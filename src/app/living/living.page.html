@@ -1,0 +1,75 @@
+<ion-content>
+
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!livingArray">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <ng-container *ngIf="livingArray">
+    <div style="background: #fff;
+    margin: 5px 0px;">
+      <div class="ion-display-flex todays-pick-wrap-div ion-justify-content-between ion-align-items-center">
+        <h3 class="pick-gender-txt">Today's Pick</h3>
+      </div>
+      <!--Living Posts Section I-->
+      <ion-row class="section-1-post-row">
+        <ng-container *ngFor="let livingItem of livingArray; first as isFirst">
+          <ion-col class="ion-no-padding" *ngIf="isFirst">
+            <div class="ion-position-relative section-1-post-wrap-div">
+              <div class="transparent-background-effect"></div>
+              <img class="section-1-post-img" [lazyLoad]="livingItem.img" >
+              <div class="section-1-txt-section">
+                <h4>{{ livingItem.desc }}</h4>
+                <h3>{{ livingItem.price }} <span>total price</span></h3>
+              </div>
+            </div>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+      <ion-row style="margin: 10px 8px;">
+        <ng-container *ngFor="let livingItem of livingArray; let i = index">
+          <ion-col *ngIf="i > 0 &&  i < 3" size="6" [class.section-2-odd-side]="i%2 == 0" [class.section-2-even-side]="i%2 != 0">
+            <div class="ion-position-relative section-2-post-wrap-div">
+              <!-- <div class="transparent-background-effect-section-2"></div> -->
+                <img class="section-2-post-img" [lazyLoad]="livingItem.img" >
+                <div class="section-2-txt-section">
+                  <h4>{{ livingItem.desc }}</h4>
+                  <h3>{{ livingItem.price }} <span>total price</span></h3>
+                </div>
+              </div>
+          </ion-col>
+        </ng-container>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Refresh Content
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <!---->
+    <div class="section-3-wrap-div">
+      <h3 class="popular-txt">Popular these Days</h3>
+      <ion-row>
+        <ion-col class="ion-text-center" *ngFor="let livingItem of livingArray" size="6">
+          <div class="ion-position-relative section-3-post-wrap-div">
+              <img class="section-3-post-img" [lazyLoad]="livingItem.img" >
+              <div class="section-3-txt-section">
+                <h4>{{ livingItem.desc }}</h4>
+                <h3>{{ livingItem.price }} <span>total price</span></h3>
+              </div>
+            </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Content
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="lines">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,13 @@
+<ion-content>
+  <ion-row class="layout-3-wrap-row">
+    <ion-col size="12" *ngFor="let post of apiResponse">
+      <div class="layout-3-wrap-div">
+        <img [lazyLoad]="post.coverImg">
+        <div class="layout-3-text-div">
+          <h3>{{ post.desc }}</h3>
+          <h4><span class="qpost-category-name">{{ post.category }}</span><span class="verticle-separator">|</span><span class="qpost-publisher-name">{{ post.name }}</span></h4>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

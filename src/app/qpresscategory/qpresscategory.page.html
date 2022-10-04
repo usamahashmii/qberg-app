@@ -1,0 +1,81 @@
+<!--Header-->
+<app-secondaryheader></app-secondaryheader>
+<ion-content>
+
+  <super-tabs class="super-tab" [activeTabIndex]=selectedTabIndex (tabChange)="tabChange($event)">
+    <super-tabs-toolbar scrollable slot="top" scrollablePadding="false">
+      <super-tab-button *ngFor="let category of categoriesArray">
+        <h3>{{ category.title }}</h3>
+      </super-tab-button>
+    </super-tabs-toolbar>
+
+    <super-tabs-container id="toggleMain">
+      <ng-container *ngFor="let category of categoriesArray">
+        <super-tab class="ion-padding" *ngIf="category.layouts == 'layout1'">
+          <ion-nav [root]="layout1"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout2'">
+          <ion-nav [root]="layout2"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout3'">
+          <ion-nav [root]="layout3"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout4'">
+          <ion-nav [root]="layout4"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout5'">
+          <ion-nav [root]="layout5"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout6'">
+          <ion-nav [root]="layout6"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout7'">
+          <ion-nav [root]="layout7"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout8'">
+          <ion-nav [root]="layout8"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout9'">
+          <ion-nav [root]="layout9"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout10'">
+          <ion-nav [root]="layout10"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout11'">
+          <ion-nav [root]="layout11"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout12'">
+          <ion-nav [root]="layout12"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout13'">
+          <ion-nav [root]="layout13"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout14'">
+          <ion-nav [root]="layout14"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout15'">
+          <ion-nav [root]="layout15"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout16'">
+          <ion-nav [root]="layout16"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout17'">
+          <ion-nav [root]="layout17"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout18'">
+          <ion-nav [root]="layout18"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout19'">
+          <ion-nav [root]="layout19"></ion-nav>
+        </super-tab>
+        <super-tab *ngIf="category.layouts == 'layout20'">
+          <ion-nav [root]="layout20"></ion-nav>
+        </super-tab> 
+        <!-- <super-tab *ngIf="">
+          <ion-nav [root]="layout19"></ion-nav>
+        </super-tab>-->
+      </ng-container>
+    </super-tabs-container>
+  </super-tabs> 
+
+</ion-content>

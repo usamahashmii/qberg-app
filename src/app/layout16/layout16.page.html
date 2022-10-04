@@ -1,0 +1,43 @@
+<ion-content>
+  <!--Refresh Content-->
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!--Skelton Structure-->
+  <ng-container *ngIf="!apiResponse">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+    
+  <div style="background-color: #fff;">
+
+    <!---->
+    <div *ngFor="let news of newsArray" class="news-channel-wrap-div" (click)="openNewsDetails(news)">
+      <div class="ion-display-flex ion-align-items-center news-channel-info-wrap-div ion-justify-content-between">
+        <div class="news-channel-info-div ion-display-flex ion-align-items-center">
+          <img [lazyLoad]="news.website.logo">
+          <h3>{{ news.website.title }}</h3>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M13.775,18.707,8.482,13.414a2,2,0,0,1,0-2.828l5.293-5.293,1.414,1.414L9.9,12l5.293,5.293Z"/></svg>
+      </div>
+      <!--News-->
+      <div class="ion-display-flex ion-align-items-center ion-justify-content-between news-by-each-channel-wrap-div">
+        <div>
+          <h1 class="news-title">{{ news.title }}</h1>
+          <div class="ion-display-flex ion-align-items-center">
+            <!-- <h3>{{ i + 1 }}</h3> -->            
+            <h4>{{ news.excerpt }}</h4>
+          </div>
+          <h5>{{ news.created_at | ago}}</h5>
+        </div>
+        <img [lazyLoad]="news.image">
+      </div>
+
+    </div>
+  </div>
+ 
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,191 @@
+.app-logo-div{
+    display: flex;
+    // justify-content: center;
+    img{
+        width: 27%;
+        margin: 1px 0px 15px 8px;
+    }
+}
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000;
+    max-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    --border-radius: 50%;
+    margin: 10px 5px 10px 10px;
+    svg{
+        min-width: 30px;
+        height: 30px;
+    }
+}
+.signup-agreement-section{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    width: 95%;
+}
+.app-logo{
+    width: 35%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.agreement-txt{
+    font-size: 14px;
+    font-family: "poppins semibold";
+    // text-decoration: underline;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    color: #25364c;
+}
+.check-box-div{
+    min-width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #b7b7b7;
+    margin-right: 10px;
+    svg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        fill: #7a7272;
+    }
+}
+.highlight-check-box-div{
+    min-width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    margin-right: 10px;
+    background: #2886b9;
+    svg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+    }
+}
+.check-box-small-div{
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid #b7b7b7;
+    margin-right: 10px;
+    svg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        fill: #7a7272;
+    }
+}
+.highlight-check-box-small-div{
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    margin-right: 10px;
+    background: #2886b9;
+    svg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+    }
+}
+.terms-of-service-txt, .privacy-policy-txt, .personal-info-txt{
+    font-size: 15px;
+    font-family: 'poppins semibold';
+    margin: 0px;
+    color: #25364c;
+    letter-spacing: 0.3px;
+    line-height: 16px;
+    span{
+        color: green;
+    }
+}
+.terms-of-service-div, .privacy-policy-div, .personal-info-div{
+    background: #f5f6f8;
+    border: 1px solid #a3abc0;
+    padding: 10px;
+    height: 108px;
+    overflow: scroll;
+    border-radius: 4px;
+    margin-top: 10px;
+    h2{
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        margin: 0px 0px 10px 0px;
+        color: #25364c;
+        letter-spacing: 0.3px;
+        line-height: 16px;
+    }
+    h3{
+        font-size: 13px;
+        font-family: 'poppins semibold';
+        margin: 0;
+        color: #707070;
+        letter-spacing: 0.3px;
+        line-height: 16px;
+    }
+}
+.personal-info-div{
+    background: none;
+    border: none;
+    padding-top: 0px;
+    height: auto;
+}
+.personal-info-txt{
+    span{
+        color: #9b9b9b;
+    }
+}
+.confirm-cancel-btns{
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.cancel-btn{
+    --background: #919191;
+    text-transform: capitalize;
+    font-family: 'poppins semibold' !important;
+    font-size: 17px;
+    height: 45px;
+    --box-shadow: none;
+    --border-radius: none;
+    border-radius: 0px;
+    width: 100%;
+    color: #fff;
+}
+.confirm-btn{
+    width: 100%;
+    --box-shadow: none;
+    --background: linear-gradient(to right, #25364c, rgb(36 68 121));
+    font-size: 15px;
+    font-family: 'poppins medium';
+    text-transform: capitalize;
+    border-radius: 30px;
+    --border-radius: 30px;
+    height: 45px;
+    margin-top: 10px;
+}

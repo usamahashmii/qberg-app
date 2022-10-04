@@ -1,0 +1,309 @@
+//Skelton Structure
+.skelton-structure-wrap-div{
+    margin: 15px;
+}
+.skelton-structure-title{
+    height: 70px;
+    width: 100%;
+}
+.skelton-structure-views{
+    height: 15px;
+    width: 16%;
+    position: relative;
+    left: 100%;
+    margin-left: -52.8px;
+}
+.skelton-structure-avatar{
+    min-width: 36px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+}
+.skelton-structure-publisher-info{
+    width: 100%;
+    margin-left: 10px;
+    h3{
+        width: 20%;
+        margin: 0;
+    }
+    h4{
+        width: 30%;
+        margin: 0;
+    }
+}
+.skelton-structure-like{
+    height: 35px;
+    width: 19%;
+    border-radius: 4px;
+}
+p.skelton-structure-paragraph{
+    height: 60px;
+}
+p.skelton-structure-image{
+    height: 120px;
+}
+.header-icons-div{
+    position: absolute;
+    z-index: 99999999;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 6px 4px;
+}
+.back-btn, .menu-btn{
+    --background: none;
+    --box-shadow: none;
+    border-radius: 50%;
+    --border-radius: 50%;
+    min-width: 37px;
+    width: 37px;
+    height: 37px;
+    svg{
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+        min-width: 22px;
+    }
+}
+
+//Header Section
+//header section
+ion-header{
+    background: #25364c;
+    ion-toolbar{
+        --background: #25364c;
+    }
+}
+.back-btn-header{
+    height: 24px;
+    width: 24px;
+    fill: white;
+    stroke: white;
+    ion-button{
+        height: 40px;
+        width: 40px;
+        --ripple-color: #ffffff;
+        border-radius: 50%;
+        --border-radius: 50%;
+        svg{
+            height: 30px;
+            width: 30px;
+            fill: #ffffff;
+            stroke: #ffffff;
+        }
+    }
+}
+//Content 
+//Merged Header
+.site-header{
+    margin: 0px !important;
+}
+.header-cover-img-div{
+    position: relative;
+    background: #5e4164;
+    img{
+        height: 145px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .cover-img-blurry{
+        height: 180px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 9999999;
+        backdrop-filter: blur(0px);
+        background: rgba(0,0,0,0.5);
+        border-radius: 0px !important;
+    }
+}
+.website-logo-info-div{
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.website-logo-div{
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+    min-width: 95px;
+    position: relative;
+    z-index: 999999999;
+    background: #e8eaed;
+    left: 0px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%), 0 2px 2px -1px rgb(0 0 0 / 20%);
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 65px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+.share-icon-div{
+    position: absolute;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    bottom: 8px;
+    svg{
+        width: 15px;
+        height: 15px;
+        path{
+            fill: #d0d0d0;
+        }
+    }
+}
+.website-title-div{
+    display: flex;
+    align-items: baseline;
+    z-index: 99999999;
+    margin-left: 0px !important;
+    justify-content: center;
+    position: relative;
+    h3{
+        font-size: 24px;
+        font-family: 'poppins bold';
+        color: #ffffff;
+        margin: 5px 10px 0px 0px;
+    }
+}
+.fab-main-btn{
+    --background: #5e4164;
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    width: 40px;
+    height: 40px;
+}
+.fab-child-list{
+    position: absolute;
+    left: -14px;
+    top: -37px;
+}
+.subscribers-count-div{
+    h4{
+        margin: 7px 8px 0px 0px;
+        color: #ffffff;
+        font-family: 'poppins Regular';
+        font-size: 14px;
+    }
+    div{
+        h3{
+            font-size: 15px;
+            color: #f69a9f;
+            font-family: "poppins semibold";
+            margin: 0;
+            text-decoration: underline;
+        }
+    }
+}
+.subscribe-wrap-min-div{
+    background: #5e4164;
+    padding: 4px 13px;
+    border-radius: 30px;
+    position: absolute;
+    right: 4px;
+    bottom: 20px;
+    h4{
+        margin: 0;
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        color: #fff;
+    }
+}
+/// Channel other info
+.channel-other-info-div{
+    background: #36233a;
+    margin-top: -4px;
+    padding: 32px 5px 12px 5px;
+}
+
+.tabs-main-wrap-div{
+    // background: #36233a;
+    // margin-top: -1px;
+    ion-list{
+        padding: 0;
+        background: #36233a;
+        margin-top: -1px;
+        ion-item-divider{
+            --background: #36233a;
+            padding: 0;
+        }
+    }
+    ion-segment{
+        ion-segment-button{
+            font-size: 14px;
+            font-family: 'poppins semibold';
+            color: #fff;
+            text-transform: capitalize;
+            --indicator-color: #ffffff;
+            --indicator-height: 3px;
+        }
+    }
+}
+//More News
+.more-news-wrap-div{
+    background: #fff;
+    padding: 10px 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.more-news-img{
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    border: 1px solid #cdcdcd;
+    margin-right: 10px;
+    min-width: 100px;
+}
+.more-news-title{
+    font-size: 15px;
+    color: #2c2c2c;
+    font-family: 'poppins Regular' !important;
+    margin: 0;
+}
+.more-news-time-ago{
+    margin-left: 5px;
+    svg{
+        fill: #3f63bf;
+        width: 15px;
+        margin-right: 3px;
+        height: 15px;
+    }
+    h3{
+        margin: 0;
+        font-size: 13px;
+        color: #3f63bf;
+        font-family: 'poppins semibold' !important;    
+    }
+}
+.comments-on-news-post-div{
+    margin-left: 10px;
+    svg{
+        fill: #bdbdbd;
+        width: 15px;
+        height: 15px;
+    }
+    span{
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        color: #bfbfbf;
+        margin-left: 3px;
+    }
+}
+ion-spinner{
+    animation-duration: 1400ms;
+    height: 50px;
+    width: 50px;
+    margin-top: 4em;
+    color: #4bbc4c;
+}
+//Social Links

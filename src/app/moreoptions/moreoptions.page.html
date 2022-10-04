@@ -1,0 +1,28 @@
+<ion-content>
+    <ion-row *ngIf="!newsResponse">
+        <ion-col class="ion-text-center">
+            <ion-spinner class="loader"></ion-spinner>
+        </ion-col>
+    </ion-row>
+    
+
+    <ion-row *ngIf="newsResponse">
+        <ion-col (click)="moreOptions('bookmark')">
+            <img src="assets/imgs/bookmark.svg">
+            <h4>Bookmark</h4>
+        </ion-col>
+        <ion-col (click)="moreOptions('copy')">
+            <img src="assets/imgs/copy.svg">
+            <h4>Copy URL</h4>
+        </ion-col>
+        <ion-col (click)="moreOptions('screenshot')">
+            <img src="assets/imgs/camera-viewfinder.svg">
+            <h4>Take screenshot</h4>
+        </ion-col>
+        <ion-col (click)="moreOptions('browser')">
+            <img src="assets/imgs/globe-light.svg">
+            <h4>Open in browser</h4>
+        </ion-col>
+    </ion-row>
+   
+</ion-content>

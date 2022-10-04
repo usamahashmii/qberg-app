@@ -1,0 +1,67 @@
+<ion-content>
+  <!--Refresh Content-->
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+<!--Structure Skelton-->
+  <ng-container *ngIf="!apiResponse">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+  <!---->
+ 
+  <ion-row>
+    <ng-container *ngFor="let news of newsArray; let i = index">
+      <ion-col *ngIf="i <= 5" size="4" style="padding-bottom: 12px;" (click)="openNewsDetails(news)">
+        <div class="ion-position-relative">
+          <img class="three-section-main-image-thumbnail" [lazyLoad]="news.image">
+         
+        </div>
+        <h4 class="video-title">{{ news.title }}</h4>
+        <h5 class="video-desc">{{ news.excerpt }}</h5>
+      </ion-col>
+
+      <ion-col *ngIf="i > 5" size="6" style="padding-bottom: 12px;" (click)="openNewsDetails(news)">
+        <div class="ion-position-relative">
+          <img class="two-section-main-image-thumbnail" [lazyLoad]="news.image">
+        </div>
+        <h4 class="entertainment-more-news-title">{{ news.title }}</h4>
+        <h5 class="video-desc">{{ news.excerpt }}</h5>
+      </ion-col>
+    </ng-container>
+
+    <div *ngIf="i > 9" class="more-news-wrap-div ion-display-flex ion-align-items-center" (click)="openNewsDetails(news)">
+      <img class="more-news-img" [lazyLoad]="news.image">
+      <div>
+        <h3 class="more-news-title">{{ news.title }}</h3>
+        <div class="ion-display-flex ion-align-items-center ion-justify-content-between" style="margin-top: 6px;">
+          <div class="ion-display-flex ion-align-items-center">
+            <h3 class="news-paper-name">{{ news.website.title }}</h3>
+            <div class="more-news-time-ago ion-display-flex ion-align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"/><path d="M12,6a1,1,0,0,0-1,1v4.325L7.629,13.437a1,1,0,0,0,1.062,1.7l3.84-2.4A1,1,0,0,0,13,11.879V7A1,1,0,0,0,12,6Z"/></svg>
+              <h3>{{ news.created_at | ago }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="comments-on-news-post-div ion-display-flex ion-align-items-end">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mb-1 ml-1" viewBox="0 0 24 24" width="14" height="14"><path d="M23.271,9.419C21.72,6.893,18.192,2.655,12,2.655S2.28,6.893.729,9.419a4.908,4.908,0,0,0,0,5.162C2.28,17.107,5.808,21.345,12,21.345s9.72-4.238,11.271-6.764A4.908,4.908,0,0,0,23.271,9.419Zm-1.705,4.115C20.234,15.7,17.219,19.345,12,19.345S3.766,15.7,2.434,13.534a2.918,2.918,0,0,1,0-3.068C3.766,8.3,6.781,4.655,12,4.655s8.234,3.641,9.566,5.811A2.918,2.918,0,0,1,21.566,13.534Z"></path><path d="M12,7a5,5,0,1,0,5,5A5.006,5.006,0,0,0,12,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"></path></svg>
+          <span>{{ news.views }}  {{ 'views' | translate }}</span>
+        </div>
+      </div>
+    </div>
+  </ion-row>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>layout11</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>

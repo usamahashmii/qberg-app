@@ -1,0 +1,211 @@
+<ion-content>
+  <ion-button (click)="goBack()" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M19,11H9l3.29-3.29a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-4.29,4.3A2,2,0,0,0,6,12H6a2,2,0,0,0,.59,1.4l4.29,4.3a1,1,0,1,0,1.41-1.42L9,13H19a1,1,0,0,0,0-2Z" fill="#24364d" data-original="#000000"/></g></svg>
+  </ion-button>
+
+  <div class="signup-fields-section">
+    <div class="app-logo-div">
+      <img src="assets/imgs/default-monochrome.svg">
+    </div>
+
+    <form [formGroup]="registeration" novalidate (ngSubmit)="signMeUp()">
+      <div>
+        <div>
+          <!-- <h4>{{ 'username' | translate }}</h4> -->
+          <ion-row>
+            <ion-col>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
+              <ion-input class="username-input" formControlName="username" placeholder="username"></ion-input>
+            </ion-col>
+          </ion-row>
+          
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.required">{{ 'you_cannot_leave_this_empty' | translate }}</span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.minlength">{{ 'username_should_be_7_character_long' | translate }}</span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.pattern">{{ 'please_choose_a_correct_format_of_username' | translate }}</span>
+          <span class="error ion-padding" *ngIf="apiResponse.msg && apiResponse.msg.hasOwnProperty('username')">{{ 'username_already_taken' | translate }}</span>
+        </div>
+        <div>
+          <!-- <h4>{{ 'password' | translate }}</h4> -->
+          <ion-row>
+            <ion-col>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M384 192h-32V127.1c0-70.58-57.42-127.1-128-127.1s-128 57.42-128 127.1V192H64C28.65 192 0 220.7 0 256v191.1c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V256C448 220.7 419.3 192 384 192zM144 128c0-44.11 35.89-80 80-80s80 35.89 80 80v64h-160V128zM400 448c0 8.822-7.178 16-16 16H64c-8.822 0-16-7.178-16-16V256c0-8.822 7.178-16 16-16h320c8.822 0 16 7.178 16 16V448z"/></svg>
+              <ion-input type="password" class="password-input" formControlName="password" placeholder="password"></ion-input>
+            </ion-col>
+          </ion-row>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">{{ 'you_cannot_leave_this_empty' | translate }}</span>
+
+          <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minLength">Your password should be atleast 8 characters</span> -->
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+            {{ 'pasword_must_be_8_characters_long' | translate }}
+          </span>
+          <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.pattern">Please creare a strong password</span> -->
+        </div>
+        <div>
+          <!-- <h4>{{ 'password_confirm' | translate }}</h4> -->
+          <ion-row>
+            <ion-col>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M384 192h-32V127.1c0-70.58-57.42-127.1-128-127.1s-128 57.42-128 127.1V192H64C28.65 192 0 220.7 0 256v191.1c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V256C448 220.7 419.3 192 384 192zM144 128c0-44.11 35.89-80 80-80s80 35.89 80 80v64h-160V128zM400 448c0 8.822-7.178 16-16 16H64c-8.822 0-16-7.178-16-16V256c0-8.822 7.178-16 16-16h320c8.822 0 16 7.178 16 16V448z"/></svg>
+              <ion-input type="password" class="confirm-password-input" formControlName="passwordconfirm" placeholder="Confirm password"></ion-input>
+            </ion-col>
+          </ion-row>
+          
+          <div *ngIf="errorControl.passwordconfirm.touched && errorControl.passwordconfirm.invalid" class="alert alert-danger">
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.passwordconfirm.errors?.required">
+              {{ 'you_cannot_leave_this_empty' | translate }}
+            </span>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.passwordconfirm.errors.confirmedValidator">
+              {{ 'password_donot_match' | translate }}
+            </span>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.passwordconfirm.errors?.minlength">
+              {{ 'pasword_must_be_8_characters_long' | translate }}
+             </span>
+          </div>
+        </div>
+
+        <div>
+          <!-- <h4>{{ 'email' | translate }} </h4> -->
+          <ion-row>
+            <ion-col>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M448 64H64C28.65 64 0 92.65 0 128v256c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V128C512 92.65 483.3 64 448 64zM64 112h384c8.822 0 16 7.178 16 16v22.16l-166.8 138.1c-23.19 19.28-59.34 19.27-82.47 .0156L48 150.2V128C48 119.2 55.18 112 64 112zM448 400H64c-8.822 0-16-7.178-16-16V212.7l136.1 113.4C204.3 342.8 229.8 352 256 352s51.75-9.188 71.97-25.98L464 212.7V384C464 392.8 456.8 400 448 400z"/></svg>
+              <ion-input class="email-input" formControlName="email" type="email" placeholder="{{ 'enter_your_email' | translate }}"></ion-input><!--placeholder="{{ 'optional' | translate }}"-->
+            </ion-col>
+          </ion-row>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+            {{ 'you_cannot_leave_this_empty' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+            {{ 'please_write_correct_format_of_email_field' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="apiResponse.msg && apiResponse.msg.hasOwnProperty('email')">{{ 'email_already_taken' | translate }}</span>
+        </div>
+
+        <div>
+          <!-- <h4>{{ 'name' | translate }}</h4> -->
+          <div class="ion-display-flex">
+            <div style="width: 100%;">
+              <ion-row>
+                <ion-col>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
+                  <ion-input class="first-name-input" formControlName="firstName" type="text" placeholder="{{ 'first_name' | translate }}"></ion-input>
+                </ion-col>
+              </ion-row>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.required">
+                {{ 'you_cannot_leave_this_empty' | translate }}
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.minlength">
+                {{ 'minimum_character_length_3' | translate }}
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.pattern">
+               {{ 'please_write_correct_format' | translate }}
+              </span>
+            </div>
+
+            <div style="width: 100%;">
+              <ion-row>
+                <ion-col>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
+                  <ion-input class="last-name-input" formControlName="lastName" type="text" placeholder="{{ 'last_name' | translate }}"></ion-input>
+                </ion-col>
+              </ion-row>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.required">
+                {{ 'you_cannot_leave_this_empty' | translate }}
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.minlength">
+                {{ 'minimum_character_length_3' | translate }}
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.pattern">
+                {{ 'please_write_correct_format' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!-- <h4>{{ 'dob' | translate }}</h4> -->
+          <div class="ion-display-flex">
+            <ion-row style="width: 100%">
+              <ion-col class="dob-col">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M383.1 223.1L376 224V168c0-13.25-10.75-24-24-24s-24 10.75-24 24V224h-80V168c0-13.25-10.75-24-24-24S200 154.8 200 168V224h-80V168C120 154.8 109.3 144 96 144S72 154.8 72 168V224L64 223.1c-35.35 0-64 28.65-64 63.1v192C0 497.7 14.33 512 32 512h384c17.67 0 32-14.33 32-32V287.1C448 252.6 419.3 223.1 383.1 223.1zM400 464h-352v-71.57c18.12-2.906 34.43-10.33 48-19.1c17.34 11.19 39.64 21.37 64 21.37s46.66-10.19 64-21.37c17.34 11.19 39.64 21.37 64 21.37s46.66-10.19 64-21.37c13.46 8.68 29.94 16.68 48 19.82V464zM400 343.8c-13.47-4.363-25.79-12.82-33.05-18.58c-8.75-6.969-21.16-6.969-29.91 0C326.1 333.2 307.2 346.7 288 346.7s-38.97-13.47-49.05-21.48c-8.75-6.969-21.16-6.969-29.91 0C198.1 333.2 179.2 346.7 160 346.7s-38.97-13.47-49.05-21.48c-8.75-6.969-21.16-6.969-29.91 0C73.79 330.1 61.47 339.4 48 343.8V288c0-8.822 7.178-16 16-16h320c8.822 0 16 7.178 16 16V343.8zM352 111.1c22.09 0 40-17.88 40-39.97S352 0 352 0s-40 49.91-40 72S329.9 111.1 352 111.1zM224 111.1c22.09 0 40-17.88 40-39.97S224 0 224 0S184 49.91 184 72S201.9 111.1 224 111.1zM96 111.1c22.09 0 40-17.88 40-39.97S96 0 96 0S56 49.91 56 72S73.91 111.1 96 111.1z"/></svg>
+                <ion-datetime class="date-of-birth-box" formControlName="dob" displayFormat="YYYY/MM/DD" min="1970-12-01" max="2010-12-01" placeholder="{{ 'pick_your_date_of_birth' | translate }}"></ion-datetime>
+              </ion-col>
+            </ion-row>
+          </div>
+          <h6 class="error ion-padding" *ngIf="isSubmitted && errorControl.dob.errors?.required">
+            {{ 'you_cannot_leave_dob_field_empty' | translate }}
+          </h6>
+        </div>
+
+        <!-- <div>
+          <ion-row>
+            <ion-col>
+              <ion-item lines="none">
+                <ion-label>{{ 'select_phone_code' | translate }}</ion-label>
+                <ion-select (ionChange)="pickPhoneCode($event)" interface="action-sheet" formControlName="phoneCode">
+                  <ion-select-option value="+965">Kuwait +965</ion-select-option>
+                  <ion-select-option value="+371">Latvia +371</ion-select-option>
+                  <ion-select-option value="+976">Mogolia +976</ion-select-option>
+                  <ion-select-option value="+92">Pakistan +92</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneCode.errors?.required">
+            {{ 'please_select_country_phone_code' | translate }}
+          </span>
+        </div> -->
+        <!-- <div class="enter-phone-number-section">
+          <div class="ion-display-flex ion-align-items-center">
+            <div style="width: 100%;">
+              <ion-input formControlName="phoneNumber" placeholder="3002784399"></ion-input>
+            </div>
+            
+          </div>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.required">
+            {{ 'you_cannot_leave_this_empty' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.pattern">
+            {{ 'please_write_correct_format' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.minlength">
+            {{ 'phone_number_characters_not_enough' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="apiResponse.msg && apiResponse.msg.hasOwnProperty('phone_number')">{{ 'phone_number_already_taken' | translate }}</span>
+        </div> -->
+        <div class="ion-display-flex ion-align-items-center mobile-number-div">
+          <ion-button (click)="pickCountryCode()">
+            +{{ countryCode }} <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Chevron Down</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144" class="ionicon-fill-none"/></svg>
+          </ion-button>
+          <ion-input formControlName="phoneNumber" placeholder="Mobile number"></ion-input>
+        </div>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.required">
+          Phone number is required
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.pattern">
+          Please write correct format of phone number
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phoneNumber.errors?.minlength">
+          Phone number characters are not enough
+        </span>
+        <span class="error ion-padding" *ngIf="apiResponse.msg && apiResponse.msg.hasOwnProperty('phone_number')">Phone number is already taken</span>
+        
+        <!-- <div>
+          <ion-input formControlName="verificationCode" placeholder="{{ 'enter_verification_code' | translate }}" maxlength="6"></ion-input>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.verificationCode.errors?.required">
+            {{ 'you_cannot_leave_this_empty' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.verificationCode.errors?.pattern">
+            {{ 'please_write_correct_format' | translate }}
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.verificationCode.errors?.minlength">
+            Minimum code length is 6
+          </span>
+        </div> -->
+        <ion-row>
+          <ion-col>
+            <ion-button class="signup-btn" type="submit">{{ 'sign_up' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+  </div>
+
+</ion-content>

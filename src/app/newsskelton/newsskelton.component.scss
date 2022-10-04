@@ -1,0 +1,23 @@
+//Skelton structure
+.avatar-div-img{
+    width: 100px;
+    min-width: 100px;
+    height: 65px;
+}
+.avatar-div-details{
+    width: 100%;
+    h2{
+        height: 32px;
+        width: 92%;
+        margin: 0px 0px 0px 10px;
+    }
+    div{
+        margin-top: 7px;
+        h3, h4{
+            width: 58px;
+            height: 15px;
+            margin: 0px 0px 0px 10px;
+            margin-right: 12px;
+        }
+    }
+}

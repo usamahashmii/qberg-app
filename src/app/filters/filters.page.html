@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <h3 class="filters-txt">Filters</h3>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <h3 *ngFor="let item of [].constructor(50)">heasjbdl</h3> -->
+  <!--Price-->
+  <div>
+    <h3 class="price-txt">Price</h3>
+    <div class="ion-display-flex ion-align-items-center ion-justify-content-around price-inputs-div">
+      <ion-input class="price-min-input" placeholder="Min"></ion-input>
+      <hr class="price-input-sep">
+      <ion-input class="price-max-input" placeholder="Max"></ion-input>
+    </div>
+    <div class="ion-display-flex ion-align-items-center price-range-btn-div">
+      <ion-button [class.highlight-range-btn]="priceRangeSelection == 'less'" (click)="selectPriceRange('less')" class="price-range-btn"> < MNT 10 </ion-button>
+      <ion-button [class.highlight-range-btn]="priceRangeSelection == 'mid'" (click)="selectPriceRange('mid')" class="price-range-btn"> MNT 10 - MNT 100 </ion-button>
+      <ion-button [class.highlight-range-btn]="priceRangeSelection == 'greater'" (click)="selectPriceRange('greater')" class="price-range-btn"> > MNT 50 </ion-button>
+    </div>
+  </div>
+  <!--Sellers-->
+  <div>
+    <h3 class="seller-txt">Seller</h3>
+    <div class="sellers-btns-div">
+      <ion-button [class.highlight-range-btn]="seller.choosen == 'yes'" (click)="chooseSellers(seller)" class="sellers-btns" *ngFor="let seller of sellersArray">{{ seller.name }}</ion-button>
+    </div>
+  </div>
+  <!--Deals-->
+  <div>
+    <h3 class="deals-txt">Deals</h3>
+    <ion-button [class.highlight-range-btn]="dealActive == 'yes'" (click)="chooseDeals()" class="deals-btns">On sale</ion-button>
+  </div>
+  <!--Discount-->
+  <div>
+    <h3 class="discount-txt">Discount <span *ngIf="minDiscount || maxDiscount" class="discount-range-choosed">({{ minDiscount }} ~ {{ maxDiscount }}% OFF)</span></h3>
+    <ion-range (ionChange)="discountRangeChoosen($event)" dualKnobs="true" min="0" max="90" step="15"></ion-range>
+    <div class="ion-display-flex discount-range-div">
+      <h2>0%</h2>
+      <h2>15%</h2>
+      <h2>30%</h2>
+      <h2>45%</h2>
+      <h2>60%</h2>
+      <h2>75%</h2>
+      <h2>90%</h2>
+    </div>
+  </div>
+  <!--Sizes-->  
+  <div>
+    <h3 class="size-txt">Size</h3>
+    <div class="size-btns-div">
+      <ion-button [class.highlight-range-btn]="size.choosen == 'yes'" (click)="chooseSizes(size)" class="size-btns" *ngFor="let size of sizesArray">{{ size.name }}</ion-button>
+    </div>
+  </div>
+
+</ion-content>

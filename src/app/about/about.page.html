@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="about-txt">{{ 'about' | translate }}</h3>
+
+  <div class="ion-align-items-center ion-display-flex logo-div ion-justify-content-center">
+    <img src="assets/imgs/tabs-page/qlogo.png">
+    <h3>Berg</h3>
+  </div>
+  <h1 class="qberg-network-txt">QBerg {{ 'network' | translate }}</h1>
+  <h4 class="version-txt">{{ 'version' | translate }} 1.0.0</h4>
+
+  <ion-item button (click)="clickItem()">
+    <ion-label>
+      {{ 'check_for_updates' | translate }}
+      <h3>{{ 'all_is_upto_date' | translate }}</h3>
+    </ion-label>
+    <ion-thumbnail slot="end">
+      <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+    </ion-thumbnail>
+  </ion-item>
+
+  <div class="footer-div">
+    <h3>{{ 'open_source_licenses' | translate }}</h3>
+    <h4>QBerg {{ 'user_agreement' | translate }}</h4>
+    <h5>QBerg. {{ 'all_rights_reserved' | translate }}. 2022</h5>
+  </div>
+</ion-content>

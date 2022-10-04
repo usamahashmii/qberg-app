@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn-effect" slot="start">
+      <img class="back-btn" src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+
+    <!-- <div *ngIf="showProfileName" class="profile-data-wrap-div-header">
+      <div class="profile-data-wrap-min-div-header ion-display-flex" >
+        <div class="ion-position-relative" style="height: 42px;">
+          <img class="profile-picture-header" [lazyLoad]="profileInfo.profile_image">
+          <div class="profile-picture-edit-div-header">
+            <img class="profile-picture-edit-header" src="assets/imgs/tabs-page/camera.svg">  
+          </div>
+        </div>
+        <div class="ion-display-flex ion-align-items-center name-edit-div-header">
+          <h3>{{ profileInfo.name }}</h3>
+          <div class="name-edit-img-header">
+            <img src="assets/imgs/tabs-page/pencil.svg">
+          </div>        
+        </div>
+      </div>
+    </div> -->
+
+    <ion-buttons slot="end">
+      <ion-button class="bell-icon-btn" (click)="goToNotificationsPage()">
+        <div class="bell-wrap-div">
+          <img src="assets/imgs/tabs-page/bell.svg">
+          <ion-badge>0</ion-badge>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content (ionScroll)="logScrolling($event)" #content id="ion-content" scrollEvents="true" ><!-- --> 
+  <!-- <ion-list>
+    <ion-item-divider sticky style="border: 0"> -->
+      <div class="profile-data-wrap-div">
+        <div class="profile-data-wrap-min-div">
+          <div class="ion-position-relative" style="height: 78px;">
+            <img (click)="changeProfilePic()" class="profile-picture" [lazyLoad]="profileInfo ? profileInfo.image_url : 'assets/imgs/user-profile-svgrepo-com.svg'">
+            <div (click)="changeProfilePic()" class="profile-picture-edit-div">
+              <img class="profile-picture-edit" src="assets/imgs/tabs-page/camera.svg">  
+            </div>
+          </div>
+          <div class="ion-display-flex ion-align-items-center name-edit-div ion-justify-content-center">
+            <h3>{{ profileInfo ? profileInfo.name : '' }}</h3>
+            <div (click)="changeName()" class="name-edit-img">
+              <img src="assets/imgs/tabs-page/pencil.svg">
+            </div>        
+          </div>
+        </div>
+      </div>
+    <!-- </ion-item-divider> -->
+    <div style="margin: 10px 0px;">
+      <div class="profile-widgets-wrap-div ion-display-flex ion-justify-content-evenly">
+        <div (click)="openWidget('history')">
+          <img src="assets/imgs/tabs-page/stopwatch.svg">
+          <h3>{{ 'search_history' | translate }}</h3>
+        </div>
+        <hr class="separator">
+        <div (click)="openWidget('collections')">
+          <img src="assets/imgs/tabs-page/star.svg">
+          <h3>{{ 'collections' | translate }}</h3>
+        </div>
+        <hr class="separator">
+        <div (click)="openWidget('interest')">
+          <img src="assets/imgs/tabs-page/heart.svg">
+          <h3>{{ 'interests' | translate }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="profile-list-item-div">
+
+      <ion-item button (click)="buttonClick('advertise')" class="advertise-with-us-btn">
+        <ion-label>
+          <img src="assets/imgs/horn.png"> {{ 'advertise_with_us' | translate }}
+        </ion-label>
+      </ion-item>
+
+      <ion-item button (click)="buttonClick('qrcode')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/qr-code-svgrepo-com.svg">
+        </ion-thumbnail>
+        <ion-label>
+          {{ 'link_other_devices' | translate }}
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+
+      <ion-item button (click)="buttonClick('settings')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/settings.svg">
+        </ion-thumbnail>
+        <ion-label>
+          {{ 'settings' | translate }}
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+      <ion-item button (click)="buttonClick('support')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/wifi-alt.svg">
+        </ion-thumbnail>
+        <ion-label style="display: flex !important; align-items: center !important;">
+          {{ 'online_support' | translate }}
+         <div class="unread-message-badge">
+          <span>{{ unreadMessage }}</span>
+         </div>
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+      <!-- <ion-item button (click)="buttonClick()">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/edit.svg">
+        </ion-thumbnail>
+        <ion-label>
+          Feedback
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item> -->
+      <ion-item button (click)="buttonClick('about')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/interrogation.svg">
+        </ion-thumbnail>
+        <ion-label>
+          {{ 'about' | translate }}
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+
+      <ion-item button (click)="buttonClick('privacy')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/shield-check.svg">
+        </ion-thumbnail>
+        <ion-label>
+          {{ 'privacy_policy' | translate }}
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+
+      <ion-item button (click)="buttonClick('logout')">
+        <ion-thumbnail slot="start">
+          <img src="assets/imgs/tabs-page/logout-svgrepo-com.svg">
+        </ion-thumbnail>
+        <ion-label>
+          {{ 'logout' | translate }}
+        </ion-label>
+        <ion-thumbnail slot="end">
+          <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+        </ion-thumbnail>
+      </ion-item>
+
+    </div>
+  <!-- </ion-list> -->
+
+  
+  
+</ion-content>
+

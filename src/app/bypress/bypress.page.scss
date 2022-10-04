@@ -1,0 +1,26 @@
+
+ion-item{
+    --background: #fff;
+    margin-top: 5px;
+    --border-color: #f2f3f5;
+    --border-radius: 5px;
+    width: 95%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.news-logo-div{
+    padding: 10px 20px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    border-radius: 4px;
+    img{
+        min-width: 45px;
+        width: 45px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 24px;
+        object-fit: cover;
+    }
+}

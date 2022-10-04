@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 class="histroy-txt">Search History</h3>
+  <div class="container-div">
+    <div *ngFor="let history of histroyData" class="container-min-div">
+      <h3 class="history-date">{{ history.date }}</h3>
+      <div class="search-data-wrap-data shadow-soft">
+        <ng-container *ngFor="let val of history.searchData; let i = index">
+          <div class="search-data-wrap-min-data ion-display-flex ion-align-items-center" [class.border-bottom]="i != history.searchData.length - 1">
+            <img class="search-icon" src="assets/imgs/tabs-page/search.svg">
+            <div class="search-text-wrap-div">
+              <h3>{{ val.text }}</h3>
+              <h4>{{ val.time }}</h4>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ion-content>

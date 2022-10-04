@@ -1,0 +1,163 @@
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000;
+    max-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    --border-radius: 50%;
+    margin: 10px 5px 10px 10px;
+    svg{
+        min-width: 30px;
+        height: 30px;
+    }
+}
+.app-logo-div{
+    display: flex;
+    margin: 6px 5px;
+    img{
+        width: 27%;
+        margin: 1px 0px 15px 8px;
+    }
+}
+.signup-fields-section{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    // padding-top: 2.2em;
+    width: 95%;
+}
+.app-logo{
+    width: 35%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+ion-row{
+    ion-col{
+        display: flex;
+        align-items: center;    
+        svg{
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            z-index: 9;
+            left: 5px;
+            fill: rgb(147 147 147);
+        }
+        ion-input, .date-of-birth-box, ion-item{
+            // background: rgb(215 220 228);
+            height: 50px;
+            font-size: 16px;
+            font-family: "poppins medium";
+            color: rgb(27, 42, 68);
+            --padding-start: 25px;
+            --padding-end: 18px;
+            border-bottom: 1px solid #aeaeae;
+            width: 100%;
+        }
+        ion-button{
+            width: 100%;
+            --box-shadow: none;
+            --background: linear-gradient(to right, #25364c, rgb(36 68 121));
+            font-size: 15px;
+            font-family: 'poppins medium';
+            text-transform: capitalize;
+            border-radius: 30px;
+            --border-radius: 30px;
+            height: 45px;
+            margin-top: 10px;
+        }
+    }
+}
+.dob-col{
+    svg{
+        margin-top: -8px;
+    }
+}
+// ion-input{
+//     background: #fff;
+//     height: 52px;
+//     border: 1px solid #e0e0e0;
+//     font-family: 'poppins semibold';
+//     font-size: 15px;
+//     width: 98%;
+//     position: relative;
+//     left: 50%;
+//     transform: translateX(-50%);
+// }
+
+.first-name-input, .last-name-input, .year-input, .month-input, .day-input{
+    width: 95%;
+}
+ion-select{
+    color: #000;
+}
+h4{
+    font-size: 15px;
+    font-family: 'poppins semibold';
+    color: #25364c;
+    margin-left: 5px;
+}
+.send-code-btn{
+    --background: #25364c;
+    --box-shadow: none;
+    text-transform: capitalize;
+    font-family: 'poppins semibold';
+    --border-radius: none;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 14px;
+    margin: 0;
+}
+.signup-btn{
+    --background: #25364c;
+    --box-shadow: none;
+    text-transform: capitalize;
+    font-family: 'poppins semibold';
+    --border-radius: none;
+    border-radius: 0px;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+.enter-phone-number-section{
+    margin: 10px 0px 10px 0px;
+}
+ion-item{
+    --background: #f2f3f5;
+    --padding-start: 0px !important;
+    --inner-padding-end: 0px !important;
+    color: #7f8094 !important;
+    .item.sc-ion-label-md-h, .item .sc-ion-label-md-h, .item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h{
+        font-family: 'poppins semibold';
+    }
+}
+.mobile-number-div{
+    ion-button{
+        --background: none;
+        --box-shadow: none;
+        color: rgb(27, 42, 68);
+        font-size: 15px;
+        font-family: 'poppins medium';
+        width: 56px;
+        border-bottom: 1px solid #aeaeae;
+        height: 50px;
+        svg{
+            width: 18px;
+            min-width: 18px;
+        }
+    }
+    ion-input{
+        height: 50px;
+        font-size: 16px;
+        font-family: 'poppins medium';
+        color: rgb(27, 42, 68);
+        --padding-start: 10px;
+        --padding-end: 18px;
+        border-bottom: 1px solid #aeaeae;
+        margin-left: -2px;
+    }  
+}

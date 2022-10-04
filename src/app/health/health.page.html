@@ -1,0 +1,45 @@
+<ion-content (ionScroll)="logScrolling($event)" #content id="ion-content" scrollEvents="true">
+  <ion-slides class="banner-slides" pager="false" [options]="slidingOptionsBanner">
+    <ion-slide *ngFor="let banner of bannerArray;">
+      <img [src]="banner.img">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row class="health-section-1-row">
+    <ng-container *ngFor="let val of healthArrayDisp; let i = index">
+      <ion-col size="4" style="padding-bottom: 0;">
+        <div class="ion-position-relative">
+          <img class="video-thumbnail" [lazyLoad]="val.img">
+        </div>
+        <h4 class="video-title">{{ val.title }}</h4>
+        <h5 class="video-desc">{{ val.desc }} ...</h5>
+      </ion-col>
+    </ng-container>
+    <ion-button (click)="refreshSectionOne(4,3)" class="refresh-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+      Refresh</ion-button>
+  </ion-row>
+  
+  <ion-row style="background: #fff;">
+    <h3 class="more-news-txt">More News</h3>
+
+    <div class="news-post-wrap-div" *ngFor="let news of gamesNewsArray">
+      <div class="news-post-div ion-display-flex ion-align-items-center">
+        <!-- <img [lazyLoad]="news.img"> -->
+        <div>
+          <h3>{{ news.title }}</h3>
+        </div> 
+      </div>
+      <h4 class="news-little-desc">{{ news.smallDesc }}</h4>
+      <div class="ion-display-flex ion-align-items-end" style="margin-top: 5px;">
+        <h5 class="news-paper-name">{{ news.newsPaperName }} | </h5>
+        <div class="comments-on-news-post-div ion-display-flex ion-align-items-end">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512"><path d="M20,0H4A4,4,0,0,0,0,4V16a4,4,0,0,0,4,4H6.9l4.451,3.763a1,1,0,0,0,1.292,0L17.1,20H20a4,4,0,0,0,4-4V4A4,4,0,0,0,20,0Zm2,16a2,2,0,0,1-2,2H17.1a2,2,0,0,0-1.291.473L12,21.69,8.193,18.473h0A2,2,0,0,0,6.9,18H4a2,2,0,0,1-2-2V4A2,2,0,0,1,4,2H20a2,2,0,0,1,2,2Z"/><path d="M7,7h5a1,1,0,0,0,0-2H7A1,1,0,0,0,7,7Z"/><path d="M17,9H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z"/><path d="M17,13H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z"/></svg>
+          <span>{{ news.commentsCount }}</span>
+        </div>
+      </div>
+    </div>
+
+  </ion-row>
+</ion-content>
+

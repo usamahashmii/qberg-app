@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 class="region-txt">{{ 'choose_region' | translate }}</h3>
+
+  <div class="region-wrap-div shadow-soft">
+
+    <ion-item *ngFor="let region of regions; let i = index" button (click)="pickRegion(region, i)">
+      <ion-label>
+        {{ region.name }}
+      </ion-label>
+      <ion-thumbnail *ngIf="selectedIndex == i" slot="end">
+        <img class="tick-img" src="assets/imgs/tabs-page/check.svg">
+      </ion-thumbnail>
+    </ion-item>
+
+  </div>
+
+  <ion-button class="save-changes" (click)="saveChanges()">{{ 'save_changes' | translate }}</ion-button>
+</ion-content>

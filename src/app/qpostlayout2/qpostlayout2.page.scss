@@ -1,0 +1,47 @@
+.layout-2-wrap-row{
+    ion-col{
+        .layout-2-wrap-div{
+            border: 1px solid #d2d2d2;
+            height: 242px;
+            img{
+                height: 130px;
+                width: 100%;
+                min-width: 100%;
+                object-fit: cover;
+            }
+            .layout-2-text-div{
+                padding: 10px;
+                h3{
+                    font-size: 16px;
+                    font-family: 'poppins semibold';
+                    margin: 0;
+                    color: #25364c;
+                    height: 2.4em;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+                h4{
+                    margin: 0;
+                    .qpost-category-name{
+                        font-size: 13px;
+                        font-family: 'poppins Regular';
+                        margin: 0px 5px 0px 0px;
+                        color: #229640;
+                    }
+                    .verticle-separator{
+                        font-size: 14px;
+                        color: #787878;
+                    }
+                    .qpost-publisher-name{
+                        font-size: 13px;
+                        font-family: 'poppins Regular';
+                        margin: 0px 5px 0px 5px;
+                        color: #787878;
+                    }
+                }
+            }
+        }
+    }
+}

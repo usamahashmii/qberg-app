@@ -1,0 +1,32 @@
+<ion-content>
+
+  <!--Refresh Content-->
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!--Skelton Structure-->
+  <ng-container *ngIf="!apiResponse">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <!--Columns-->
+  <div class="cloumn-wrap-div">
+    <div *ngFor="let news of newsArray" class="cloumn-min-wrap-div" (click)="openNewsDetails(news)">
+      <div style="padding: 12px;">
+        <h3 class="column-title">{{ news.title }}</h3>
+        <div class="ion-display-flex ion-align-items-center">
+          <h3 class="news-name">{{ news.website.title }}</h3>
+          <h4 class="date">{{ news.created_at | ago }}</h4>
+        </div>
+        <h4 class="column-desc">{{ news.excerpt }}</h4>
+      </div>
+      <img class="column-img" [lazyLoad]="news.image">
+    </div>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

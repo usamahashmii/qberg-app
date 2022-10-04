@@ -1,0 +1,11 @@
+<ion-content (ionScroll)="logScrolling($event)" #content id="ion-content" scrollEvents="true">
+  <header id="header" class="nav-down header">
+    This is your menu.
+  </header>
+  <main>
+    <p *ngFor="let val of [].constructor(500)">Hello tehr !!</p>
+  </main>
+  <footer id="footer" class="footer">
+    This is your footer.
+  </footer>
+</ion-content>

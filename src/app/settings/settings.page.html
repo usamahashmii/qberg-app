@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 class="settings-txt">{{ 'settings' | translate }}</h3>
+  <div class="settings-items-wrap-div shadow-soft">
+    <ion-item button (click)="buttonClick('lang')">
+      <ion-label>
+        {{ 'language' | translate }}
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+      </ion-thumbnail>
+    </ion-item>
+  
+    <ion-item button (click)="buttonClick('region')">
+      <ion-label>
+        {{ 'region' | translate }}
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+      </ion-thumbnail>
+    </ion-item>
+  
+    <ion-item button (click)="buttonClick('changepassword')">
+      <ion-label>
+        {{ 'changePassword' | translate }}
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img class="right-arrow-img" src="assets/imgs/tabs-page/angle-right.svg">
+      </ion-thumbnail>
+    </ion-item>
+    
+  </div>
+</ion-content>

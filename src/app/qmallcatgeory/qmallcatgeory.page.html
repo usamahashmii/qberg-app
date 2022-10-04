@@ -1,0 +1,64 @@
+<!--Header-->
+<app-secondaryheader></app-secondaryheader>
+
+<ion-content>
+  <super-tabs class="super-tab" (tabChange)="tabChange($event)">
+    <super-tabs-toolbar scrollable slot="top" scrollablePadding="false"><!-- -->
+      <super-tab-button>
+        <h3>{{ 'shops' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button>
+        <h3>{{ 'gifts' | translate }}</h3>
+      </super-tab-button>
+      <!-- <super-tab-button (click)="onTabSelect('beauty')">
+        <h3>{{ 'beauty' | translate }}</h3>
+      </super-tab-button> -->
+      <super-tab-button>
+        <h3>{{ 'fashion' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button>
+        <h3>{{ 'recipe' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button>
+        <h3>{{ 'bookstore' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button>
+        <h3>{{ 'living' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button>
+        <h3>{{ 'grocery' | translate }}</h3>
+      </super-tab-button>
+    </super-tabs-toolbar>
+
+    <super-tabs-container id="toggleMain" auto-scroll-top="true"><!---->
+      <super-tab class="ion-padding">
+        <ion-nav [root]="shopsPage"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="giftPage"></ion-nav>
+      </super-tab>
+      <!-- <super-tab class="ion-padding">
+        <ion-nav [root]="beautyPage"></ion-nav>
+      </super-tab> -->
+      <super-tab class="ion-padding">
+        <ion-nav [root]="fashionPage"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="recipePage"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="bookstorePage"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="livingPage"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="groceryPage"></ion-nav>
+      </super-tab>
+      <!--<super-tab>
+        <ion-nav [root]="entertainmentPage"></ion-nav>
+      </super-tab> -->
+    </super-tabs-container>
+
+  </super-tabs> 
+</ion-content>

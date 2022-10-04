@@ -1,0 +1,187 @@
+ion-header{
+    ion-button{
+        text-transform: capitalize;
+        font-size: 16px;
+        font-family: 'poppins semibold';
+        color: #1b2a44;
+        svg{
+            height: 20px;
+            width: 20px;
+            min-width: 20px;
+            fill: #1b2a44;
+        }
+    }
+}
+ion-content{
+    --padding-start: 15px;
+    --padding-top: 0px;
+    --padding-end: 15px;
+}
+.app-logo-div{
+    img{
+        width: 30%;
+        margin: 1px 0px 25px 2px;
+    }
+}
+.sms-verif-txt{
+    font-size: 17px;
+    font-family: 'poppins semibold';
+    color: rgb(27, 42, 68);
+    margin: 0px 15px 0px 6px;
+    display: flex;
+    align-items: center;
+    svg{
+        width: 16px;
+        height: 16px;
+        fill: #1b2a44;
+        margin-right: 6px;
+    }
+}
+.sms-verif-txt-2{
+    font-size: 12px;
+    font-family: 'poppins regular';
+    color: #1b2a44;
+    margin: 10px 15px 2em 6px;
+}
+.enter-otp-txt{
+    text-align: center;
+    font-size: 13px;
+    color: #de4040;
+    font-family: "poppins semibold";
+    margin: 0px 0px 20px 0px;
+}
+.mobile-number-div{
+    ion-button{
+        --background: none;
+        --box-shadow: none;
+        color: rgb(27, 42, 68);
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        width: 56px;
+        border-bottom: 1px solid #aeaeae;
+        height: 50px;
+        svg{
+            width: 18px;
+            min-width: 18px;
+        }
+    }
+    ion-input{
+        height: 50px;
+        font-size: 15px;
+        font-family: 'poppins medium';
+        color: rgb(27, 42, 68);
+        --padding-start: 10px;
+        --padding-end: 18px;
+        border-bottom: 1px solid #aeaeae;
+        margin-left: -2px;
+    }  
+}
+.verfication-code-div{
+    ion-button{
+        --background: none;
+        --box-shadow: none;
+        color: rgb(27, 42, 68);
+        font-size: 13px;
+        font-family: 'poppins semibold';
+        border-bottom: 1px solid #aeaeae;
+        height: 50px;
+        text-transform: capitalize;
+        margin-left: -2px;
+    }
+    ion-input{
+        height: 50px;
+        font-size: 15px;
+        font-family: 'poppins medium';
+        color: rgb(27, 42, 68);
+        --padding-start: 10px;
+        --padding-end: 18px;
+        border-bottom: 1px solid #aeaeae;
+    }
+}
+//Agreement
+ion-item{
+    --background: none;
+    font-size: 12px;
+    color: #757575;
+    margin-top: 8px;
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+    ion-checkbox{
+        margin: 0px 15px 0px 0px;
+        --background: #eaeaea;
+        --background-checked: #1b2a44;
+        height: 15px;
+        width: 15px;
+        --border-radius: 3px;
+        --inner-border-radius: 0px;
+        --border-color: #b5b5b5;
+        --border-color-checked: #1b2a44;
+    }
+    ion-label{
+        font-family: "poppins medium";
+        span{
+            color: #1b2a44 !important;
+        }
+    }
+}
+.login-btn{
+    width: 100%;
+    --box-shadow: none;
+    --background: linear-gradient(to right, #25364c, rgb(36 68 121));
+    font-size: 15px;
+    font-family: 'poppins medium';
+    text-transform: capitalize;
+    border-radius: 30px;
+    --border-radius: 30px;
+    height: 45px;
+    margin-top: 10px;
+}
+.login-more-options-div{
+    margin: 0px 9px;
+    h3{
+        text-align: center;
+        font-size: 13px;
+        font-family: "poppins semibold";
+        color: #455979;
+        margin-top: 3px;
+    }
+}
+ion-footer{
+    // background: #eaeaea;
+    ion-toolbar{
+        // --background: #eaeaea;
+        .bottom-icons{
+            justify-content: center;
+            margin-bottom: 22px;
+            .message-icon-div{
+                --box-shadow: none;
+                height: 30px;
+                width: 30px;
+                --background: #75c94c;
+                border-radius: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                --border-radius: 50%;
+            }
+            .comment-icon-div{
+                --box-shadow: none;
+                height: 30px;
+                width: 30px;
+                --background: #c94c4c;
+                border-radius: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                --border-radius: 50%;
+                margin-left: 16px;
+            }
+            svg{
+                width: 16px;
+                min-width: 16px;
+                height: 16px;
+                fill: #ffffff;
+            }
+        }
+    }
+}

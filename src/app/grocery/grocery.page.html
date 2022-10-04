@@ -1,0 +1,66 @@
+<ion-content>
+
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!grocerySlider">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <ng-container *ngIf="grocerySlider">
+    <div style="background: #fff;
+    margin: 5px 0px;">
+
+    <ion-slides class="banner-slides" pager="false" [options]="slideOpts" >
+      <ion-slide *ngFor="let banner of grocerySlider;">
+        <img [lazyLoad]="banner.img">
+      </ion-slide>
+    </ion-slides>
+
+      <!--Grocery Posts-->
+      <h4 class="our-picks-txt">Our Picks</h4>
+      <ion-row class="section-1-recipe-row">
+        <ion-col *ngFor="let grocery of groceryArray" size="6">
+          <img class="section-1-grocery-img" [lazyLoad]="grocery.img">
+          <div class="section-1-recipe-div-main">
+            <h3>{{ grocery.name_quantity }}</h3>
+            <h5>{{ grocery.availability }}</h5>
+            <h4><span>Price:</span> {{ grocery.price }}</h4>
+          </div>
+          <!-- <hr class="border-line"> -->
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row class="section-1-post-row">
+        <ng-container *ngFor="let clothItem of groceryArray; first as isFirst">
+          <ion-col class="ion-no-padding" *ngIf="isFirst">
+            <div class="ion-position-relative section-1-post-wrap-div">
+              <div class="transparent-background-effect"></div>
+                <img class="section-1-post-img" [lazyLoad]="clothItem.img" >
+                <div class="section-1-txt-section">
+                  <h3>{{ clothItem.name }}</h3>
+                  <h4>{{ clothItem.desc }}</h4>
+                </div>
+              </div>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+      <ion-row>
+        <ng-container *ngFor="let clothItem of fasionArray; let i = index">
+          <ion-col *ngIf="i > 0 &&  i < 3" size="6" [class.section-2-odd-side]="i%2 == 0" [class.section-2-even-side]="i%2 != 0">
+            <div class="ion-position-relative section-2-post-wrap-div">
+              <div class="transparent-background-effect-section-2"></div>
+                <img class="section-2-post-img" [lazyLoad]="clothItem.img" >
+                <div class="section-2-txt-section">
+                  <h3>{{ clothItem.name }}</h3>
+                  <h4>{{ clothItem.desc }}</h4>
+                </div>
+              </div>
+          </ion-col>
+        </ng-container>
+      </ion-row> -->
+    </div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="lines">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
+</ion-content>

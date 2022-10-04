@@ -1,0 +1,17 @@
+<ion-content >
+  <ion-progress-bar id="progressbar" class="status-loader"></ion-progress-bar>
+  <div class="ion-display-flex ion-align-items-center ion-justify-content-between user-detail-info-div">
+    <div (click)="dismissModel()" class="ion-align-items-center ion-display-flex">
+      <svg class="close-chat-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M19,11H9l3.29-3.29a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-4.29,4.3A2,2,0,0,0,6,12H6a2,2,0,0,0,.59,1.4l4.29,4.3a1,1,0,1,0,1.41-1.42L9,13H19a1,1,0,0,0,0-2Z" fill="#ffffff" data-original="#000000"/></g></svg>
+      <img class="user-profile-picture" [lazyLoad]="profilePicture">
+      <div class="user-info-div">
+        <h3 class="user-name">Tom Shephard</h3>
+      </div>
+    </div>
+    <svg (click)="moreOptions()" class="menu-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><g xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="53.333" r="53.333" fill="#ffffff" data-original="#000000"/><circle cx="256" cy="256" r="53.333" fill="#ffffff" data-original="#000000"/><circle cx="256" cy="458.667" r="53.333" fill="#ffffff" data-original="#000000"/></g></g></svg>
+  </div>
+  
+  <div class="swiper-wrap-div square">
+    <img class="story-picture" [src]="storyImage">
+  </div>
+</ion-content>

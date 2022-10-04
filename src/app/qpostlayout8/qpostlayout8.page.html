@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-row class="layout-8-row">
+    <ng-container *ngFor="let post of apiResponse; let i = index">
+      
+      <ion-col size="6" *ngIf="i < 6 || i > 13">
+        <div class="layout-8-wrap-div">
+          <img [lazyLoad]="post.img">
+          <div>
+            <h3>{{ post.title }}</h3>
+            <h4>{{ post.smallDesc }}</h4>
+            <h5>2 days ago</h5>
+          </div>
+        </div>
+      </ion-col>
+
+      <ng-container *ngIf="i > 5 && i < 14">
+        <!-- <h3 *ngIf="i == 6" class="more-results-txt">More results</h3> -->
+        <ion-col size="3" class="more-results-col">
+          <img [lazyLoad]="post.img">
+        </ion-col>
+      </ng-container>
+      
+      
+    </ng-container>
+  </ion-row>  
+</ion-content>

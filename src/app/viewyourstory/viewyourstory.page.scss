@@ -1,0 +1,78 @@
+ion-content{
+    --background: #000000;
+}
+.back-btn{
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
+}
+.close-chat-btn{
+    width: 25px;
+    margin: 0px 8px 0px 8px;
+    height: 25px;
+    fill: #fff;
+    stroke: #fff;
+}
+.user-detail-info-div{
+    margin: 12px 0px 0px 3px;
+    position: absolute;
+    width: 100%;
+}
+.user-profile-picture{
+    border: 1px solid #bababa;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    padding: 2px;
+}
+.user-info-div{
+    margin-left: 10px;
+}
+.user-name{
+    margin: 0;
+    font-family: 'poppins semibold' !important;
+    font-size: 15px;
+    color: #fff;
+}
+.menu-btn{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 12px;
+}
+.save-btn{
+    --background: none;
+    --box-shadow: none;
+    text-transform: capitalize;
+    font-family: "poppins semibold";
+    font-size: 16px;
+    color: #ffffff;
+    text-align: right;
+    float: right;
+    --ripple-color: #ffffff;
+    margin: 10px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    --border-radius: 6px;
+}
+.story-picture{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+.status-loader{
+    --background: #3e3f5e;
+    --progress-background: #fff;
+    height: 2.5px;
+}
+.swiper-wrap-div{
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%,-50%);
+}

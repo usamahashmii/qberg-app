@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goBack()" class="back-btn">
+        <img src="assets/imgs/tabs-page/angle-small-left.svg">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="subscription-top-section-div">
+    <img src="assets/imgs/tabs-page/Layer 1.png">
+    <h4>{{ 'upgrade_to' | translate }} </h4>
+    <h3>{{ activeSubscriptionInformation.packageName }}</h3>
+    <h5>{{ 'get_our_memebership' | translate }}</h5>
+  </div>
+  
+  <ion-slides [options]="option" class="ion-margin-top" (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let subscription of subscriptonArray; let i = index">
+      <ion-card>
+        <div class="slider-div" [class.active-slider-div]="i == activeSlide">
+          <h3 class="subscription-discount-txt">{{ 'save' | translate }} {{ subscription.discount }}</h3>
+          <h3 class="subscription-duration-digit">{{ subscription.durationCount }}</h3>
+        <h4 class="subscription-duration">{{ subscription.duration }}</h4>
+          <h5 class="subscription-price">{{ subscription.price }}</h5>
+        </div>
+        <div class="border-div" [class.active-border-div]="i == activeSlide"></div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-button (click)="payNow()" class="get-subscription-btn">{{ 'get' | translate }} {{ activeSubscriptionInformation.durationCount }} {{ 'months' | translate }} / {{ activeSubscriptionInformation.price }}</ion-button>
+
+  <!-- <div class="billing-info-div">
+    <h3>When will i be billed?</h3>
+    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</h4>
+    <h5>When will i be billed?</h5>
+    <h6>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h6>
+  </div> -->
+  <div class="what-are-we-offering">
+    <div *ngFor="let offers of activeSubscriptionInformation.offer" class="ion-display-flex">
+      <img *ngIf="offers.offering == 'yes'" class="check-img" src="assets/imgs/check-mark.png">
+      <img *ngIf="offers.offering == 'no'" class="cross-img" src="assets/imgs/cross-sign.png">
+      <h3>{{ offers.desc }}</h3></div>
+    <!-- <div class="ion-display-flex"><img class="check-img" src="assets/imgs/check-mark.png"> <h3>Enjoy purchases</h3></div>
+    <div class="ion-display-flex"><img class="cross-img" src="assets/imgs/cross-sign.png"> <h3>Unlimited Advertisements</h3></div>
+    <div class="ion-display-flex"><img class="cross-img" src="assets/imgs/cross-sign.png"> <h3>Show your product at the Feed page</h3></div> -->
+  </div>
+  
+</ion-content>

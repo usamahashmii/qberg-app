@@ -1,0 +1,90 @@
+ion-content{
+    --background: var(--ion-content-background-color) !important;
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color) !important;
+}
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 37px;
+    max-width: 37px;
+    img{
+        min-width: 32px;
+        height: 32px;
+    }
+}
+.about-txt{
+    font-size: 20px;
+    font-family: 'poppins semibold' !important;
+    padding: 0px 12px;
+    margin: 0;
+    color: #293545;
+}
+.logo-div{
+    margin-top: 3em;
+    h3{
+        font-size: 22px;
+        font-family: 'poppins semibold' !important;
+        color: #293545;
+        margin-left: 6px;
+    }
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
+.qberg-network-txt{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'poppins semibold' !important;
+    color: #293545;
+    margin-bottom: 3px;
+    margin-top: 0;
+}
+.version-txt{
+    text-align: center;
+    font-size: 15px;
+    font-family: "poppins semibold" !important;
+    color: #51565c;
+    margin: 0;
+}
+ion-item{
+    --background: #e4e6eb;
+    --border-color: #dfe1e5;
+    margin-top: 50px;
+    ion-thumbnail{
+        display: contents;
+        img{
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+        }
+    }
+}
+.footer-div{
+    position: absolute;
+    bottom: 0;
+    padding: 0px 14px 5px 14px;
+    h3{
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+        color: #293545;
+    }
+    h4{
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+        color: #293545;
+    }
+    h5{
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+        color: #293545;
+    }
+}

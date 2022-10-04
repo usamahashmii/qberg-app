@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="gallery">
+    <!--Section 1-->
+    <ng-container>
+      <ng-container>
+        <figure class="gallery__item gallery__item--1">
+          <img [lazyLoad]="responseArray[8].img" class="gallery__img" alt="Image 1">
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img [lazyLoad]="responseArray[9].img" class="gallery__img" alt="Image 2">
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img [lazyLoad]="responseArray[10].img" class="gallery__img" alt="Image 3">
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img [lazyLoad]="responseArray[11].img" class="gallery__img" alt="Image 4">
+        </figure>
+      </ng-container>
+    </ng-container>
+  </div>
+  <!--Section 2-->
+  <ion-row>
+    <ng-container *ngFor="let news of responseArray; let i = index">
+      <ng-container *ngIf="i >= 4">
+  
+        <ion-col size="4" style="padding-bottom: 12px;" (click)="openNewsDetails(news)">
+          <div class="ion-position-relative">
+            <img class="three-section-main-image-thumbnail" [lazyLoad]="news.img">
+           
+          </div>
+          <h4 class="video-title">{{ news.title }}</h4>
+          <h5 class="video-desc">{{ news.smallDesc }}</h5>
+        </ion-col>
+    
+        <!-- <ion-col *ngIf="i > 5" size="6" style="padding-bottom: 12px;" (click)="openNewsDetails(news)">
+          <div class="ion-position-relative">
+            <img class="two-section-main-image-thumbnail" [lazyLoad]="news.img">
+          </div>
+          <h4 class="entertainment-more-news-title">{{ news.title }}</h4>
+          <h5 class="video-desc">{{ news.smallDesc }}</h5>
+        </ion-col> -->
+  
+      </ng-container>
+    </ng-container>
+  </ion-row>
+  
+</ion-content>

@@ -1,0 +1,89 @@
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 37px;
+    max-width: 37px;
+    img{
+        min-width: 32px;
+        height: 32px;
+    }
+}
+.bell-icon-btn{
+    --background: none;
+      --box-shadow: none;
+      --ripple-color: #000000;
+      border-radius: 50% !important;
+      --border-radius: 50% !important;
+      height: 40px;
+      max-width: 40px;
+      position: relative;
+      left: 0px;
+      margin: 0;
+      img{
+        min-width: 20px;
+        height: 20px;
+      }
+  }
+.interest-txt{
+    font-size: 20px;
+    font-family: 'poppins semibold' !important;
+    padding: 0px 12px;
+    margin: 0;
+    color: #293545;
+}
+.suggested-topics-btn{
+    --background: #d1d2d5;
+    --box-shadow: none;
+    text-transform: capitalize;
+    color: #000;
+    --border-radius: 18px;
+    border-radius: 18px;
+    align-items: center;
+    margin: 4px 6px;
+    h5{
+        margin: 0;
+        font-size: 16px;
+        font-family: 'poppins semibold' !important;
+        color: #293545;
+    }
+    img{
+        width: 14px;
+        margin-right: 6px;
+    }
+}
+.suggested-txt, .topic-txt{
+    margin-left: 12px;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #293545;
+}
+.no-topics-txt{
+    font-size: 16px;
+    font-family: 'poppins semibold' !important;
+    color: #9b9b9b;
+    margin-top: 7px;
+
+}
+.bell-wrap-div{
+    justify-content: end;
+    display: flex;
+    padding: 6px 10px 0px 0px;
+    img{
+      width: 20px;
+      height: 20px;
+    }
+    ion-badge{
+      background: #d9e7fd;
+      color: #000;
+      border-radius: 50%;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      margin-left: -8px;
+      width: 22px;
+      height: 22px;
+      padding-top: 4px;
+    }
+  }

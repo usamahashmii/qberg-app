@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-item>
+    <ion-label>{{ 'select' | translate }}</ion-label>
+    <ion-select (ionChange)="pickNewsPaper($event)" value="comprehensive" interface="popover">
+      <ion-select-option value="comprehensive">Comprehensive Paper</ion-select-option>
+      <ion-select-option value="broadcasting">Broadcasting/ Communication Company</ion-select-option>
+      <ion-select-option value="businessmag">Business Magzaine</ion-select-option>
+      <ion-select-option value="itmag">Internet/ IT Magazine</ion-select-option>
+      <ion-select-option value="magazine">Magazine</ion-select-option>
+      <ion-select-option value="localpap">Local Paper</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!---->
+  <ion-row style="margin-top: 60px;">
+    <ion-col size="4" *ngFor="let val of newsLogo">
+      <div class="news-logo-div">
+        <img [lazyLoad]="val.img">
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

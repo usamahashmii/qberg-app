@@ -1,0 +1,57 @@
+ion-slides{
+    height: 138px !important;
+    ion-slide{
+        img{
+            border-radius: 6px !important;
+            width: 99% !important;
+        }
+    }
+}
+.our-picks-txt{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'poppins semibold';
+    color: #25364c;
+}
+.section-1-grocery-img{
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.section-1-recipe-div-main{
+    h3{
+        font-size: 13px;
+        font-family: "poppins semibold";
+        color: #25364c;
+        margin: 2px 0px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        height: auto;
+        overflow: hidden;
+    }
+    h5{
+        font-size: 15px;
+        color: #177d32;
+        font-family: 'poppins semibold';
+        margin: 0px 2px 6px 2px;
+    }
+    h4{
+        font-family: 'poppins semibold';
+        color: #ffffff;
+        background: #f65343;
+        border-radius: 1px;
+        display: table;
+        max-width: 80%;
+        width: auto;
+        margin: 0px;
+        font-size: 14px;
+        padding: 4px 12px;
+        // float: right;
+        span{
+            font-size: 15px;
+            color: #ffffff;
+        }
+    }
+}

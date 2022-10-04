@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <div class="ion-display-flex ion-justify-content-between ion-align-items-center search-wrap-div">
+      <div class="ion-display-flex ion-align-items-end" style="width: 100%">
+        <!-- <img class="q-logo" src="assets/imgs/tabs-page/qlogo.png"> -->
+        <ion-button (click)="goBack()" class="back-btn" button slot="start">
+          <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+        </ion-button>
+        <ion-input #inputMessage (ionChange)="searchItem($event)" [(ngModel)]="searchValue" placeholder="{{ 'enter_your_search' | translate }}"></ion-input>
+      </div>
+      <div class="micro-image-div ion-align-items-center ion-display-flex">
+        <img src="assets/imgs/tabs-page/image.png">
+        <!-- <img src="assets/imgs/tabs-page/microphone.png"> -->
+      </div>
+    </div>
+
+    <h4 *ngIf="finalSearch?.length > 0" class="searched-results-txt">Searched Result</h4>
+    <div class="search-results">
+      <h3 *ngFor="let val of finalSearch">{{ val.desc }}</h3>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <!-- <h3 *ngIf="finalSearch?.length < 1" class="no-search-txt">{{ 'there_are_no_recent_searches' | translate }}</h3>   -->
+  <!-- <h4 class="reset-search-txt">If the settings are reset, please check the <span class="help">help</span></h4> -->
+  <div class="shadow-soft auto-save-wrap-div">
+    <div class="ion-display-flex ion-align-items-center ion-justify-content-between">
+      <h3>{{ 'auto_save' | translate }}</h3>
+      <ion-toggle class="auto-save-toggle"></ion-toggle>
+    </div>
+  </div>
+</ion-content>

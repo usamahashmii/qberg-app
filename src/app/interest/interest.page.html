@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+    <!-- <ion-title>Collections</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button class="bell-icon-btn" (click)="goToNotificationsPage()">
+        <div class="bell-wrap-div">
+          <img src="assets/imgs/tabs-page/bell.svg">
+          <ion-badge>0</ion-badge>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="interest-txt">Interests</h3>
+
+  <h3 class="topic-txt">Topics</h3>
+  <div>
+    <ion-button (click)="removeTopic(topic , i)" *ngFor="let topic of topicArray; let i = index" class="suggested-topics-btn">
+      <img style="width: 14px;" src="assets/imgs/minus.png">
+      <h5>{{ topic.name }}</h5>
+    </ion-button>
+    <ion-row *ngIf="topicArray?.length <= 0">
+      <ion-col class="ion-text-center">
+        <img style="width: 40px;" src="assets/imgs/notebook.svg">
+        <h4 class="no-topics-txt">No Topics selected</h4>
+      </ion-col>
+    </ion-row>
+    
+  </div>
+
+  <h3 class="suggested-txt">Suggested</h3>
+  <div>
+    <ion-button (click)="addTopic(topic , i)" *ngFor="let topic of interestTopic; let i = index" class="suggested-topics-btn">
+      <img style="width: 14px;" src="assets/imgs/add.svg">
+      <h5>{{ topic.name }}</h5>
+    </ion-button>
+  </div>
+</ion-content>

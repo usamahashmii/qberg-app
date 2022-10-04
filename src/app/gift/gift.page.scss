@@ -1,0 +1,195 @@
+.gift-background-main-img{
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+}
+.transparent-background-effect{
+    background: rgba(0,0,0,0.4);
+    height: 320px;
+    width: 100%;
+    position: absolute;
+}
+.gift-top-section-wrap-div{
+    position: absolute;
+    bottom: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    .gift-top-section-tagline{
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        font-family: 'poppins semibold';
+        margin-bottom: 5px;
+    }
+    .gift-top-section-discount-line{
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        font-family: 'poppins medium';
+        margin: 0px 0px 1.5em 0px;
+    }
+}
+.bell-btn{
+    --background: #f2f3f5;
+    --box-shadow: none;
+    --border-radius: none;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-family: "poppins semibold";
+    color: #25364c;
+    position: absolute;
+    top: -40px;
+    right: 7px;
+    border-radius: 50%;
+    --border-radius: 50%;
+    min-width: 35px;
+    height: 35px;
+    width: 35px;
+    svg{
+        min-width: 15px;
+        height: 15px;
+        fill: #000000;
+    }
+}
+.multiple-gifts-top-section{
+    justify-content: center;
+    div{
+        height: 90px;
+        width: 98px;
+        margin: 0px 2px;
+        img{
+            height: 90px;
+            width: 98px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        h3{
+            background: #617d9f;
+            color: #fff;
+            padding: 6px 5px;
+            font-size: 14px;
+            text-align: center;
+            margin: -8px 0px 0px 0px;
+        }
+    }
+}
+.gift-recommendation-btn{
+    --background: none;
+    --box-shadow: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    --border-radius: 5px;
+    margin: 40px 0px 0px 0px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    font-family: 'poppins semibold';
+    font-size: 14px;
+}
+//Trending GIFTS
+.trending-gifts-wrap-div, .todays-gift-wrap-div{
+    border: 1px solid #e1e1e1;
+    box-shadow: 7px -1px 6px 0px #ededed;
+    margin: 2px 5px 2px 2px;
+    background: #ffffff;
+    padding: 5px 5px;
+}
+.trending-gift-txt, .todays-gift-txt{
+    font-size: 18px;
+    font-family: 'poppins semibold';
+    text-align: center;
+    margin: 8px 0px;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+    color: #25364c;
+}
+.worry-about-gift-txt{
+    font-size: 15px;
+    text-align: center;
+    margin: 7px 0px 0px 0px;
+    color: #25364c;
+    font-family: 'poppins semibold';
+}
+.we-have-collection-txt{
+    font-size: 17px;
+    text-align: center;
+    margin: 3px 0px 10px 0px;
+    color: #e16fc3;
+    font-family: 'poppins medium';
+}
+//Gift Posts Section
+.gift-post-section{
+    .main-img{
+        height: 218px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.small-imgs{
+    height: 107px;
+    width: 100%;
+    object-fit: cover;
+}
+.gift-post-section-gift-name{
+    position: absolute;
+    bottom: 0;
+    width: 65px;
+    height: 18px;
+    overflow: hidden;
+    color: #FF7F50;
+    left: 10px;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'poppins bold';
+}
+//Sliders
+.banner-slides{
+    height: 100px;
+    margin: 5px 4px 5px 4px;
+    ion-slide{
+        img{
+            height: 100px;
+            object-fit: cover;
+            width: 100%;
+            margin: 10px 5px;
+        }
+    }
+}
+//Todays Gift
+.todays-gift-wrap-div{
+    h5{
+        font-size: 15px;
+        text-align: center;
+        margin: 7px 0px 0px 0px;
+        color: #25364c;
+        font-family: 'poppins semibold';
+    }   
+    h6{
+        font-size: 17px;
+        text-align: center;
+        margin: 3px 0px 10px 0px;
+        color: #e16fc3;
+        font-family: 'poppins medium';
+    }
+    //gift item name
+    h4{
+        font-size: 16px;
+        font-family: 'poppins semibold';
+        margin: 5px 0px;
+        color: #25364c;
+        text-align: center;
+    }
+    ion-row{
+        ion-col{
+            img{
+                height: 85px;
+                width: 60%;
+                object-fit: cover;
+                min-width: 60%;
+                border-radius: 10px;
+            }
+        }
+    }
+}

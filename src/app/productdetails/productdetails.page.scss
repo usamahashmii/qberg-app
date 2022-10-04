@@ -1,0 +1,471 @@
+
+//Ion Header Footer hide Show On Scroll
+//Hide/Show On Scroll
+ion-slides{
+    background: #e6e9ee;
+    img{
+        height: 360px;
+    }
+}
+.images-counter-div{
+    position: absolute;
+    bottom: 8px;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    h3{
+        color: #fff;
+        margin: 0;
+        font-size: 13px;
+        padding: 5px 9px;
+        font-family: 'poppins semibold';
+    }
+}
+.left-slider-button, .right-slider-button{
+    position: absolute;
+    height: 360px;
+    // background: rgba(0,0,0,0.6);
+    width: 47px;
+    top: 50%;
+    z-index: 99999;
+    transform: translateY(-50%);
+    // left: 0;
+    ion-button{
+        height: 40px;
+        width: 40px;
+        --background: rgba(0,0,0,0.6);
+        --box-shadow: none;
+        --ripple-color: #fff;
+        --border-radius: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        svg{
+            min-width: 26px;
+            height: 40px;
+            fill: #fff;
+        }
+    }
+}
+.right-slider-button{
+    right: 0px !important;
+    ion-button{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+footer { 
+	background: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	transition: bottom 0.2s ease;
+}
+.item-desc, .item-title{
+    font-size: 15px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+    margin: 16px 10px 0px 10px;
+}
+.item-desc-recipe{
+    margin: 5px 10px 0px 10px;
+}
+.item-title{
+    font-size: 20px !important;
+    font-family: 'poppins bold' !important;
+}
+.section-1-recipe-offered-by-div{
+    margin: 0px 6px;
+    h4{
+        font-size: 16px;
+        margin: 5px 6px;
+        font-family: 'poppins semibold';
+        color: #25364c;
+        text-transform: capitalize;
+    }
+    img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        max-width: 35px;
+        border: 1px solid #d8c7ff;
+    }
+}
+.rating-section-wrap{
+    margin-left: 15px;
+    ion-button{
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
+        min-width: 41px;
+        ion-icon{
+            color: #ffa02c;
+        }
+    }
+}
+.rating-value{
+    color: #7c7a7a;
+    font-family: 'poppins semibold';
+    font-size: 16px;
+    margin: 0;
+}
+.border-line{
+    border-top: 1px solid #e1e1e1;
+    width: 80%;
+    margin: auto;
+}
+.item-price-info-div{
+    background: #232725;
+    padding: 6px 0px 8px 0px;
+    // border-radius: 0px 0px 60px 0px;
+}
+.item-price{
+    font-size: 24px;
+    font-family: 'poppins bold' !important;
+    margin: 0px 0px 3px 12px !important;
+    color: #ffffff;
+    span{
+        font-size: 11px;
+        text-decoration: line-through;
+        color: #ffffff;
+        font-family: "poppins semibold" !important;
+        margin-left: 15px;
+    }
+}
+.item-discount{
+    font-size: 14px;
+    margin: 2px 0px 1px 12px;
+    color: #ffffff;
+    font-family: 'poppins bold' !important;
+}
+.item-seller{
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0px 0px 0px 10px;
+    font-family: "poppins semibold" !important;
+}
+.go-to-store-btn{
+    --background: #c11a1a;
+    --box-shadow: none;
+    text-transform: capitalize;
+    font-size: 11px;
+    --border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 30px;
+    width: 103px;
+}
+//Shopping Items
+.shopping-items-separator{
+    border-top: 4px solid #dfdfdf;
+    margin-top: 5px
+}
+.you-might-like{
+    font-size: 17px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+    margin: 5px 8px 10px 8px;
+}
+
+//Footer
+footer{
+    background: none;
+    padding: 0px 0px;
+    border-radius: 15px 15px 0px 0px;
+    height: 50px;
+    align-items: center;
+}
+.footer-down{
+    bottom: -72px;
+    transition: 0.2s ease-in-out;
+}
+.item-seller-footer{
+    margin: 5px 20px;
+    color: black;
+    font-family: "poppins semibold" !important;
+    font-size: 16px;
+}
+.footer-navbar{
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    ion-button{
+        --background: none;
+        --box-shadow: none;
+        --ripple-color: #000000;
+        border-radius: 50%;
+        --border-radius: 50%;
+        height: 40px;
+        max-width: 40px;
+        img{
+            min-width: 20px;
+            height: 20px;
+            margin: 0px 10px;
+        }
+    }
+}
+.footer-md::before,.footer-ios::before{
+    background-image: none;
+}
+.left-slide-btn, .right-slide-btn{
+    --background: #cbcbcb;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 40px;
+    max-width: 40px;
+    img{
+        min-width: 20px;
+        height: 20px;
+    }
+}
+.no-background{
+    --background: none;
+}
+.footer-menu-items{
+    z-index: -9999999;
+    display: contents;
+}
+.footer-menu-items-2{
+    // display: none;
+}
+.swipeLeft{
+    display: contents;
+    ion-button{
+        right: 0;
+    }
+}
+.swipeRight{
+    
+    ion-button{
+        left: -180%;
+    }
+}
+.home-slide-btn, .settings-slide-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 40px;
+    max-width: 40px;
+    transition: left 0.2s ease-in-out;
+    position: relative;
+    left: 0px;
+    z-index: -99999999;
+    img{
+        min-width: 20px;
+        height: 20px;
+    }
+}
+.refresh-slide-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 40px;
+    max-width: 40px;
+    transition: transform 0.3s cubic-bezier(0, 0, 0.33, 1.38);
+    position: relative;
+    left: 0px;
+    z-index: -99999999;
+    img{
+        min-width: 20px;
+        height: 20px;
+    } 
+}
+.refresh-rotate{
+    transform: rotate(161deg);
+}
+.back-slide-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 40px;
+    max-width: 40px;
+    transition: left 0.2s ease-in-out;
+    position: relative;
+    left: 0px;
+    z-index: -99999999;
+    img{
+        min-width: 40px;
+        height: 30px;
+    }
+}
+.share-slide-btn, .like-slide-btn, .comment-slide-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 40px;
+    max-width: 40px;
+    transition: left 0.2s ease-in-out;
+    position: relative;
+    right: -180%;
+    z-index: -99999999;
+    img{
+        min-width: 28px;
+        height: 20px;
+    }
+}
+.buy-now-btn{
+    width: 65px;
+    --background: #ee5649;
+    color: #ffffff;
+    font-family: "poppins semibold";
+    text-transform: capitalize;
+    font-size: 12px;
+    height: 65px;
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    box-shadow: 0px 1px 3px 1px #a1a1a1;
+    --border-radius: 50%;
+    border-radius: 50%;
+}
+
+//Book Store
+.books-item-details{
+    .books-item-img{
+        box-shadow: 1px 1px 4px 0px #805656;
+        height: 200px;
+        object-fit: cover;   
+        margin: 0px 8px 0px 0px; 
+    }
+    .book-item-title{
+        font-size: 16px;
+        font-family: 'poppins bold';
+        height: 45px;
+        overflow: hidden;
+        margin: 10px 5px 0px 5px;
+        color: #25364c;
+    }
+    .book-item-desc{
+        font-size: 12px;
+        font-family: "poppins semibold";
+        height: 29px;
+        overflow: hidden;
+        margin: 0px 5px 0px 5px;
+        color: #797979;
+    }
+    .book-item-offerby{
+        color: #c23d3d;
+        font-size: 15px;
+        font-family: 'poppins bold';
+        margin: 0px 5px 0px 5px;
+    }
+    .books-item-origianl-price{
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        margin: 5px 5px 0px 5px;
+        color: #25364c;
+        padding: 2px 0px;
+        span{
+            font-size: 12px;
+            text-decoration: line-through;
+            margin-left: 5px;
+            color: #c23e3d;        
+        }
+    }
+    .books-item-discount-value{
+        font-size: 13px;
+        color: #c23e3d;
+        margin: 0px 0px 0px 5px;
+        font-family: 'poppins semibold';
+        border-bottom: 2px solid #d9dee9;
+        padding-bottom: 4px;
+    }
+}
+.more-info-text{
+    font-size: 17px;
+    // text-align: center;
+    color: #25364c;
+    font-family: "poppins semibold";
+    margin: 10px 10px 10px 8px;
+}
+.book-detail-information-row{
+    margin: 0px 6px 0px 10px;
+    tr{
+        .title{
+            color: #25364c;
+            font-size: 14px;
+            font-family: 'poppins semibold';   
+        }
+        .info{
+            color: #c23e3d;
+            font-size: 15px;
+            padding-left: 12px;
+            font-family: 'poppins semibold';
+        }
+    }
+}
+//Footer
+ion-footer{
+    ion-toolbar{
+        --background: #f2f3f5;
+        box-shadow: 0px 0px 4px 1px #cecece;
+        height: 48px;
+    }
+}
+.back-btn-effect{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50% !important;
+    --border-radius: 50% !important;
+    height: 45px;
+    min-width: 45px;
+    width: 45px;
+}
+.q-logo-icon{
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    margin-top: -5px;
+}
+.back-icon, .refresh-icon, .share-icon, .menu-icon, .forward-icon, .q-icon{
+    min-width: 23px;
+    height: 23px;
+}
+.forward-icon{
+    fill: #a5a6a9;
+}
+.q-icon-btn{
+    --background: none;
+    --box-shadow: none;
+    border: 1px solid #000;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+.screenshot-img{
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    max-height: 140px;
+    right: 2px;
+    box-shadow: 1px 1px 1px 1px #f9f9f9;
+}
+.merged-header-main-wrapper{
+    margin: -4.5em 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+.more-product-btn{
+    ion-fab-button{
+        --background: #3d577a;
+        font-size: 14px;
+        font-family: 'poppins semibold';
+    }
+}

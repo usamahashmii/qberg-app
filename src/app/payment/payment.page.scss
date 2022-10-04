@@ -1,0 +1,219 @@
+.back-btn{
+    width: 40px;    
+    height: 40px;
+    --background: none;
+    --box-shadow: none;
+    svg{
+        width: 17px;
+        height: 17px;
+        min-width: 17px;
+        transform: rotate(180deg);
+    }
+}
+ion-title{
+    font-size: 18px;
+    font-family: 'poppins semibold';
+    color: #1f1f1f;
+    margin: -5px 0px 0px 0px;
+    padding-bottom: 5px;
+}
+ion-content{
+    --background: #ffffff;
+    --overflow: hidden;
+}
+ion-content::part(scroll) { 
+    height: 460px !important;
+  }
+ion-toolbar{
+    --background: #ffffff;
+}
+.header-break{
+    border-top: 1px solid #d3d3d3;
+    width: 90%;
+    margin: 10px auto;
+}
+ion-item{
+    --background: none;
+    --border-width: 0;
+    --border-radius: 10px;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    height: 50px;
+}
+ion-label{
+    color: #999999;
+    font-family: 'montserrat-medium';
+    font-size: 14px;
+}
+ion-row{
+    margin: 15px 10px;
+}
+.payment-method-icon{
+    ion-col{
+        text-align: center;
+        svg{
+            max-width: 65px;
+            height: auto;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+.card-info-field{
+    h4{
+        font-size: 11px;
+        font-family: "montserrat-medium";
+        position: absolute;
+        background: #ffffff;
+        top: -16px;
+        left: 20px;
+        z-index: 999999;
+        color: #999999;
+    }
+    ion-input{
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        color: #575757;
+        height: 38px;
+    }
+    img{
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    ion-datetime{
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        color: #575757;
+        height: 38px;
+    }
+}
+//Save Card Info
+.save-card-info-div{
+    margin: 0px 16px;
+    align-items: center;
+    ion-checkbox{
+        --background: white;
+        --border-color: #d5d5d5;
+        --background-checked: #f9aa43;
+        --border-color-checked: #f9aa43;
+        
+    }
+    h3{
+        font-size: 13px;
+        font-family: 'montserrat-medium';
+        color: #6c6c6c;
+        margin: 0px 0px 0px 10px;
+    }
+}
+.pay-now-btn{
+    --box-shadow: none;
+    --border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'montserrat-semibold';
+    --background: #f9aa43;
+    width: 66%;
+    margin: 2.5em 0px 1em 0px;
+    height: 35px;
+}
+.dismiss-popover-div{
+    background: #b7b7b7;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    img{
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);   
+    }
+}
+ion-item{
+    --background: none;
+    --border-width: 0;
+    border: none !important;
+    border-radius: 0 !important;
+    height: auto !important;
+    --border-radius: 0 !important;
+
+    ion-thumbnail{
+        display: contents;
+        svg{
+            width: 32px;
+            height: 45px;
+            margin-right: 10px;
+        }
+        img{
+            width: 23px;
+            height: 23px;
+            margin-right: 10px;
+        }
+        .right-arrow-img{
+            width: 13px !important;
+            height: 13px !important;
+        }
+    }
+}
+.hideRightContent{
+    position: relative;
+    right: -100%;
+    transition: 0.4s ease-in-out;
+    visibility: hidden;
+}
+.showRightContent{
+    right: 0 !important;
+    visibility: visible;
+}
+//Hide Show Card detail div
+.hideCardRightContent{
+    position: absolute;
+    right: -100%;
+    transition: 0.4s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+}
+.showCardRightContent{
+    right: 0 !important;
+    visibility: visible;
+}
+//Hide Show QPAY detail div
+.hideQPayRightContent{
+    position: relative;
+    right: -100%;
+    transition: 0.4s ease-in-out;
+    visibility: hidden;
+}
+.showQPayRightContent{
+    right: 0 !important;
+    visibility: visible;
+}
+
+.showLeftContent{
+    left: 0;
+    position: absolute;
+    transition: 0.4s ease-in-out;
+    width: 100%;
+    ion-label{
+        font-size: 15px;
+        font-family: 'montserrat-medium';
+    }
+}
+.hideLeftContent{
+    left: -100%;
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search country" (ionChange)="searchCountry($event)"></ion-searchbar>
+    <ion-buttons slot="end" (click)="pickCountryCode(null)">
+      <ion-button class="ion-ripple-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M312.1 375c9.369 9.369 9.369 24.57 0 33.94s-24.57 9.369-33.94 0L160 289.9l-119 119c-9.369 9.369-24.57 9.369-33.94 0s-9.369-24.57 0-33.94L126.1 256L7.027 136.1c-9.369-9.369-9.369-24.57 0-33.94s24.57-9.369 33.94 0L160 222.1l119-119c9.369-9.369 24.57-9.369 33.94 0s9.369 24.57 0 33.94L193.9 256L312.1 375z"/></svg>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>    
+  <ion-list lines="none">
+    <ion-item *ngFor="let country of searchValue != '' ? countriesFiltered : countries" button (click)="pickCountryCode(country)">
+      <h3>{{ country.name }}</h3>
+      <ion-avatar slot="end">
+        <h4>{{ country.number }}</h4>
+      </ion-avatar>
+    </ion-item>
+  </ion-list>  
+</ion-content>

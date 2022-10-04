@@ -1,0 +1,10 @@
+ion-content{
+    --background: #000;
+}
+.images-div{
+    img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

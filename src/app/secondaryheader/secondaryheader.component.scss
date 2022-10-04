@@ -1,0 +1,53 @@
+// //Hide/Show On Scroll
+// header {
+//   background: none;
+//   height: 60px;
+//   position: fixed;
+//   top: 0;
+//   transition: top 0.4s ease-in-out;
+//   width: 100%;
+// }
+
+// .nav-up {
+//   top: -108px;
+// }
+// .super-tab{
+//   position: relative;
+//   top: 100px;
+//   transition: top 0.4s ease-in-out;
+// }
+
+ion-header{
+    background: var(--ion-content-background-color);
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color);
+}
+
+
+.back-btn{
+    height: 24px;
+    width: 24px;
+    fill: white;
+    stroke: white;
+    ion-button{
+        height: 40px;
+        width: 40px;
+        --ripple-color: #233d5c;
+        border-radius: 50%;
+        --border-radius: 50%;
+        svg{
+            height: 30px;
+            width: 30px;
+            fill: #233d5c;
+            stroke: #233d5c;
+        }
+    }
+}
+ion-title{
+    img{
+        width: 80px;
+        min-width: 80px;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goBack()" class="back-btn">
+        <img src="assets/imgs/tabs-page/angle-small-left.svg">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrap-container">
+    <!-- <img class="advertisement-img" src="assets/imgs/advertisement.png">
+    <ion-row>
+      <ion-col class="ion-position-relative add-link-field">
+        <h4>Post your Ad Link</h4>
+        <ion-input></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <div class="image-preview-div ion-position-relative">
+      <img lazyLoad="https://images.unsplash.com/photo-1649000939045-26524708f600?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 870w,">
+      <div class="image-preview-black-layer"></div>
+
+      <h3 class="image-desc">Nutella is a brand of sweetened hazelnut cocoa spread. Nutella is manufactured by the Italian company Ferrero and was first introduced in 1964, although its first iteration dates to 1963</h3>
+    </div>
+    <h4 class="advertisement-preview-txt">Advertisement Preview</h4>
+
+    <ion-button (click)="postNow()" class="post-now-btn">Post Now</ion-button> -->
+    <h3 class="add-your-advertisement-details-txt">Add your Advertisement details</h3>
+    <ion-row>
+      <ion-col class="ion-position-relative add-link-field">
+        <h4>Ad Title</h4>
+        <ion-input></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-position-relative add-link-field">
+        <h4>Select Category</h4>
+        <!--<div class="category-div"></div> -->
+        <ion-item>
+          <!-- <ion-label>{{ 'select' | translate }}</ion-label> -->
+          <ion-select (ionChange)="pickCategory($event)" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+            <ion-select-option value="cloth">Clothing</ion-select-option>
+            <ion-select-option value="watch">Watches</ion-select-option>
+            <ion-select-option value="footwear">Footwear</ion-select-option>
+            <ion-select-option value="food">Food</ion-select-option>
+            <ion-select-option value="furniture">Furniture</ion-select-option>
+            <ion-select-option value="living">Living</ion-select-option>
+            <ion-select-option value="grocessary">Grocessary</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-position-relative add-link-field">
+        <h4>Ad Link</h4>
+        <ion-input></ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col class="ion-position-relative add-link-field">
+        <h4 class="text-area-desc-txt">Description</h4>
+        <ion-textarea></ion-textarea>
+      </ion-col>
+    </ion-row> -->
+    <!--Preview-->
+    <ion-row class="ion-display-flex ion-justify-content-center image-preview-row ion-position-relative">
+      <img [lazyLoad]="advertisementImage">
+      <!--Preview layer-->
+      <div class="img-preview-layer-div">
+        <h3>Preview</h3>
+      </div>
+      <!--Camera Layer-->
+      <div (click)="changeAdvertisementPic()" class="camera-layer-div">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="512" height="512"><path d="M17.721,3,16.308,1.168A3.023,3.023,0,0,0,13.932,0H10.068A3.023,3.023,0,0,0,7.692,1.168L6.279,3Z"/><circle cx="12" cy="14" r="4"/><path d="M19,5H5a5.006,5.006,0,0,0-5,5v9a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V10A5.006,5.006,0,0,0,19,5ZM12,20a6,6,0,1,1,6-6A6.006,6.006,0,0,1,12,20Z"/></svg>
+      </div>
+    </ion-row>
+    <!--Post Now Button-->
+    <ion-button (click)="postNow()" class="post-now-btn">Publish</ion-button>
+
+    
+  </div>
+    
+</ion-content>

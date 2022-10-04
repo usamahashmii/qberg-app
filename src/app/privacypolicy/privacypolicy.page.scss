@@ -1,0 +1,38 @@
+ion-header{
+    background: var(--ion-content-background-color);
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color);
+}
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 37px;
+    max-width: 37px;
+    img{
+        min-width: 32px;
+        height: 32px;
+    }
+}
+.privacy-policy-txt{
+    font-size: 20px;
+    font-family: 'poppins semibold' !important;
+    padding: 0px 12px;
+    margin: 0;
+    color: #293545;
+}
+div{
+    margin: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    h3{
+        font-size: 14px;
+        font-family: "poppins Regular" !important;
+        line-height: 19px;
+        letter-spacing: 0.5px;
+    }
+}

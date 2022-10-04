@@ -1,0 +1,119 @@
+mat-form-field{
+    font-size: 16px;
+    font-weight: 500;
+    width: 48%;
+    font-family: 'poppins semibold' !important;
+    height: 38px;
+}
+.press-category-div{
+    h3{
+        font-size: 16px;
+        margin: 0;
+        font-family: 'poppins semibold';
+    }
+    svg{
+        width: 20px;
+        height: 20px;
+        transform: rotate(270deg);
+        margin-left: 5px;
+    }
+}
+//News
+.news-wrap-div{
+    background: #fff;
+    padding: 8px 8px 0px 8px;
+    margin: 5px 0px;
+}
+.news-channel-div{
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #e0e0e0;
+        padding: 4px;
+    }
+    h4{
+        font-size: 14px;
+        font-family: "poppins semibold";
+        margin: 0px 0px 0px 8px;
+    }
+}
+.views-count-div{
+    svg{
+        margin-right: 4px;
+        fill: #a0a0a0;
+    }
+    span{
+        color: #a0a0a0;
+        font-size: 13px;
+        font-family: 'poppins semibold';
+    }
+}
+.pages-count{
+    font-family: 'poppins medium' !important;
+    margin: 0;
+    font-size: 14px;
+}
+.news-text-div{
+    margin: 0px 5px;
+    h3{
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 18px;
+        // font-family: 'poppins semibold' !important;
+        margin: 4px 0px 10px 0px;
+    }
+    div{
+        p{
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            height: 70px;
+            overflow: hidden;
+            font-family: "poppins medium" !important;
+            font-size: 15px;
+            margin: 3px 5px 10px 1px;
+            line-height: 17px;
+        }
+        img{
+            width: 120px;
+            height: 80px;
+            border-radius: 5px;
+            object-fit: cover;
+            min-width: 120px;
+        }
+    }
+    
+}
+.border-line{
+    border-top: 1px solid #e1e1e1;
+    // padding: 10px;
+    margin: 0;
+}
+.press-subscription-div{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    padding: 10px 0px;
+    svg{
+        height: 16px;
+        width: 16px;
+        fill: #f43523;
+    }
+    h4{
+        font-family: 'poppins semibold';
+        font-size: 14px;
+        margin: 0px 0px 0px 8px;
+        color: #f43523;
+    }
+}
+ion-spinner{
+    animation-duration: 1400ms;
+    height: 50px;
+    width: 50px;
+    margin-top: 4em;
+    color: #4bbc4c;
+}

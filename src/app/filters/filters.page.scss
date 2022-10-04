@@ -1,0 +1,160 @@
+ion-header{
+    position: sticky;
+    top: 0;
+}
+.filters-txt{
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+    margin: 10px 20px;
+}
+.price-inputs-div{
+    margin: 0px 10px;
+}
+.price-txt{
+    margin: 10px 20px;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+}
+.price-min-input{
+    background: #e0e0e0;
+    border-radius: 6px;
+    color: #24364d;
+    font-family: 'poppins semibold' !important;
+    max-width: 40%;
+}
+.price-input-sep{
+    border-bottom: 2px solid #24364d;
+    width: 19px;
+    margin: 0;
+}
+.price-max-input{
+    background: #e0e0e0;
+    border-radius: 6px;
+    color: #24364d;
+    font-family: 'poppins semibold' !important;
+    max-width: 40%;
+}
+.price-range-btn-div{
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.price-range-btn{
+    --background: none;
+    --box-shadow: none;
+    color: #24364d;
+    font-size: 13px;
+    font-family: 'poppins semibold' !important;
+    background: #e0e0e0;
+    border-radius: 30px;
+    --border-radius: 30px;
+    letter-spacing: 0.1px;
+}
+.highlight-range-btn{
+    background: #24364d !important;
+    color: #fff !important;
+}
+//Sellers
+.seller-txt{
+    margin: 25px 20px 10px 20px !important;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+}
+.sellers-btns-div{
+    padding-left: 10px;
+}
+.sellers-btns{
+    --background: none;
+    --box-shadow: none;
+    color: #24364d;
+    font-size: 13px;
+    font-family: 'poppins semibold' !important;
+    background: #e0e0e0;
+    border-radius: 30px;
+    --border-radius: 30px;
+    letter-spacing: 0.1px;
+    text-transform: capitalize;
+}
+//Deals
+.deals-txt{
+    margin: 25px 20px 10px 20px !important;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+}
+.deals-btns{
+    --background: none;
+    --box-shadow: none;
+    color: #24364d;
+    font-size: 13px;
+    font-family: 'poppins semibold' !important;
+    background: #e0e0e0;
+    border-radius: 30px;
+    --border-radius: 30px;
+    letter-spacing: 0.1px;
+    margin-left: 12px;
+    text-transform: capitalize;
+}
+//Discounts
+.discount-txt{
+    margin: 25px 20px 10px 20px !important;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+}
+.discount-range-choosed{
+    font-size: 14px;
+    font-family: "poppins bold" !important;
+    color: #7c7c7c;
+}
+ion-range{
+    // margin-bottom: 100px;
+    --bar-background: #c9c5c5;
+    --bar-background-active: #24364d;
+    --bar-border-radius: 0px;
+    --bar-height: 4px;
+    --height: 0px;
+    --knob-background: #24364d;
+    --knob-border-radius: 50px;
+    --knob-box-shadow: 1px 1px 1px 1px #000;
+    --knob-size: 18px;
+    --pin-background: #000;
+    --pin-color: #000;
+    width: 95%;
+    margin: auto;
+}
+.discount-range-div{
+    // margin-bottom: 100px;
+    justify-content: space-around;
+    h2{
+        font-size: 12px;
+        font-family: 'poppins semibold' !important;
+        color: #24364d;
+        margin: 0;
+    }
+}
+.size-txt{
+    margin: 25px 20px 10px 20px !important;
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    color: #24364d;
+}
+.size-btns-div{
+    margin-bottom: 100px;
+    padding-left: 10px;
+}
+.size-btns{
+    --background: none;
+    --box-shadow: none;
+    color: #24364d;
+    font-size: 13px;
+    font-family: 'poppins semibold' !important;
+    background: #e0e0e0;
+    border-radius: 30px;
+    --border-radius: 30px;
+    letter-spacing: 0.1px;
+    width: 30%;
+    text-transform: lowercase;
+}

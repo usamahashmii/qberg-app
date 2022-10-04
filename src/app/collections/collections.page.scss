@@ -1,0 +1,93 @@
+.back-btn{
+    --background: none;
+    --box-shadow: none;
+    --ripple-color: #000000;
+    border-radius: 50%;
+    --border-radius: 50%;
+    height: 37px;
+    max-width: 37px;
+    img{
+        min-width: 32px;
+        height: 32px;
+    }
+}
+.collections-txt{
+    font-size: 20px;
+    font-family: 'poppins semibold' !important;
+    padding: 0px 12px;
+    margin: 0;
+    color: #293545;
+}
+.collections-wrap-div{
+    margin: 20px 0px;
+}
+.recently-added-text, .my-collections-text{
+    font-size: 20px;
+    font-family: 'poppins semibold' !important;
+    padding: 0px 12px;
+    margin: 0;
+    color: #293545;
+    margin-bottom: 10px;
+}
+.collection-container-div{
+    overflow: scroll;
+    flex-wrap: nowrap;
+    background: #eaebed;
+    padding: 2px;
+}
+.collections-div{
+    min-width: 40%;
+    margin: 0px 2px;
+    padding: 0px 0px 10px 0px;
+    // border-bottom: 1px solid #d5d5d5;
+    img{
+        height: 136px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    h1{
+        font-size: 14px;
+        font-family: "poppins semibold" !important;
+        margin: 0px 5px;
+        color: #293545;
+    }
+}
+.separator{
+    border-top: 8px solid #eaebed;
+    margin: 10px 0px;
+}
+
+//My Collections 
+.collection-category-icon{
+    background: #e2e4e7;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    position: relative;
+    margin: 0px 10px;
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 22px;
+    }
+}
+.collection-category-details{
+    margin-left: 5px;
+}
+.category-name{
+    font-family: 'poppins semibold' !important;
+    font-size: 16px;
+    margin: 0;
+}
+.items-count{
+    font-family: 'poppins semibold' !important;
+    font-size: 13px;
+    margin: 3px 0px;
+}
+.date{
+    font-family: 'poppins semibold' !important;
+    font-size: 13px;
+    margin: 0;
+}

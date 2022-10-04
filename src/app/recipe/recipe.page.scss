@@ -1,0 +1,59 @@
+
+.recipe-section-1-wrap-div, .section-2-wrap-div, .recipe-section-3-wrap-div{
+    background: #fff;
+    margin-top: 10px;
+}
+.what-do-you-eat, .seasonal-food-txt{
+    font-size: 19px;
+    font-family: 'poppins semibold';
+    padding: 10px 15px 5px 15px;
+    margin: 0;
+}
+.recipe-tags-wrap-div{
+    margin: 0px 15px;
+    h3{
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        margin: 0;
+    }
+}
+//section 1
+.section-1-recipe-row, .section-2-recipe-row, .section-3-recipe-row{
+    margin: 0px 5px;
+}
+.section-1-recipe-img, .section-2-recipe-img, .section-3-recipe-img{
+    height: 130px;
+    object-fit: cover;
+    border-radius: 5px;
+    width: 100%;
+}
+.section-1-recipe-div-main, .section-2-recipe-div-main, .section-3-recipe-div-main{
+    h3{
+        font-size: 14px;
+        margin: 5px 0px 5px 0px;
+        font-family: 'poppins semibold';
+        color: #25364c;
+        height: 35px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}
+.section-1-recipe-offered-by-div, .section-2-recipe-offered-by-div, .section-3-recipe-offered-by-div{
+    h4{
+        font-size: 14px;
+        margin: 5px 6px;
+        font-family: 'poppins semibold';
+        color: #25364c;
+        text-transform: capitalize;
+    }
+    img{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        object-fit: cover;
+        max-width: 25px;
+        border: 1px solid #d8c7ff;
+    }
+}

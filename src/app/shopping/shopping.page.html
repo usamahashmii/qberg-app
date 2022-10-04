@@ -1,0 +1,134 @@
+<ion-content (ionScroll)="logScrolling($event)" #content id="ion-content" scrollEvents="true">
+
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!shoppingItemsArray">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <ng-container *ngIf="shoppingItemsArray">
+    <div class="shopping-items-section-1-wrap">
+      <ion-item class="clothing-category-item">
+        <!-- <ion-label>{{ 'select' | translate }}</ion-label> -->
+        <ion-select (ionChange)="pickCategory($event)" value="men" interface="popover">
+          <ion-select-option value="men">Men's</ion-select-option>
+          <ion-select-option value="women">Women</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <div class="shopping-items-section-1">
+        <ion-row>
+          <ion-col size="4" *ngFor="let items of shoppingItemsArray" (click)="openProductDetails(items)">
+            <div class="ion-position-relative">
+              <img class="brand-product-img" [lazyLoad]="items.img">
+              <div class="brand-name-div">
+                <h3 class="brand-name">{{ items.brandName }}</h3>
+              </div>
+            </div>
+            <h4 class="product-description">{{ items.desc }}</h4>
+          </ion-col>
+        </ion-row>
+      </div>
+      <!---->
+      <div class="brand-promotion-wrap-div">
+        <ion-item button>
+          <ion-thumbnail slot="start">
+            <img src="assets/imgs/clothes-hanger.png">
+          </ion-thumbnail>
+          <ion-label>
+            <h2><span>Ready to wear?</span> Checkout latest merchants of popular brands</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item button>
+          <ion-thumbnail slot="start">
+            <img src="assets/imgs/ticket.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h2><span>Enjoy full discount.</span> Some new brands are running their promotions</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item button>
+          <ion-thumbnail slot="start">
+            <img src="assets/imgs/truck-side.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h2><span>Pick the fastest delivery mode.</span> And get your items now.</h2>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+    <!--Our most popular picks-->
+    <div class="our-most-popular-pick-wrap-div">
+      <h2 class="our-most-popular-pick-txt">Our most popular picks</h2>
+      <ion-row>
+        <ion-col size="6" *ngFor="let items of mostPopularPicksArray" (click)="openProductDetails(items)">
+          <div class="ion-position-relative">
+            <img class="popular-pick-image" [lazyLoad]="items.img">
+            <div class="brand-name-div">
+              <h3 class="brand-name">{{ items.brandName }}</h3>
+            </div>
+          </div>
+          <h3 class="popular-pick-title">{{ items.title }}</h3>
+          <h3 class="popular-pick-desc">{{ items.desc }}</h3>
+        </ion-col>
+      </ion-row>
+      <div class="ion-display-flex switch-prev-next-wrap-div ion-justify-content-center ion-align-items-center">
+        <ion-button>
+          <div class="pagination-left-div">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M16.041,24,6.534,14.48a3.507,3.507,0,0,1,0-4.948L16.052,0,18.17,2.121,8.652,11.652a.5.5,0,0,0,0,.707l9.506,9.52Z" fill="#24364d" data-original="#000000"/></g></svg>
+          </div>
+        </ion-button>
+        <div class="popular-item-pagination">
+          <h3>1 / 3</h3>
+        </div>
+        <ion-button>
+          <div class="pagination-left-div">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512"><g id="_01_align_center" data-name="01 align center"><path d="M7.412,24,6,22.588l9.881-9.881a1,1,0,0,0,0-1.414L6.017,1.431,7.431.017l9.862,9.862a3,3,0,0,1,0,4.242Z"/></g></svg>
+          </div>
+        </ion-button>
+      </div>
+    </div>
+  
+    <!--Our most popular picks-->
+    <div class="our-most-popular-pick-wrap-div">
+      <h2 class="our-most-popular-pick-txt">Trending Items for overseas direct purchase</h2>
+      <ion-row>
+        <ion-col size="6" *ngFor="let items of overSeasDirectPurchase" (click)="openProductDetails(items)">
+          <div class="ion-position-relative">
+            <img class="popular-pick-image" [lazyLoad]="items.img">
+            <div class="brand-name-div">
+              <h3 class="brand-name">{{ items.brandName }}</h3>
+            </div>
+          </div>
+          <h3 class="popular-pick-title">{{ items.title }}</h3>
+          <h3 class="popular-pick-desc">{{ items.desc }}</h3>
+        </ion-col>
+      </ion-row>
+      <div class="ion-display-flex switch-prev-next-wrap-div ion-justify-content-center ion-align-items-center">
+        <ion-button>
+          <div class="pagination-left-div">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M16.041,24,6.534,14.48a3.507,3.507,0,0,1,0-4.948L16.052,0,18.17,2.121,8.652,11.652a.5.5,0,0,0,0,.707l9.506,9.52Z" fill="#24364d" data-original="#000000"/></g></svg>
+          </div>
+        </ion-button>
+        <div class="popular-item-pagination">
+          <h3>1 / 10</h3>
+        </div>
+        <ion-button>
+          <div class="pagination-left-div">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512"><g id="_01_align_center" data-name="01 align center"><path d="M7.412,24,6,22.588l9.881-9.881a1,1,0,0,0,0-1.414L6.017,1.431,7.431.017l9.862,9.862a3,3,0,0,1,0,4.242Z"/></g></svg>
+          </div>
+        </ion-button>
+      </div>
+    </div>
+    <!--Recommendations you might like-->
+    <div class="recommendations-you-might-like-section-div">
+      <ion-row>
+        <ion-col size="4" *ngFor="let items of shoppingItemsArray" (click)="openProductDetails(items)">
+          <div class="ion-position-relative">
+            <img class="brand-product-img" [lazyLoad]="items.img">
+              <h3 class="hashtag">{{ items.hashtag }}</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>  
+  </ng-container>
+  </ion-content>

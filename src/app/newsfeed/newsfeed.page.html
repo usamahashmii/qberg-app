@@ -1,0 +1,162 @@
+<ion-content (ionScroll)="logScrolling($event)" #content id="ion-content" scrollEvents="true">
+
+  <!--Refresh Content-->
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+     <!--Stories Section-->
+     <h2 class="stories-txt">{{ 'stories' | translate }}</h2>
+     <div class="ion-display-flex stories-wrap-div">
+       <ng-container *ngFor="let singleStory of stories; let i = index">
+         <ng-container *ngFor="let story of singleStory.imgsArray">
+           <div class="other-stories-div" (click)="openStory(singleStory, i)">
+             <img class="other-stories-img" [lazyLoad]="story.img">
+           </div>
+         </ng-container>
+       </ng-container>
+       <div class="more-stories-div" (click)="moreStories()">
+          <ion-item button>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 21a9 9 0 1 1 9-9 9.01 9.01 0 0 1 -9 9zm5-9a1.5 1.5 0 0 1 -1.5 1.5h-2v2a1.5 1.5 0 0 1 -3 0v-2h-2a1.5 1.5 0 0 1 0-3h2v-2a1.5 1.5 0 0 1 3 0v2h2a1.5 1.5 0 0 1 1.5 1.5z" fill="#293545" data-original="#000000"/></g></svg>
+              <h3>More</h3>
+            </div>
+          </ion-item>
+       </div>
+     </div>
+  
+     <ion-slides class="banner-slides" pager="false" [options]="slidingOptionsBanner">
+      <ion-slide *ngFor="let banner of bannerArray;">
+        <img [lazyLoad]="banner.banner_image">
+      </ion-slide>
+    </ion-slides>
+
+  <!--Structure Skelton-->
+  <ng-container *ngIf="newsFeedResponse?.length < 1">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+  <!--Real Data-->
+  <!--Big News Format-->
+  <ng-container *ngFor="let news of newsFeedResponse; let i = index">
+    <ng-container *ngIf="i % 4 == 0">
+
+      <div class="news-posts-wrap-div ion-display-flex shadow-soft ion-justify-content-between" (click)="openNewsDetails(news)">
+        <div >
+          <div class="ion-display-flex ion-justify-content-between" style="width: 100%;">
+            <div class="publisher-name-time-div ion-display-flex ion-align-items-start">
+              <img class="publisher-profile-img" [lazyLoad]="news.website.logo">
+              <div class="ion-display-flex ion-justify-content-between">
+                <div>
+                  <h3>{{ news.website.title }}</h3>
+                  <h4>{{ news.updated_at | ago }}</h4>
+                </div>
+              </div>
+          </div>
+        </div>
+          <h5 [class.publisher-post-desc-height]="news.excerpt && news.excerpt != ''" class="publisher-post-desc">{{ news.excerpt }}</h5>   
+        </div>
+        <div class="ion-display-flex publisher-news-post-img-more">
+          <div (click)="presentActionSheet(news)" class="more-btn-div">
+            <img class="more-btn" src="assets/imgs/tabs-page/musical-sign-of-two-dots.png">
+          </div>
+          <img class="publisher-news-post-img" [lazyLoad]="news.image">
+        </div>
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="i == 5">
+
+      <!--Weather Forms-->
+      <ion-card id="weather-card" class="weather-card" *ngIf="weatherInfo" (click)="openWeatherDetails()">
+        <div class="city-country-div"><h3>{{ weatherInfo.name }}, {{ getCountryName(weatherInfo.sys.country) }}</h3></div>
+        <div class="date-div ion-display-flex ion-align-items-center"><h3>Friday, April 8</h3><h4>{{ weatherInfo.weather[0].description }}</h4></div>
+        
+        <ng-container *ngFor="let icons of weatherIcons">
+          <img class="weather-icon" *ngIf="icons.icon == weatherInfo.weather[0].icon" [lazyLoad]="icons.svgIcon">
+        </ng-container>
+
+        <div style="margin-top: -19px" class="ion-display-flex ion-align-items-center ion-justify-content-between">
+          <h4 class="temperature-value">{{ parseInt(weatherInfo.main.temp) }} <span>°C</span></h4>
+          <div class="weather-main-info-div">
+            <h3 class="ion-display-flex ion-align-items-center">
+              <ng-container *ngFor="let icons of weatherIcons">
+                <img class="weather-icon-sm" *ngIf="icons.icon == weatherInfo.weather[0].icon" [lazyLoad]="icons.svgIcon">
+              </ng-container>
+              
+              Feels like: {{ parseInt(weatherInfo.main.feels_like) }}°</h3>
+            <hr>
+            <h4 class="ion-display-flex ion-align-items-center"><img class="windmill-weather-icon-sm" src="assets/imgs/windmill.png"> Wind: {{ weatherInfo.wind.speed }} Km/h</h4>
+            <hr>
+            <h5 class="ion-display-flex ion-align-items-center"><img class="humidity-weather-icon-sm " src="assets/imgs/humidity.png">Humidity: {{ weatherInfo.main.humidity }}%</h5>
+          </div>
+        </div>
+        <div>
+        </div> 
+      </ion-card>
+      
+      <!-- Scrollable QPost Segment -->
+      <h3 class="our-qposts-txt">Our QPosts</h3>
+      <div class="shadow-soft qpost-wrapper">
+        <ion-segment class="post-segment" (ionChange)="postSegments($event)" scrollable [value]="postsCategories[0].name">
+          <ion-segment-button *ngFor="let category of postsCategories" [value]="category.name">
+            <h3>{{ category.name }}</h3>
+          </ion-segment-button>
+        </ion-segment>
+        <div class="qposts-main-wrap-div">
+          <ng-container *ngFor="let posts of postsArray; let i = index">
+            <div class="qposts-wrap-div ion-display-flex ion-align-items-center">
+              <img class="qposts-img" [lazyLoad]="posts.descImage">
+              <div>
+                <h5 class="qposts-category">{{ posts.profileName }}</h5>
+                <h3 class="qposts-desc">{{ posts.desc }}</h3>
+                <div class="ion-display-flex ion-align-items-center ion-justify-content-between" style="margin-top: 6px;">
+                  <div class="ion-display-flex ion-align-items-center ion-justify-content-between" style="width: 100%;">
+                    <h3 class="qposts-uploaded-by">{{ posts.profileName }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <ion-row *ngIf="postsArray?.length <= 0">
+          <ion-col class="ion-text-center">
+            <ion-spinner></ion-spinner>
+          </ion-col>
+        </ion-row>
+        
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="i % 4 != 0">
+
+      <div class="big-news-format-wrap-div shadow-soft" (click)="openNewsDetails(news)">
+        <div class="ion-display-flex ion-justify-content-between big-news-format-wrap-div-child">
+          <div class="big-news-format-div-1 ion-display-flex">
+            <img class="publisher-profile-img" [lazyLoad]="news.website.logo">
+            <div class="big-news-format-div-1-child-div">
+              <h3>{{ news.website.title }}</h3>
+              <h4>{{ news.updated_at | ago }}</h4>
+            </div>
+          </div>
+          <div class="big-news-format-div-2 ion-display-flex ion-justify-content-end">
+            <div (click)="presentActionSheet(news)" class="big-news-format-more-btn-div">
+              <img class="big-news-format-more-btn" src="assets/imgs/tabs-page/musical-sign-of-two-dots.png">
+            </div>
+          </div>
+        </div>
+        <h5 [class.big-news-format-publisher-publisher-post-desc-height]="news.excerpt && news.excerpt != ''" class="big-news-format-publisher-publisher-post-desc">{{ news.excerpt }}</h5>   
+        <img class="big-news-format-publisher-news-post-img" [lazyLoad]="news.image">
+      </div>
+
+    </ng-container>
+  </ng-container>
+    
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,42 @@
+ion-searchbar{
+    --background: rgb(215 221 231);
+    --box-shadow: none;
+    border-radius: 30px;
+    --border-radius: 30px;
+    font-family: 'poppins medium';
+    color: #09142e;
+}
+svg{
+    width: 20px;
+    height: 20px;
+    fill: rgb(27, 42, 68);
+}
+ion-list{
+    background: #eaeaea;
+    ion-item{
+        --background: #eaeaea;
+        --padding-start: 5px;
+        --inner-padding-end: 1px;
+        height: 46px;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid #e0e0e0;
+        h3{
+            font-size: 14px;
+            font-family: 'poppins semibold';
+            margin: 0;
+            color: rgb(27, 42, 68);
+        }
+        ion-avatar{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            h4{
+                font-size: 15px;
+                font-family: 'poppins regular';
+                margin: 0;
+                color: rgb(157 29 29);
+            }
+        }        
+    }
+}

@@ -1,0 +1,41 @@
+<!--Header-->
+<app-secondaryheader></app-secondaryheader>
+
+<ion-content>
+  <super-tabs class="super-tab" [activeTabIndex]=selectedTabIndex (tabChange)="tabChange($event)">
+    <super-tabs-toolbar scrollable slot="top" scrollablePadding="false">
+      <super-tab-button *ngFor="let category of categoriesArray">
+        <h3>{{ category.name }}</h3>
+      </super-tab-button>
+    </super-tabs-toolbar>
+
+    <super-tabs-container id="toggleMain">
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout1"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout2"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout3"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout4"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout5"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout6"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout7"></ion-nav>
+      </super-tab>
+      <super-tab class="ion-padding">
+        <ion-nav [root]="layout8"></ion-nav>
+      </super-tab>
+      
+      
+    </super-tabs-container>
+  </super-tabs> 
+</ion-content>

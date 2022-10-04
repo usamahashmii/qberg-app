@@ -1,0 +1,189 @@
+ion-header{
+    ion-button{
+        text-transform: capitalize;
+        font-size: 16px;
+        font-family: 'poppins semibold';
+        color: #1b2a44;
+        svg{
+            height: 20px;
+            width: 20px;
+            min-width: 20px;
+            fill: #1b2a44;
+        }
+    }
+}
+ion-content{
+    --padding-start: 15px;
+    --padding-top: 20px;
+    --padding-end: 15px;
+}
+.login-txt{
+    font-size: 17px;
+    font-family: 'poppins medium';
+    color: rgb(27, 42, 68);
+    margin: 0px 15px 2em 6px;
+    display: flex;
+    align-items: center;
+    svg{
+        width: 16px;
+        height: 16px;
+        fill: #1b2a44;
+        margin-right: 11px;
+    }
+}
+.logo-row{
+    svg{
+        width: 30% !important;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 15px;
+    }
+}
+ion-row{
+    ion-col{
+        display: flex;
+        align-items: center;        
+        ion-input{
+            // border-radius: 5px;
+            height: 50px;
+            font-size: 15px;
+            font-family: "poppins medium";
+            color: rgb(27, 42, 68);
+            --padding-start: 25px;
+            --padding-end: 18px;
+            border-bottom: 1px solid #aeaeae;
+        }
+        ion-button{
+            width: 100%;
+            --box-shadow: none;
+            --background: linear-gradient(to right, #25364c, rgb(36 68 121));
+            font-size: 15px;
+            font-family: 'poppins medium';
+            text-transform: capitalize;
+            border-radius: 30px;
+            --border-radius: 30px;
+            height: 45px;
+            margin-top: 10px;
+        }
+    }
+}
+.svg-icons-common-class{
+    svg{
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        z-index: 9;
+        left: 5px;
+        fill: rgb(147 147 147);
+    }
+}
+//Agreement
+ion-item{
+    --background: none;
+    font-size: 12px;    
+    color: #757575;
+    margin-top: 8px;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    ion-checkbox{
+        margin: 0px 15px 0px 0px;
+        --background: #eaeaea;
+        --background-checked: #1b2a44;
+        height: 15px;
+        width: 15px;
+        --border-radius: 3px;
+        --inner-border-radius: 0px;
+        --border-color: #b5b5b5;
+        --border-color-checked: #1b2a44;
+    }
+    ion-label{
+        font-family: "poppins medium";
+        span{
+            color: #1b2a44 !important;
+        }
+    }
+}
+.login-more-options-div{
+    margin: 0px 9px;
+    h3{
+        text-align: center;
+        font-size: 13px;
+        font-family: "poppins semibold";
+        color: #455979;
+        margin-top: 3px;
+    }
+}
+ion-footer{
+    // background: #eaeaea;
+    ion-toolbar{
+        // --background: #eaeaea;
+        .bottom-icons{
+            justify-content: center;
+            margin-bottom: 22px;
+            .mobile-icon-div{
+                --box-shadow: none;
+                height: 30px;
+                width: 30px;
+                --background: #75c94c;
+                border-radius: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                --border-radius: 50%;
+            }
+            .comment-icon-div{
+                --box-shadow: none;
+                height: 30px;
+                width: 30px;
+                --background: #c94c4c;
+                border-radius: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                --border-radius: 50%;
+                margin-left: 16px;
+            }
+            svg{
+                width: 16px;
+                min-width: 16px;
+                height: 16px;
+                fill: #ffffff;
+            }
+        }
+        h3{
+            font-size: 14px;
+            font-family: 'poppins medium';
+            text-align: center;
+            color: #909090;
+            span{
+                color: #1b2a44;
+            }
+        }
+    }
+}
+.biometric-div{
+    margin-top: 18px;
+}
+.finger-print-div{
+    svg{
+        width: 40px;
+    }
+    h3{
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        color: #25364c;
+        margin: 0px 0px 0px 6px;
+    }
+}
+ion-toggle{
+    --background: #a4a4a4;
+    --background-checked: #25364c;
+    --handle-background-checked: white;
+    --handle-height: 23px;
+    --handle-max-height: 23px;
+    --handle-border-radius: 50%;
+    --handle-width: 23px;
+    height: 24px;
+    width: 40px;
+}

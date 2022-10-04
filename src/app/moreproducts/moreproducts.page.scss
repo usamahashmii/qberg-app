@@ -1,0 +1,59 @@
+ion-header{
+    background: #25364c;
+    ion-toolbar{
+        --background: #25364c;
+    }
+}
+.back-btn-header{
+    height: 24px;
+    width: 24px;
+    fill: white;
+    stroke: white;
+    ion-button{
+        height: 40px;
+        width: 40px;
+        --ripple-color: #ffffff;
+        border-radius: 50%;
+        --border-radius: 50%;
+        svg{
+            height: 30px;
+            width: 30px;
+            fill: #ffffff;
+            stroke: #ffffff;
+        }
+    }
+}
+ion-title{
+    img{
+        margin-left: -20px;
+        margin-top: 3px;
+        min-width: 136px;
+        width: 136px;
+    }
+}
+
+.shopping-items-desc-div{
+    position: unset;
+}
+.shopping-items-desc{
+    color: #25364c;
+}
+.you-might-like{
+    font-size: 17px;
+    font-family: 'poppins bold' !important;
+    color: #24364d;
+    margin: 20px 8px 10px 8px;
+}
+.shopping-items-discount{
+    background: #dd2f2f;
+    color: #fff;
+    padding: 4px 10px;
+    position: absolute;
+    top: -3px;
+    border-radius: 2px 4px 0px 2px;
+    right: 0;
+    font-size: 10px;
+}
+.shopping-items-img{
+    border: 1px solid #dbdbdb;
+}

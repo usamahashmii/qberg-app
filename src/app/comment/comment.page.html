@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>comment</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <img src="assets/imgs/tabs-page/close.png">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <!--Add Comment-->
+  <div class="add-comment-main-wrapper">
+    <div class="add-comment-wrap-div">
+      <img [lazyLoad]="profileInfo ? profileInfo.image_url : 'assets/imgs/user-profile-svgrepo-com.svg'">
+      <ion-input [(ngModel)]="commmentInput" placeholder="Add a comment..."></ion-input>
+    </div>
+    <ion-button (click)="postComment()" class="post-btn"> 
+      <img src="assets/imgs/send.svg">
+    </ion-button>
+  </div>
+  
+
+  <!--all comments-->
+  <ng-container *ngFor="let comment of commentsArray">
+    <div class="comments-main-wrapper">
+      <div class="ion-display-flex comments-wrap-div">
+        <img [lazyLoad]="comment.img">
+        <div style="margin-left: 10px;">
+          <div class="comment-info">
+            <h3>{{ comment.name }}</h3>
+            <div class="time-ago">
+              <h5>.</h5>
+              <h6>{{ comment.created_at | ago }}</h6>
+            </div>
+          </div>
+          <h2 class="comment-txt">{{ comment.comment }}</h2>
+        </div>
+      </div>
+      
+      <div class="more-options-div">
+        <ion-button (click)="reportComment()">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><g xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="53.333" r="53.333" fill="#ffffff" data-original="#000000"/><circle cx="256" cy="256" r="53.333" fill="#ffffff" data-original="#000000"/><circle cx="256" cy="458.667" r="53.333" fill="#ffffff" data-original="#000000"/></g></g></svg>  
+        </ion-button>
+      </div>
+  
+    </div>
+  </ng-container>
+  
+  
+</ion-content>

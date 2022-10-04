@@ -1,0 +1,123 @@
+<ion-app>
+  <!-- <ion-split-pane contentId="main-content"> -->
+    <ion-menu contentId="main-content" type="overlay" id="side-menu"  (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+      <ion-content>
+       <div style="position: absolute;
+       top: 50%;
+       transform: translate(-50%,-50%);
+       width: 100%;
+       left: 50%;">
+       <!-- <ion-button (click)="toggleMenu()">Close</ion-button> -->
+          <ion-row class="our-more-products-row-1" [class.our-more-products-row-1-menu]="menuOpenedBool">
+            <ion-col size="4">
+              <div class="our-more-products-row-1-div">
+                <div>
+                  <img src="assets/imgs/emojis/box.png">
+                  <h3>QBox</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-1-div">
+                <div>
+                  <img src="assets/imgs/emojis/broadcast.png">
+                  <h3>QLive</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-1-div">
+                <div>
+                  <img src="assets/imgs/emojis/cloud.png">
+                  <h3>QCloud</h3>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="our-more-products-row-2" [class.our-more-products-row-2-menu]="menuOpenedBool">
+            <ion-col size="4">
+              <div class="our-more-products-row-2-div">
+                <div>
+                  <img src="assets/imgs/emojis/insurance.png">
+                  <h3>QInsurance</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-2-div">
+                <div>
+                  <img src="assets/imgs/emojis/portfolio.png">
+                  <h3>QJobs</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-2-div">
+                <div>
+                  <img src="assets/imgs/emojis/location.png">
+                  <h3>QMaps</h3>  
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="our-more-products-row-3" [class.our-more-products-row-3-menu]="menuOpenedBool">
+            <ion-col size="4">
+              <div class="our-more-products-row-3-div">
+                <div>
+                  <img src="assets/imgs/emojis/news.png">
+                  <h3>QNews</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-3-div">
+                <div>
+                  <img src="assets/imgs/emojis/placeholder.png">
+                  <h3>QMall</h3>    
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-3-div">
+                <div>
+                  <img src="assets/imgs/emojis/shop-bag.png">
+                  <h3>QShop</h3>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="our-more-products-row-4" [class.our-more-products-row-4-menu]="menuOpenedBool">
+            <ion-col size="4">
+              <div class="our-more-products-row-4-div">
+                <div>
+                  <img src="assets/imgs/emojis/taxi.png">
+                  <h3>QGo</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-4-div">
+                <div>
+                  <img src="assets/imgs/emojis/wallet.png">
+                  <h3>QWallet</h3>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="our-more-products-row-4-div">
+                <div>
+                  <img src="assets/imgs/emojis/rubik.png">
+                  <h3>QGames</h3>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-content>
+    </ion-menu>
+  <!-- </ion-split-pane> -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

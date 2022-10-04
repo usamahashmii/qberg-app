@@ -1,0 +1,62 @@
+
+<ion-content>
+
+  <!-- <ion-slides #slides [options]="slideOpts" >
+    <ion-slide *ngFor="let menu of menuArray">
+    
+      <h3>{{ menu.title }}</h3>
+      <h4>{{ menu.desc }}</h4>
+    </ion-slide>
+    <div class="left-right-arrow-div ion-display-flex ion-align-items-center ion-justify-content-between">
+      <img (click)="prev()" class="left" src="assets/imgs/tabs-page/right-arrow.png">
+      <img (click)="next()" class="right" src="assets/imgs/tabs-page/right-arrow.png">
+    </div>
+  </ion-slides> -->
+  <div id="menu-obj" >
+    <h3 class="menu-title">{{ menu.title }}</h3>
+    <h4 class="menu-desc">{{ menu.desc }}</h4>
+    <hr class="border-line">
+  </div>
+ 
+</ion-content>
+<ion-footer>
+
+  <div class='menu'>
+    <input class='toggle' id='menu' type='checkbox' [checked]="checkMe">
+    <label (click)="dismissPopover()" class='style' for='menu'>
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      <img class="q-logo" src="assets/imgs/tabs-page/qlogo.png">
+    </label>
+    <a (click)="selectedTab('1')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '1'">
+      <img src="assets/imgs/emojis/q-box.svg">
+    </a>
+    <a (click)="selectedTab('2')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '2'">
+      <!-- <p>II</p> -->
+      <img src="assets/imgs/emojis/q-wallet.svg">
+    </a>
+    <a (click)="selectedTab('3')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '3'">
+      <!-- <p>III</p> -->
+      <img src="assets/imgs/emojis/q-taxi.svg">
+    </a>
+    <a (click)="selectedTab('4')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '4'">
+      <!-- <p>IV</p> -->
+      <img src="assets/imgs/emojis/q-commerce.svg">
+    </a>
+    <a (click)="selectedTab('5')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '5'">
+      <!-- <P>V</P> -->
+      <img src="assets/imgs/emojis/q-messenger.svg">
+    </a>
+    <a (click)="selectedTab('6')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '6'">
+      <!-- <P>VI</P> -->
+      <img src="assets/imgs/emojis/q-insurance.svg">
+    </a>
+    <a (click)="selectedTab('7')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '7'">
+      <!-- <P>VII</P> -->
+      <img src="assets/imgs/emojis/q-news.svg">
+    </a>
+    <a (click)="selectedTab('8')" class='tab' [class.highlight-selected-tab]="selectedTabValue == '8'">
+      <!-- <P>VIII</P> -->
+      <img src="assets/imgs/emojis/q-social.svg">
+    </a>
+  </div>
+</ion-footer>

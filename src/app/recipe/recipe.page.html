@@ -1,0 +1,105 @@
+<ion-content>
+  
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!recipeArray">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <ng-container *ngIf="recipeArray">
+    <div class="recipe-section-1-wrap-div">
+      <h3 class="what-do-you-eat">What do you eat today?</h3>
+      <div class="ion-display-flex ion-justify-content-between recipe-tags-wrap-div ion-align-items-center">
+        <h3>Popular Recipe Tags</h3>
+        <ion-item class="recipe-tags-item">
+          <ion-select (ionChange)="pickRecipeTag($event)" value="minari" interface="popover">
+            <ion-select-option value="minari">Minari Excuse</ion-select-option>
+            <ion-select-option value="salad">Salad</ion-select-option>
+            <ion-select-option value="bibim">Bibimbap</ion-select-option>
+            <ion-select-option value="pepperroast">Pepper roast</ion-select-option>
+            <ion-select-option value="spicymeat">Spicy Meat</ion-select-option>
+            <ion-select-option value="desert">Deserts</ion-select-option>
+            <ion-select-option value="special">Specialities</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <!--Recipes Items-->
+      <ion-row class="section-1-recipe-row">
+        <ion-col *ngFor="let recipes of recipeArray" size="6" (click)="openProductDetails(recipes)">
+          <img class="section-1-recipe-img" [lazyLoad]="recipes.img">
+          <div class="section-1-recipe-div-main">
+            <h3>{{ recipes.desc }}</h3>
+            <div class="ion-display-flex section-1-recipe-offered-by-div ion-align-items-center">
+              <img [lazyLoad]="recipes.offeredByImg">
+              <h4>{{ recipes.offeredByName }}</h4>
+            </div>
+          </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Recipes
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <div class="section-2-wrap-div">
+      <h3 class="seasonal-food-txt">Seasonal food in march</h3>
+      <ion-row>
+        <ion-col *ngFor="let recipes of seaosnalRecipe" size="6" (click)="openProductDetails(recipes)">
+          <img class="section-2-recipe-img" [lazyLoad]="recipes.img">
+          <div class="section-2-recipe-div-main">
+            <h3>{{ recipes.desc }}</h3>
+            <div class="ion-display-flex section-2-recipe-offered-by-div ion-align-items-center">
+              <img [lazyLoad]="recipes.offeredByImg">
+              <h4>{{ recipes.offeredByName }}</h4>
+            </div>
+          </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Recipes
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <!--Section III-->
+    <div class="recipe-section-3-wrap-div">
+      <div class="ion-display-flex ion-justify-content-between recipe-tags-wrap-div ion-align-items-center">
+        <h3>Popular Recipe Tags</h3>
+        <ion-item class="recipe-tags-item">
+          <ion-select (ionChange)="pickRecipeTag($event)" value="minari" interface="popover">
+            <ion-select-option value="minari">Minari Excuse</ion-select-option>
+            <ion-select-option value="salad">Salad</ion-select-option>
+            <ion-select-option value="bibim">Bibimbap</ion-select-option>
+            <ion-select-option value="pepperroast">Pepper roast</ion-select-option>
+            <ion-select-option value="spicymeat">Spicy Meat</ion-select-option>
+            <ion-select-option value="desert">Deserts</ion-select-option>
+            <ion-select-option value="special">Specialities</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <!--Recipes Items-->
+      <ion-row class="section-3-recipe-row">
+        <ion-col *ngFor="let recipes of moreRecipeArray" size="6" (click)="openProductDetails(recipes)">
+          <img class="section-3-recipe-img" [lazyLoad]="recipes.img">
+          <div class="section-3-recipe-div-main">
+            <h3>{{ recipes.desc }}</h3>
+            <div class="ion-display-flex section-3-recipe-offered-by-div ion-align-items-center">
+              <img [lazyLoad]="recipes.offeredByImg">
+              <h4>{{ recipes.offeredByName }}</h4>
+            </div>
+          </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Recipes
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="lines">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
+</ion-content>

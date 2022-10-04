@@ -1,0 +1,31 @@
+<ion-content>
+  <ng-container *ngFor="let post of qPostsMore">
+    <div class="ion-display-flex ion-align-items-center qpost-section-2-wrapper-div ion-justify-content-between">
+      <div class="qpost-section-2-wrap-div">
+        <h3>{{ post.title }}</h3>
+        <h4><span class="qpost-category-name">{{ post.category }}</span><span class="verticle-separator">|</span><span class="qpost-publisher-name">{{ post.name }}</span></h4>
+      </div>
+      <img [lazyLoad]="post.img">
+    </div>
+    <hr class="main-separator">  
+  </ng-container>
+
+  <!--More Posts-->
+  <h1 class="recommended-publishers">Recommended Publishers</h1>
+  <ion-row class="qpost-section-1-wrap-row">
+    <ion-col size="6" *ngFor="let post of qPostsPublishers">
+      <div class="qpost-section-1t-wrapper-div">
+        <div class="qpost-section-1t-wrap-div">
+          <div class="qpost-section-1-box-effect"></div>
+          <img class="qpost-section-1-cover-img" [lazyLoad]="post.coverImg">
+          <img class="qpost-section-1-profile-img" [lazyLoad]="post.profileImg">
+        </div>
+        <div class="qpost-section-1t-post-by-div"><!--post by info-->
+          <h3>{{ post.name }}</h3>
+          <h4>{{ post.desc }}</h4>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row> 
+
+</ion-content>

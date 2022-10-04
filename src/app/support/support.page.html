@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+  <h3 class="support-txt">{{ 'online_support' | translate }}</h3>
+</ion-header>
+
+<ion-content #content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
+  <h1 class="date-txt">{{ date }}</h1>
+  <h3 class="send-query-txt">{{ 'send_your_query' }} ..</h3>
+  <ion-row *ngIf="showChatLoader">
+    <ion-col class="ion-text-center">
+      <ion-spinner class="more-chat-loader"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!apiResponse">
+    <ion-col class="ion-text-center">
+      <ion-spinner class="main-loader"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <div class="ion-margin-10 chatting-wrapping-div">
+    <ng-container *ngFor="let chat of chatArray">
+      <div class="support-wrap-div" [class.customer-wrap-div]="chat.sender_id != '0'">
+
+        <div class="support-div" [class.customer-div]="chat.sender_id != '0'">
+          <div [class.support-arrow-down-div]="chat.sender_id == '0'" [class.customer-arrow-down-div]="chat.sender_id != '0'">
+            <div class="arrow-down"></div>  
+          </div>
+          <h3>{{ chat.message }}</h3>
+          <h4 class="message-time">{{ chat.created_at | ago }}</h4>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <!--Short Texts-->
+
+    <!-- <div class="tags-div">
+      <ion-button (click)="sendShortMessage('its_ok')" class="btn-primary" id="tags-btn">Its Ok</ion-button>
+      <ion-button (click)="sendShortMessage('money_received')" class="btn-primary" id="tags-btn">{{ 'money_received' | translate }}</ion-button>
+      <ion-button (click)="sendShortMessage('sending_money')" class="btn-primary" id="tags-btn">{{ 'sending_money' | translate }}</ion-button>
+      <ion-button (click)="sendShortMessage('haha_funny')" class="btn-primary" id="tags-btn">{{ 'haha_funny' | translate }}</ion-button>
+      <ion-button (click)="sendShortMessage('thanks')" class="btn-primary" id="tags-btn">{{ 'thanks' | translate }}</ion-button>
+      <ion-button (click)="sendShortMessage('you_are_kind')" class="btn-primary" id="tags-btn">{{ 'you_are_kind' | translate }}</ion-button>
+    </div> -->
+    <!--send message div-->
+    <div class="footer-div">
+      <ion-input [(ngModel)]="messageTxt" type="text" class="form-control type-input" placeholder="{{ 'type_your_message' | translate }}"></ion-input>
+      <div class="send-btn-div ripple-parent ion-activatable">
+        <ion-button *ngIf="!showSendLoader" (click)="send()" class="send-btn"> 
+          <img src="assets/imgs/send.svg">
+        </ion-button>
+        <ion-spinner class="message-send-loader" *ngIf="showSendLoader"></ion-spinner>
+      </div>
+    </div> 
+  </ion-toolbar> 
+</ion-footer>

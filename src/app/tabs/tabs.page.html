@@ -1,0 +1,77 @@
+<ion-content><!-- --> 
+
+
+  <header id="header" class="nav-down header">
+    <div class="ion-display-flex ion-justify-content-between">
+      <div class="ion-align-items-center ion-display-flex logo-div">
+        <img src="assets/imgs/logo.png">
+        <!-- <h3>Berg</h3> -->
+      </div>
+  
+      <div class="ion-display-flex bell-settings-wrap-div">
+        <ion-button class="bell-icon-btn" (click)="goToNotificationsPage()">
+          <div class="bell-wrap-div ion-display-flex">
+            <img src="assets/imgs/tabs-page/bell.svg">
+            <ion-badge>0</ion-badge>
+          </div>
+        </ion-button>
+        <ion-button (click)="goToSettings()" class="settings-icon-btn">
+          <img src="assets/imgs/tabs-page/settings.svg">
+        </ion-button>
+
+        <ion-button (click)="goToProfile()" class="profile-icon-btn">
+          <img [lazyLoad]="profileInfo ? profileInfo.image_url : 'assets/imgs/user-profile-svgrepo-com.svg'">
+        </ion-button>
+      </div>
+    </div>  
+    <div style="margin: 8px auto;" class="search-bar-header-div ion-display-flex ion-align-items-center">
+      <div (click)="goToSearchPage()" class="search-icon-txt-div ion-display-flex ion-align-items-center">
+        <img src="assets/imgs/tabs-page/qlogo.png">
+        <h3 class="search-text">{{ 'search' | translate }}</h3>
+      </div>
+      <div class="micro-image-div ion-align-items-center">
+        
+        <ion-button (click)="listeningWords()" class="micro-image-div-microphone">
+          <img src="assets/imgs/tabs-page/microphone.png">
+        </ion-button>
+      </div>
+    </div>
+
+   
+  </header>
+
+
+  <super-tabs [config]="{dragThreshold: 300, allowElementScroll: true}" class="super-tab" [activeTabIndex]=selectedTabIndex>
+    <super-tabs-toolbar slot="top" ><!-- -->
+      <super-tab-button (click)="onTabSelect('My Feed')">
+        <h3>{{ 'my_feed' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button (click)="onTabSelect('Popular News')">
+        <h3>{{ 'popular_news' | translate }}</h3>
+      </super-tab-button>
+      <super-tab-button (click)="onTabSelect('Popular Sales')">
+        <h3>{{ 'popular_sales' | translate }}</h3>
+      </super-tab-button>
+    </super-tabs-toolbar>
+
+    <super-tabs-container id="toggleMain" ><!---->
+      <super-tab class="ion-padding">
+        <ion-nav [root]="newsFeed"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="popularNews"></ion-nav>
+      </super-tab>
+      <super-tab>
+        <ion-nav [root]="popularSales"></ion-nav>
+      </super-tab>
+    </super-tabs-container>
+
+  </super-tabs> 
+ 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <!--Main Bottom Menu-->
+    <app-bottommenu></app-bottommenu>  
+  </ion-toolbar>
+</ion-footer>

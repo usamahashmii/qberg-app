@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+    <!-- <ion-title>Collections</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="collections-txt">Collections</h3>
+
+  <div class="collections-wrap-div">
+    <h3 class="recently-added-text">Recently Added</h3>
+    <div class="ion-display-flex collection-container-div">
+      <div *ngFor="let collection of myCollections" class="collections-div">
+        <img [lazyLoad]="collection.img">
+        <h1 class="collection-desc">{{ collection.desc }}</h1>
+      </div>
+    </div>
+    <hr class="separator">
+    <h3 class="my-collections-text">My Collections</h3>
+    <div>
+      <div class="ion-display-flex ion-align-items-center" style="border-bottom: 1px solid #d7dadf;
+      padding: 10px 0px">
+        <div class="collection-category-icon">
+          <img src="assets/imgs/shopping-bag.svg">
+        </div>
+        <div class="collection-category-details">
+          <h3 class="category-name">QShop</h3>
+          <h4 class="items-count">4 Items</h4>
+          <h4 class="date">13 Jan, 2022</h4>
+        </div>
+      </div>
+
+      <div class="ion-display-flex ion-align-items-center" style="border-bottom: 1px solid #d7dadf;
+      padding: 10px 0px">
+        <div class="collection-category-icon">
+          <img src="assets/imgs/picture.svg">
+        </div>
+        <div class="collection-category-details">
+          <h3 class="category-name">Favorite Images</h3>
+          <h4 class="items-count">0 Items</h4>
+          <h4 class="date">13 Jan, 2022</h4>
+        </div>
+      </div>
+
+      <div class="ion-display-flex ion-align-items-center" style="border-bottom: 1px solid #d7dadf;
+      padding: 10px 0px">
+        <div class="collection-category-icon">
+          <img src="assets/imgs/globe.svg">
+        </div>
+        <div class="collection-category-details">
+          <h3 class="category-name">QNews</h3>
+          <h4 class="items-count">1 Items</h4>
+          <h4 class="date">13 Jan, 2022</h4>
+        </div>
+      </div>
+
+      <div class="ion-display-flex ion-align-items-center" style="border-bottom: 1px solid #d7dadf;
+      padding: 10px 0px">
+        <div class="collection-category-icon">
+          <img src="assets/imgs/music-alt.svg">
+        </div>
+        <div class="collection-category-details">
+          <h3 class="category-name">Music</h3>
+          <h4 class="items-count">2 Items</h4>
+          <h4 class="date">13 Jan, 2022</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

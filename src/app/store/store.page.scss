@@ -1,0 +1,253 @@
+.header-icons-div{
+    position: absolute;
+    z-index: 99999999;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 6px 4px;
+}
+.back-btn, .menu-btn{
+    --background: none;
+    --box-shadow: none;
+    border-radius: 50%;
+    --border-radius: 50%;
+    min-width: 37px;
+    width: 37px;
+    height: 37px;
+    svg{
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+        min-width: 22px;
+    }
+}
+.site-header{
+    margin: 0px !important;
+}
+.header-cover-img-div{
+    position: relative;
+    // background: #003a1c;
+    height: 190px;
+    .rgba-cover-back{
+        background: rgba(0,0,0,0.4);
+        height: 190px;
+        width: 100%;
+        position: absolute;
+    }
+    img{
+        height: 190px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .cover-img-blurry{
+        height: 180px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 9999999;
+        backdrop-filter: blur(0px);
+        background: rgba(0,0,0,0.5);
+        border-radius: 0px !important;
+    }
+}
+.website-logo-info-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+}
+.website-logo-div{
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+    min-width: 95px;
+    position: relative;
+    z-index: 999999999;
+    background: #e8eaed;
+    left: 0px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%), 0 2px 2px -1px rgb(0 0 0 / 20%);
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 65px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+/// Channel other info
+.store-other-info-div{
+    margin-left: 10px;
+}
+.website-title-div{
+    display: flex;
+    align-items: baseline;
+    z-index: 99999999;
+    margin-left: 0px !important;
+    justify-content: center;
+    position: relative;
+    h3{
+        font-size: 24px;
+        font-family: 'poppins bold';
+        color: #ffffff;
+        margin: 5px 10px 0px 0px;
+    }
+}
+.fab-main-btn{
+    --background: #232725;
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+
+}
+.subscribers-count-div{
+    margin: -4px 0px 15px 0px;
+    h4{
+        margin: 7px 8px 0px 0px;
+        color: #ffffff;
+        font-family: 'poppins Regular';
+        font-size: 14px;
+    }
+    div{
+        h3{
+            font-size: 15px;
+            color: #a90000;
+            font-family: "poppins semibold";
+            margin: 0;
+            text-decoration: underline;
+        }
+    }
+}
+.social-follow-btn-div{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+        display: flex;
+        align-items: center;
+        color: #212121;
+        svg{
+            width: 17px;
+            height: 17px;
+            margin-right: 8px;
+            fill: #fba800;
+        }
+        font-size: 12px;
+        font-family: "poppins semibold";
+        color: #000000;
+        margin: 23px 10px;
+    }
+    ion-fab{
+        ion-fab-list{
+            position: absolute;
+            right: -8px;
+            top: -18px;
+        }
+    }
+
+}
+.subscribe-wrap-min-div{
+    background: #232725;
+    padding: 4px 13px;
+    border-radius: 30px;
+    margin: 10px 60px 10px 0px;
+    border: 1px solid #232725;
+    h4{
+        margin: 0;
+        font-size: 13px;
+        font-family: 'poppins semibold';
+        color: #fff;
+        display: flex;
+        align-items: center;
+        svg{
+            width: 14px;
+            height: 14px;
+            fill: #232725;
+            margin-left: 5px;
+        }
+    }
+}
+.tabs-main-wrap-div{
+    // background: #36233a;
+    
+    // margin-top: -1px;
+    ion-list{
+        padding: 0;
+        background: #232725;
+        margin-top: -1px;
+        ion-item-divider{
+            --background: #232725;
+            padding: 0;
+        }
+    }
+    ion-segment{
+        ion-segment-button{
+            font-size: 14px;
+            font-family: 'poppins semibold';
+            color: #fff;
+            text-transform: capitalize;
+            --indicator-color: #ffffff;
+            --indicator-height: 3px;
+        }
+    }
+}
+//More News
+.more-news-wrap-div{
+    background: #fff;
+    padding: 10px 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.more-news-img{
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    border: 1px solid #cdcdcd;
+    margin-right: 10px;
+    min-width: 100px;
+}
+.more-news-title{
+    font-size: 15px;
+    color: #2c2c2c;
+    font-family: 'poppins Regular' !important;
+    margin: 0;
+}
+.more-news-time-ago{
+    margin-left: 5px;
+    svg{
+        fill: #3f63bf;
+        width: 15px;
+        margin-right: 3px;
+        height: 15px;
+    }
+    h3{
+        margin: 0;
+        font-size: 13px;
+        color: #3f63bf;
+        font-family: 'poppins semibold' !important;    
+    }
+}
+.comments-on-news-post-div{
+    margin-left: 10px;
+    svg{
+        fill: #bdbdbd;
+        width: 15px;
+        height: 15px;
+    }
+    span{
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        color: #bfbfbf;
+        margin-left: 3px;
+    }
+}
+ion-spinner{
+    animation-duration: 1400ms;
+    height: 50px;
+    width: 50px;
+    margin-top: 4em;
+    color: #4bbc4c;
+}

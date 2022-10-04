@@ -1,0 +1,7 @@
+{
+  "name": "Qnewsnew",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

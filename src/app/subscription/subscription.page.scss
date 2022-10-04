@@ -1,0 +1,174 @@
+ion-header{
+    background: var(--ion-content-background-color);
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color);
+}
+.back-btn{
+    --border-radius: 50% !important;
+    border-radius: 50% !important;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    margin: 20px 10px 0px 14px;
+    img{
+        width: 32px;
+        height: 32px;
+    }
+}
+.subscription-top-section-div{
+    img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 36%;
+    }
+    h4{
+        font-size: 20px;
+        font-family: 'poppins semibold';
+        text-align: center;
+        color: #1c2947;
+        margin: 10px 0px 5px 0px;
+    }
+    h5{
+        font-size: 13px;
+        font-family: "poppins semibold";
+        text-align: center;
+        color: #6a6a6a;
+        margin: 0px 20px;
+    }
+    h3{
+        text-align: center;
+        font-size: 25px;
+        font-family: "montserrat-bold";
+        margin: 0px 0px 10px 0px;
+        color: #f9aa43;
+        text-transform: uppercase;
+    }
+}
+//Subscription sliders
+ion-title {
+    font-weight: 600;
+}
+
+ion-card {
+    width: 88%;
+    height: 160px;
+    box-shadow: none;
+    border-radius: 15px;
+    
+    img {
+        object-fit: cover;
+        width: 100%;
+        transform: scale(1.1, 1.1) rotate(1deg);
+        transition: 600ms all ease-in-out;
+    }
+}
+
+.swiper-slide-active {
+    transform: scale(1.05, 1.05);
+
+    ion-card {
+        img {
+            transform: scale(1, 1);
+        }
+    }
+}
+
+.swiper-slide {
+    transition: 400ms all ease-in-out;
+}
+.slider-div, .active-slider-div{
+    .subscription-discount-txt{
+        background: #272727;
+        color: #ffffff;
+        font-size: 12px;
+        font-family: 'poppins semibold';
+        width: 75px;
+        margin: 9px;
+        border-radius: 9px;
+        padding: 5px 4px;
+    }
+    .subscription-price, .subscription-duration, .subscription-duration-digit{
+        font-size: 21px;
+        font-family: 'montserrat-black';
+        margin: 0;
+        color: #272727;
+    }
+}
+.border-div, .active-border-div{
+    height: 96px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 2px solid #272727;
+    border-top: none;
+    border-radius: 0px 0px 15px 15px;
+}
+.active-slider-div{
+    .subscription-discount-txt{
+        background: #f9a943 !important;
+        transition: 200ms all ease-in-out;
+    }
+    .subscription-price, .subscription-duration, .subscription-duration-digit{
+        color: #f9a943 !important;
+        transition: 200ms all ease-in-out;
+    }
+}
+.active-border-div{
+    border: 2px solid #f9a943 !important;
+    border-top: none !important;
+    transition: 200ms all ease-in-out;
+}
+.get-subscription-btn{
+    --box-shadow: none;
+    --border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'montserrat-semibold';
+    --background: #f9aa43;
+    width: 75%;
+    margin: 1em 0px;
+    height: 43px;
+}
+// .billing-info-div{
+//     h3,h5{
+//         font-family: 'montserrat-semibold';
+//         font-size: 14px;
+//         color: #272727;
+//         margin: 12px 0px 0px 0px;
+//         text-align: center;
+//     }
+//     h4,h6{
+//         font-family: 'montserrat-regular';
+//         font-size: 12px;
+//         color: #272727;
+//         margin: 5px 12px 0px 12px;
+//         text-align: center;
+//     }
+// }
+.what-are-we-offering{
+    div{
+        margin: 8px 10px;
+        align-items: center;
+        .check-img{
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+        .cross-img{
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+        h3{
+            font-size: 16px;
+            margin: 0;
+            font-family: 'poppins semibold';
+        }        
+    }
+}

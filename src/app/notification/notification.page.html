@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()" class="back-btn" button slot="start">
+      <img src="assets/imgs/tabs-page/arrow-small-left.svg">
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <h3 class="notifications-txt">{{ 'notifications' | translate }}</h3>
+  
+  <!--Refresh Content-->
+  <ion-refresher slot="fixed" (ionRefresh)="refreshData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!apiResponse">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <div class="notifications-container">
+    <div *ngFor="let notification of notificationsResponse" class="notification-wrap-div ion-display-flex ion-align-items-center">
+      <div class="ion-display-flex ion-align-items-baseline">
+        <div class="notification-red-icon"></div>
+        <div class="notification-inital-div">  
+          <h3 class="notification-title">{{ notification.title }}</h3>
+          <h4 class="notification-desc">{{ notification.description }}</h4>
+          <h5 class="notification-date">{{ notification.created_at | ago }}</h5>
+        </div>
+      </div>
+      <div class="notification-img-div">
+        <img [lazyLoad]="notification.image_url">
+      </div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

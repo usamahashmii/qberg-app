@@ -1,0 +1,29 @@
+ion-content{
+    --background: #000000;
+}
+.back-btn{
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
+}
+.save-btn{
+    --background: none;
+    --box-shadow: none;
+    text-transform: capitalize;
+    font-family: "poppins semibold";
+    font-size: 16px;
+    color: #ffffff;
+    text-align: right;
+    float: right;
+    --ripple-color: #ffffff;
+    margin: 10px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    --border-radius: 6px;
+}
+.story-picture{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

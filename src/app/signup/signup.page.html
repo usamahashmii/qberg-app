@@ -1,0 +1,65 @@
+<ion-content>
+  <ion-button (click)="goBack()" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M19,11H9l3.29-3.29a1,1,0,0,0,0-1.42,1,1,0,0,0-1.41,0l-4.29,4.3A2,2,0,0,0,6,12H6a2,2,0,0,0,.59,1.4l4.29,4.3a1,1,0,1,0,1.41-1.42L9,13H19a1,1,0,0,0,0-2Z" fill="#24364d" data-original="#000000"/></g></svg>
+  </ion-button>
+
+  <div class="signup-agreement-section">
+    <div class="app-logo-div">
+      <img src="assets/imgs/default-monochrome.svg">
+    </div>
+
+    <div class="ion-display-flex ion-align-items-center">
+      <div (click)="agreeToAllTerms()" class="check-box-div" [class.highlight-check-box-div]="agreeToAllTermsBool">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" width="512" height="512"><g><path d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"/></g></svg>
+      </div>
+      <h3 class="agreement-txt">{{ 'agreement_to_all' | translate }}</h3>
+    </div>
+
+    <div>
+      <!--Terms of service-->
+      <div style="margin: 20px 0px 6px 0px;" class="ion-align-items-center ion-display-flex">
+        <div (click)="agreeToIndividualTerm()" class="check-box-small-div" [class.highlight-check-box-small-div]="agreeToAllTermsBool || termsBool">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" width="512" height="512"><g><path d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"/></g></svg>
+        </div>
+        <h3 class="terms-of-service-txt">{{ 'terms_of_service' | translate }} <span>({{ 'required' | translate }})</span></h3>
+      </div>
+      <div class="terms-of-service-div">
+        <h2>{{ 'welcome_to_qberg' | translate }}</h2>
+        <h3>
+          {{ 'welcome_txt' | translate }}
+        </h3>
+      </div>
+
+      <!--Privacy Policy-->
+      <div style="margin: 20px 0px 6px 0px;" class="ion-align-items-center ion-display-flex">
+        <div (click)="agreeToIndividualPrivacyPolicy()" class="check-box-small-div" [class.highlight-check-box-small-div]="agreeToAllTermsBool || privacyBool">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" width="512" height="512"><g><path d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"/></g></svg>
+        </div>
+        <h3 class="privacy-policy-txt">{{ 'privacy_policy' | translate }} <span>({{ 'required' | translate }})</span></h3>
+      </div>
+      <div class="privacy-policy-div">
+        <h3>
+          {{ 'privacy_policy_txt' | translate }}
+          </h3>
+      </div>
+
+      <!--Personal Information-->
+      <!--Privacy Policy-->
+      <div style="margin: 22px 0px 6px 0px;" class="ion-align-items-center ion-display-flex">
+        <div (click)="agreeToIndividualpersonalInfo()" class="check-box-small-div" [class.highlight-check-box-small-div]="agreeToAllTermsBool || personalInfo">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" width="512" height="512"><g><path d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"/></g></svg>
+        </div>
+        <h3 class="personal-info-txt">{{ 'receive_personal_info' | translate }} <span>({{ 'optional' | translate }})</span></h3>
+      </div>
+      <div class="personal-info-div">
+        <h3>{{ 'receive_personal_info_txt' | translate }}</h3>
+      </div>
+    </div>
+
+    <!--Buttons-->
+    <div class="ion-display-flex confirm-cancel-btns">
+      <!-- <ion-button (click)="goBack()" class="cancel-btn">{{ 'cancel' | translate }}</ion-button> -->
+      <ion-button (click)="signUp()" class="confirm-btn">{{ 'confirm' | translate }}</ion-button>
+    </div>
+  </div>
+</ion-content>

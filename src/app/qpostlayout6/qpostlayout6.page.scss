@@ -1,0 +1,62 @@
+ion-row{
+    margin: 10px;
+    background: #ffffff;
+    padding: 10px 5px;
+}
+.slider-main-img-div{
+    height: 100px;
+    width: 120px;
+    img{
+        height: 100px;
+        min-width: 120px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+}
+.slider-details-div{
+    margin-left: 10px;
+    h3{
+        font-size: 15px;
+        margin: 0px 0px 4px 0px;
+        font-family: 'poppins semibold';
+        height: 1.3em;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #25364c;
+    }
+    h4{
+        font-size: 12px;
+        margin: 0px 0px 10px 0px;
+        font-family: 'poppins regular';
+        height: 3.6em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #25364c;
+    }
+    h5{
+        font-size: 10px;
+        font-family: 'poppins medium';
+        color: #646464;
+        margin: 3px 5px 0px 5px;
+    }
+    .total-views-div{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        svg{
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+           fill: #c4c4c4;
+        }
+        span{
+            font-size: 13px;
+            color: #bcbcbc;
+            font-family: 'poppins semibold';
+        }
+    }
+}

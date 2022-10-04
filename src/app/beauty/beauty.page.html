@@ -1,0 +1,93 @@
+<ion-content>
+  <div style="background: #fff;
+  margin: 5px 0px;">
+    <div class="ion-display-flex pick-gender-wrap-div ion-justify-content-between ion-align-items-center">
+      <h3 class="pick-gender-txt">Pick your Gender</h3>
+      <div class="ion-display-flex gender-toggle-bar">
+        <h3 (click)="toggleGenderCategory('women')" [class.active-gender-background]="genderCategory == 'women'">Women</h3>
+        <h4 (click)="toggleGenderCategory('men')" [class.active-gender-background]="genderCategory == 'men'">Men</h4>
+      </div>
+    </div>
+    <!--Fashion Posts-->
+    <ion-row class="section-1-post-row">
+      <ng-container *ngFor="let clothItem of fasionArray; first as isFirst">
+        <ion-col class="ion-no-padding" *ngIf="isFirst">
+          <div class="ion-position-relative section-1-post-wrap-div">
+            <div class="transparent-background-effect"></div>
+              <img class="section-1-post-img" [lazyLoad]="clothItem.img" >
+              <div class="section-1-txt-section">
+                <h3>{{ clothItem.name }}</h3>
+                <h4>{{ clothItem.desc }}</h4>
+              </div>
+            </div>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+    <ion-row>
+      <ng-container *ngFor="let clothItem of fasionArray; let i = index">
+        <ion-col *ngIf="i > 0 &&  i < 3" size="6" [class.section-2-odd-side]="i%2 == 0" [class.section-2-even-side]="i%2 != 0">
+          <div class="ion-position-relative section-2-post-wrap-div">
+            <div class="transparent-background-effect-section-2"></div>
+              <img class="section-2-post-img" [lazyLoad]="clothItem.img" >
+              <div class="section-2-txt-section">
+                <h3>{{ clothItem.name }}</h3>
+                <h4>{{ clothItem.desc }}</h4>
+              </div>
+            </div>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </div>
+
+   <!--Our most popular picks-->
+   <div class="our-most-popular-pick-wrap-div">
+    <h2 class="our-most-popular-pick-txt">Our most popular picks</h2>
+    <ion-row style="margin: 0px 5px;">
+      <ion-col size="6" *ngFor="let items of mostPopularPicksArray; let i = index" [class.section-2-odd-side]="i%2 != 0" [class.section-2-even-side]="i%2 == 0">
+        <div class="ion-position-relative">
+          <img class="popular-pick-image" [lazyLoad]="items.img">
+          <div class="brand-name-div">
+            <h3 class="brand-name">{{ items.brandName }}</h3>
+          </div>
+        </div>
+        <h3 class="popular-pick-title">{{ items.title }}</h3>
+        <h3 class="popular-pick-desc">{{ items.desc }}</h3>
+      </ion-col>
+    </ion-row>
+    <div class="ion-display-flex switch-prev-next-wrap-div ion-justify-content-center ion-align-items-center">
+      <ion-button>
+        <div class="pagination-left-div">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M16.041,24,6.534,14.48a3.507,3.507,0,0,1,0-4.948L16.052,0,18.17,2.121,8.652,11.652a.5.5,0,0,0,0,.707l9.506,9.52Z" fill="#24364d" data-original="#000000"/></g></svg>
+        </div>
+      </ion-button>
+      <div class="popular-item-pagination">
+        <h3>1 / 3</h3>
+      </div>
+      <ion-button>
+        <div class="pagination-left-div">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512"><g id="_01_align_center" data-name="01 align center"><path d="M7.412,24,6,22.588l9.881-9.881a1,1,0,0,0,0-1.414L6.017,1.431,7.431.017l9.862,9.862a3,3,0,0,1,0,4.242Z"/></g></svg>
+        </div>
+      </ion-button>
+    </div>
+  </div>
+
+   <!--Other picks-->
+   <div class="our-most-popular-pick-wrap-div">
+    <h2 class="our-most-popular-pick-txt">Other Products</h2>
+    <ion-row style="margin: 0px 5px;">
+      <ion-col size="6" *ngFor="let items of fasionArray; let i = index" [class.section-2-odd-side]="i%2 != 0" [class.section-2-even-side]="i%2 == 0">
+        <div class="ion-position-relative">
+          <img class="popular-pick-image" [lazyLoad]="items.img">
+        </div>
+        <h3 class="popular-pick-title">{{ items.name }}</h3>
+        <h3 class="popular-pick-desc">{{ items.desc }}</h3>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="lines">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

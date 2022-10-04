@@ -1,0 +1,114 @@
+.qpost-section-1-wrap-row{
+
+}
+.qpost-section-1t-wrapper-div{
+    border: 1px solid #d2d2d2;
+    height: 208px;
+    background: #ffffff;
+}
+.qpost-section-1t-wrap-div{
+    position: relative;
+}
+.qpost-section-1-box-effect{
+    height: 85px;
+    position: absolute;
+    z-index: 99999;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+}
+.qpost-section-1-cover-img{
+    height: 85px;
+    width: 100%;
+    object-fit: cover;
+}
+.qpost-section-1-profile-img{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    min-width: 70px;
+    position: absolute;
+    z-index: 99999;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+.qpost-section-1t-post-by-div{
+    h3{
+        margin: 37px 10px 0px 10px;
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        text-align: center;
+        color: #25364c;
+        height: 1.2em;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    h4{
+        margin: 7px 10px 12px 10px;
+        font-size: 12px;
+        font-family: 'poppins regular';
+        text-align: center;
+        color: #747474;
+        height: 3.8em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+//Section 2
+.recommended-publishers{
+    font-size: 17px;
+    font-family: 'poppins semibold';
+    margin: 22px 10px 10px 5px;
+    color: #25364c;
+}
+.qpost-section-2-wrapper-div{
+    margin: 5px 10px;
+    img{
+        height: 100px;
+        width: 150px;
+        object-fit: cover;
+        min-width: 150px;
+    }
+}
+.qpost-section-2-wrap-div{
+    margin-right: 10px;
+    h3{
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        margin: 0;
+        color: #25364c;
+        height: 3.7em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    h4{
+        margin: 0;
+        .qpost-category-name{
+            font-size: 13px;
+            font-family: 'poppins Regular';
+            margin: 0px 5px 0px 0px;
+            color: #229640;
+        }
+        .verticle-separator{
+            font-size: 14px;
+            color: #787878;
+        }
+        .qpost-publisher-name{
+            font-size: 13px;
+            font-family: 'poppins Regular';
+            margin: 0px 5px 0px 5px;
+            color: #787878;
+        }
+    }
+}
+.main-separator{
+    border-top: 1px solid #dfdfdf;
+    width: 85%;
+}

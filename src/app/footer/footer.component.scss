@@ -1,0 +1,116 @@
+
+//Footer Tabs Style
+ion-footer{
+    background: #425265;
+    // height: 64px;
+}
+.center-logo-div{
+    position: relative;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 70px;
+    margin: auto;
+    border-radius: 50%;
+    height: 70px;
+    margin-bottom: -40px;
+    border: 5px solid #14253b;
+    z-index: 1111111;
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 30px;
+    }
+}
+ion-toolbar{
+    margin-bottom: -3px;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-bottom: 0;
+}
+.footer-md::before, .footer-ios::before{
+    background-image: none;
+}
+.footer-ios ion-toolbar:first-of-type{
+    --border-width: 0;
+}
+.tab-left-side-div, .tab-right-side-div{
+    background: #425265;
+    width: 100%;
+    height: 55px;
+}
+.tab-left-side-div{
+    position: relative;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: start;
+}
+.tab-left-side-div-child{
+    position: absolute;
+    // left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.tabs-left-arrow{
+    transform: rotate(-180deg);
+    height: 14px;
+    width: 14px;
+}
+.qshop-icon-img{
+    width: 23px;
+    height: 23px;
+    margin-left: 36px;
+}
+.qshop-icon-img-txt{
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    margin-right: -5px;
+    margin-top: 5px;
+}
+.tab-middle-div{
+    width: 140px;
+    height: 35px;
+    background: #425265;
+}
+.tab-right-side-div{
+    position: relative;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: end;
+}
+.tab-right-side-div-child{
+    position: absolute;
+    // left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.tabs-right-arrow{
+    height: 14px;
+    width: 14px;
+}
+.qnews-icon-img{
+    width: 23px;
+    height: 23px;
+    margin-right: 36px;
+}
+.qnews-icon-img-txt{
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    margin-left: -8px;
+    margin-top: 5px;
+}
+ion-ripple-effect{
+    border-radius: 20px;
+}
+
+//$$

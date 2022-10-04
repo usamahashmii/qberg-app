@@ -1,0 +1,85 @@
+<ion-content>
+  
+  <!--Structure Skelton-->
+  <ng-container *ngIf="!bestSellerArray">
+    <app-newsskelton></app-newsskelton>
+  </ng-container>
+
+  <ng-container *ngIf="bestSellerArray">
+    <div class="bookstore-section-1-wrap-div">
+      <div class="ion-display-flex ion-justify-content-between store-tags-wrap-div ion-align-items-center">
+        <h3>Popular Book Stores</h3>
+        <ion-item class="store-tags-item">
+          <ion-select (ionChange)="pickRecipeTag($event)" value="fantasy" interface="popover">
+            <ion-select-option value="fantasy">Fantasy</ion-select-option>
+            <ion-select-option value="drama">Drama</ion-select-option>
+            <ion-select-option value="horror">Horror</ion-select-option>
+            <ion-select-option value="intellectual">Intellectual</ion-select-option>
+            <ion-select-option value="comic">Comic</ion-select-option>
+            <ion-select-option value="cartoon">Cartoon</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <!---->
+      <div class="about-book-top-section-wrap" (click)="openProductDetails({id: 1, img: 'https://www.libertybooks.com/image/cache/catalog/9780241573631-313x487.jpg?q6', offerBy: 'Tamim Ansary', title: 'The history of Russia, a great power in Asia', desc: 'Read fully about the history of Russia, economy of Russia. The rise and fall of the country and much more. By very popular Leo Shan Li Don.', discountPrice: '40 MNT', originalPrice: '50 MNT', discount: '10%', url: 'https://www.libertybooks.com/' })">
+        <div class="ion-display-flex ion-align-items-center about-book-top-section">
+          <div class="about-book-top-section-txt">
+            <div>
+              <h3>History/ Culture</h3>
+            </div>
+            <h4>From ancient times to new times</h4>
+            <h5>The history of Russia, a great power in Asia</h5>
+          </div>
+          <img class="about-book-top-section-img" lazyLoad="https://www.libertybooks.com/image/cache/catalog/9780241573631-313x487.jpg?q6">
+        </div>
+        <h5 class="about-book-top-section-detail-desc">Read fully about the history of Russia, economy of Russia. The rise and fall of the country and much more. By very popular Leo Shan Li Don.</h5>
+      </div>
+
+      <ion-button class="load-more-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+        Show More
+      </ion-button>
+    </div>
+    <!--Best Sellers-->
+    <div class="section-2-wrap-div">
+      <h3 class="best-seller-txt">Best Seller (Economic Management) (Last week)</h3>
+      <ion-row>
+        <ion-col *ngFor="let book of bestSellerArray" size="4" (click)="openProductDetails(book)">
+          <img class="section-2-book-img" [lazyLoad]="book.img">
+          <div class="section-2-books-div-main">
+            <h3>By: {{ book.offerBy }}</h3>
+            <h4>{{ book.title }}</h4>
+          </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Books
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <!---->
+    <div class="section-3-wrap-div">
+      <h3 class="new-collection-txt">New Collection</h3>
+      <ion-row>
+        <ion-col class="ion-text-center" *ngFor="let book of bestSellerArray" size="6" (click)="openProductDetails(book)">
+          <img class="section-3-book-img" [lazyLoad]="book.img">
+          <div class="section-3-books-div-main">
+            <h3>By: {{ book.offerBy }}</h3>
+            <h4>{{ book.title }}</h4>
+          </div>
+        </ion-col>
+        <ion-button class="load-more-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M21,12a9.038,9.038,0,1,1-2.647-6.353L16,8h5.909A1.09,1.09,0,0,0,23,6.909V1L20.471,3.529A11.98,11.98,0,1,0,24,12Z" fill="#24364d" data-original="#000000"/></g></svg>
+          Load More Books
+        </ion-button>
+      </ion-row>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="lines">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
+</ion-content>

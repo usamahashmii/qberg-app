@@ -1,0 +1,149 @@
+//Footer Tabs Style
+ion-footer{
+    background: #25364c;
+    position: absolute;
+    bottom: 0;
+}
+.center-logo-div{
+    position: relative;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 63px;
+    margin: auto;
+    border-radius: 50%;
+    height: 63px;
+    margin-bottom: -57px;
+    border: 5px solid #14253b;
+    z-index: 1111111;
+    img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 30px;
+    }
+}
+ion-toolbar{
+    // margin-bottom: -3px;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-bottom: 0;
+}
+.footer-md::before, .footer-ios::before{
+    background-image: none;
+}
+.footer-ios ion-toolbar:first-of-type{
+    --border-width: 0;
+}
+.tab-left-side-div, .tab-right-side-div{
+    background: #25364c;
+    width: 100%;
+    height: 55px;
+}
+.tab-left-side-div{
+    position: relative;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: start;
+}
+.tab-left-side-div-child{
+    position: absolute;
+    // left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.tabs-left-arrow{
+    transform: rotate(-180deg);
+    height: 14px;
+    width: 14px;
+}
+.qshop-icon-img{
+    width: 20px;
+    height: 20px;
+    margin-left: 36px;
+}
+.qshop-icon-img-txt{
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    // margin-right: -11px;
+    // margin-right: 2px;
+    margin-top: 5px;
+}
+.tab-middle-div{
+    width: 140px;
+    height: 35px;
+    background: #25364c;
+}
+.tab-right-side-div{
+    position: relative;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: end;
+}
+.tab-right-side-div-child{
+    position: absolute;
+    // left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.tabs-right-arrow{
+    height: 14px;
+    width: 14px;
+}
+.qnews-icon-img{
+    width: 20px;
+    height: 20px;
+    margin-right: 36px;
+}
+.qnews-icon-img-txt{
+    font-size: 11px;
+    color: #fff;
+    margin: 0;
+    margin-left: -4px;
+    margin-top: 5px;
+}
+ion-ripple-effect{
+    border-radius: 20px;
+}
+//News Footer
+.footer-wrapper-div{
+    display: flex;
+    justify-content: space-around;
+    background: #25364c;
+    padding: 0px 0px 20px 0px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99999;
+    div{
+        position: relative;
+        padding-top: 8px;
+        img{
+            // width: 19px;
+            // height: 19px;
+            max-width: 26px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        h4{
+            font-size: 10px;
+            font-family: 'montserrat-semibold';
+            margin: 0px 0px 0px 0px;
+            color: #dbdbdb;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

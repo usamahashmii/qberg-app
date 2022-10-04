@@ -1,0 +1,180 @@
+ion-header{
+    background: var(--ion-content-background-color);
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color);
+}
+.back-btn{
+    --border-radius: 50% !important;
+    border-radius: 50% !important;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    margin: 20px 10px 0px 14px;
+    img{
+        width: 32px;
+        height: 32px;
+    }
+}
+.wrap-container{
+    margin: 0px 22px;
+}
+// .advertisement-img{
+//     width: 84%;
+//     position: relative;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     margin-bottom: 2em;
+// }
+.add-your-advertisement-details-txt{
+    font-size: 17px;
+    font-family: 'montserrat-semibold';
+    color: #161616;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: 10px;
+}
+.add-link-field{
+    padding: 0;
+    margin: 10px 0px;
+    h4{
+        font-size: 12px;
+        font-family: 'montserrat-semibold';
+        position: absolute;
+        background: #f2f3f5;
+        margin: 0;
+        top: -6px;
+        left: 20px;
+        z-index: 999999;
+        color: #999999;
+    }
+    ion-input, ion-textarea{
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        color: #575757;
+        height: 40px;
+        background: #f2f3f5;
+    }
+    .category-div{
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        color: #575757;
+        height: 40px;
+        background: #f2f3f5;
+    }
+    ion-textarea{
+        height: 100px;
+    }
+    .text-area-desc-txt{
+        top: 2px !important;
+    }
+    ion-item{
+        --background: #f2f3f5;
+        --border-width: 0;
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        color: #575757;
+        height: 40px;
+        background: #f2f3f5;
+        display: flex;
+        ion-select{
+            width: 100%;
+            color: #000000;
+        }
+    }
+}
+ion-select::part(icon) { color: #000000 !important; }
+//Image Preview
+.image-preview-row{
+    img{
+        height: 200px;
+        border-radius: 12px;
+        margin-top: 10px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .img-preview-layer-div{
+        position: absolute;
+        left: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        // border-radius: 12px 0px 0px 0px;
+        top: 20px;
+        padding: 1px 14px;
+        h3{
+            font-size: 10px;
+            color: #fff;
+            font-family: "montserrat-semibold";
+            margin: 0;
+        }
+    }
+    .camera-layer-div{
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        min-width: 40px;
+        height: 40px;
+        right: 10px;
+        bottom: 10px;
+        position: absolute;
+        svg{
+            width: 15px;
+            height: 15px;
+            fill: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+// .image-preview-div{
+//     justify-content: center;
+//     display: flex;
+//     margin: 10px 0px;
+//     img{
+//         border-radius: 12px;
+//         width: 90%;
+//         object-fit: cover;
+//         height: 200px;
+//     }
+//     .image-preview-black-layer{
+//         position: absolute;
+//         height: 65px;
+//         background: rgba(0,0,0,0.4);
+//         bottom: 0px;
+//         width: 90%;
+//         border-radius: 0px 0px 12px 12px;
+//     }
+//     .image-desc{
+//         position: absolute;
+//         bottom: 4px;
+//         color: #fff;
+//         height: 45px;
+//         overflow: hidden;
+//         font-size: 12px;
+//         font-family: "montserrat-medium";
+//         margin: 0px 0px 0px 5px;
+//         width: 87%;
+//     }
+// }
+// .advertisement-preview-txt{
+//     text-align: center;
+//     font-size: 12px;
+//     color: #a1a1a2;
+//     font-family: 'montserrat-semibold';
+// }
+//Post Now
+.post-now-btn{
+    --box-shadow: none;
+    --border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "montserrat-semibold";
+    --background: #f9aa43;
+    width: 100%;
+    margin: 1.5em 0px;
+    height: 43px;
+}

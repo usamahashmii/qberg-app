@@ -1,0 +1,916 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// @import 'swiper/scss';
+// @import 'swiper/scss/navigation';
+// @import 'swiper/scss/pagination';
+@import '~swiper/css/bundle';
+
+.header-md::after,.header-ios::after, .footer-md::before,.footer-ios::before{
+    background-image: none !important;
+}
+//Ion Content
+ion-content{
+    --background: var(--ion-content-background-color);
+}
+ion-header, ion-footer{
+    background: var(--ion-content-background-color);
+}
+ion-toolbar{
+    --background: var(--ion-content-background-color);
+}
+
+
+
+//Neumorphism
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+    background-color: #e6e7ee;
+    background-clip: padding-box;
+    border: 0.0625rem solid #D1D9E6;
+    border-radius: 0.55rem;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+    transition: all 0.3s ease-in-out;
+}
+.shadow-soft {
+    box-shadow: 6px 6px 12px #e5dbeb, -6px -6px 12px #ffffff !important;
+}
+.shadow-inset {
+    box-shadow: inset 2px 2px 5px #e5dbeb, inset -3px -3px 7px #FFFFFF !important;
+}
+.btn {
+    position: relative;
+    transition: all 0.2s ease;
+    letter-spacing: 0.025em;
+    font-size: 1rem;
+    border-color: #D1D9E6;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+}
+// IOnic Css
+.ion-display-flex{
+    display: flex;
+}
+.ion-display-grid{
+    display: grid;
+}
+.ion-position-relative{
+    position: relative;
+}
+.ion-position-absolute{
+    position: absolute !important;
+}
+.ion-display-none{
+    // display: none;
+}
+.ion-no-padding{
+    padding: 0px;
+}
+//
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal>.swiper-pagination-bullets{
+    position: absolute !important;
+    bottom: 40px !important;
+}
+.swiper-pagination-bullet-active {
+    background: #24364d !important;
+}
+.swiper-pagination-bullet {
+    background: #000000 !important;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    width: 10px;
+    height: 10px;
+    background: #000000 !important;
+}
+//Main Menu Popover class
+.main-menu{
+    background: rgb(0,0,0,.9);
+    top: 0px !important;
+    left: 0 !important;
+    --background: none;
+    --box-shadow: none;
+    --height: 100%;
+    --width: 100%;
+    .popover-content.sc-ion-popover-md, .popover-content.sc-ion-popover-ios{
+        top: 80px !important;
+        left: 0 !important;
+    }
+}
+//News more options action sheet
+.more-options-action-sheet, .profile-pic-action-sheet{
+    --background: rgb(77 97 143 / 90%);
+    // background: rgb(0,0,0,.5);
+    .action-sheet-group.sc-ion-action-sheet-md:first-child, .action-sheet-group.sc-ion-action-sheet-ios:first-child{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .action-sheet-button.sc-ion-action-sheet-md,.action-sheet-button.sc-ion-action-sheet-ios{
+        color: #fff;
+        font-family: 'poppins medium' !important;
+        font-size: 16px;
+    }
+    .action-sheet-icon.sc-ion-action-sheet-md,.action-sheet-icon.sc-ion-action-sheet-ios{
+        color: #ddd;
+        font-size: 21px;
+    }
+    .action-sheet-title.sc-ion-action-sheet-md, .action-sheet-title.sc-ion-action-sheet-ios{
+        color: #fff;
+        font-size: 17px;
+        font-family: 'poppins semibold';
+    }
+}
+//Waiting Loader
+.loader-popup{
+    background: rgb(0,0,0,.9);
+    // top: 0px !important;
+    // left: 0 !important;
+    --background: none;
+    --box-shadow: none;
+    --height: 100%;
+    --width: 100%;
+}
+//Toaster CSS
+.ion-toast{
+    width: 80%;
+    position: absolute;
+    left: 54%;
+    transform: translateX(-50%);
+}
+.add-to-fav-toast, .advertisement-toast{
+    width: 95%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: "poppins semibold" !important;
+    height: 0px;
+    padding: 22px 20px;
+    border-radius: 5px;
+    margin-bottom: 5em;
+    text-align: center;
+    --background: none;
+    --box-shadow: none;
+    margin-top: 10px;
+    --height: 29px;
+    letter-spacing: 0.7px;
+    background-color: rgb(77 97 143 / 90%);
+}
+.advertisement-toast{
+    --height: 35px !important;
+    padding: 25px 20px !important;
+}
+//Filter Page Popup
+.filter-popup{
+    background: rgb(0,0,0,.2);
+    top: 0px !important;
+    left: 0 !important;
+    --background: none;
+    --box-shadow: none;
+    --height: 100%;
+    --width: 100%;
+    .popover-content.sc-ion-popover-md, .popover-content.sc-ion-popover-ios{
+        top: 190px !important;
+        left: 0 !important;
+        // border-radius: 20px 20px 0px 0px !important;
+        border-radius: 15px;
+    }
+}
+// .profile-pic-action-sheet{
+//     .action-sheet-group{
+//         border-radius: 10px 10px 0px 0px;
+//         box-shadow: 1px 1px 1px 1px #414c81;
+//     }   
+// }
+//QPRESS Tabs Headline fold/ unfold div
+.headline-txt-div{
+    margin-left: 10px;
+    h3{
+        font-size: 15px;
+        color: #808080;
+        margin: 0px 0px 0px 5px;
+    }
+    svg{
+        fill: #808080;
+        height: 12px;
+        width: 12px;
+    }
+}
+.unfold-txt-div{
+    h3{
+        font-size: 14px;
+        color: #808080;
+        margin: 0;
+    }
+}
+ion-toggle{
+    --background: #afafaf;
+    --background-checked: #42bd42;
+    --handle-background-checked: #fff;
+    --handle-height: 30px;
+}
+//QPRESS Subscription divs
+//Subscriptions div
+.subscription-news-wrap-div{
+    margin: 10px 0px; 
+    background: #fff;
+    padding: 10px;
+}
+.subscription-news-div{
+    h3{
+        margin: 0;
+        font-size: 16px;
+        font-family: "poppins semibold" !important;
+        color: #0e0e0e;
+    }
+    svg{
+        width: 25px;
+        height: 25px;
+        transform: rotate(180deg);
+        fill: #0e0e0e;
+    }
+}
+.subscription-news-clickable-box{
+    border: 1px solid rgba(46,70,100,0.1);
+    -webkit-box-shadow: 1px 2px 4px 0 rgb(46 70 100 / 10%);
+    box-shadow: 1px 2px 4px 0 rgb(46 70 100 / 10%);
+    border-radius: 6px;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    margin: 0px 4px;
+    ion-button{
+        max-width: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        --background: none;
+        --box-shadow: none;
+        --ripple-color: #000;
+        margin: 0;
+    }
+    img{
+        width: 35px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+.add-subs-div{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #42bd42;
+    position: absolute;
+    right: -6px;
+    top: 3px;
+    svg{
+        fill: #42bd42;
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);    
+    }
+}
+.highlight-add-subs-div{
+    background: #42bd42 !important;
+}
+.add-subs-div-check{
+    width: 8px !important;
+    height: 8px !important;
+    fill: #fff !important;
+}
+.new-recommendations-div{
+    position: relative;
+    width: 140px;
+    height: 80px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+    margin: 0px 4px;
+    div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        justify-items: center;
+        display: grid;
+        svg{
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            fill: #c9c9c9;
+            stroke: #b1b1b1;
+        }
+        h3{
+            margin: 0;
+            font-size: 14px;
+            font-family: 'poppins semibold' !important;
+            color: #6a6a6a;
+        }
+    }
+}
+.press-subscriptions-div{
+    position: relative;
+    width: 140px;
+    height: 80px;
+    border: 1px solid #42bd42;
+    border-radius: 2px;
+    div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        justify-items: center;
+        display: grid;
+        svg{
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            fill: #42bd42;
+            stroke: #42bd42;
+        }
+        h3{
+            margin: 0;
+            font-size: 14px;
+            font-family: 'poppins semibold' !important;
+            color: #42bd42;
+        }
+    }
+}
+//Angular Material Date Picker
+.mat-form-field-appearance-fill .mat-form-field-flex{
+    padding: 0 !important;
+    background-color: #ffffff !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-infix{
+    padding: 0 0px 0px 0px !important;
+    
+}
+//IONIC select box 
+.sc-ion-select-popover-h ion-list-header.sc-ion-select-popover, .sc-ion-select-popover-h ion-label.sc-ion-select-popover{
+    font-size: 15px !important;
+    font-family: 'poppins Regular' !important;
+}
+
+
+//QMALL Page
+//Shopping/Fashion
+//Our most popular pick{
+    .our-most-popular-pick-wrap-div{
+        background: #fff;
+        margin: 5px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px -3px #dbdbdb;
+        border: 1px solid #e5e5e5;
+        padding: 0px 0px 10px 0px;
+        .our-most-popular-pick-txt{
+            font-size: 17px;
+            color: #2f435c;
+            font-family: 'poppins semibold';
+            margin: 12px 10px 10px 5px;
+        }
+        ion-row{
+            ion-col{
+                .popular-pick-image{
+                    height: 130px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .popular-pick-title{
+        color: #3e526c;
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .popular-pick-desc{
+        color: #2c2c2c;
+        font-size: 13px;
+        font-family: 'poppins Regular';
+        margin: 3px 0px 0px 0px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .switch-prev-next-wrap-div{
+        margin-top: 10px;
+        ion-button{
+            --background: none;
+            --border-radius: none;
+            --box-shadow: none;
+            border-radius: 0px;
+            height: 40px;
+            max-width: 90px;
+            --ripple-color: #000;
+        }
+    }
+    .pagination-left-div, .pagination-right-div{
+        border: 1px solid #e0e0e0;
+        min-width: 90px;
+        height: 40px;
+        position: relative;
+        svg{
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .popular-item-pagination{
+        margin: 0px 15px;
+        h3{
+            font-size: 14px;
+            font-family: 'poppins semibold';
+            color: #2f435c;
+        }
+    }
+    .brand-name-div{
+        position: absolute;
+        top: 0;
+        background: #2f435c;
+        padding: 6px 5px;
+        h3{
+            font-size: 10px;
+            font-family: 'poppins semibold';
+            margin: 0;
+            color: #ffffff;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            width: 79px;
+            height: 13px;
+            overflow: hidden;
+        }
+    }
+//Shopping/ recipe page select BOX
+.clothing-category-item, .recipe-tags-item, .store-tags-item{
+    width: 42%;
+    right: 0px;
+    top: 11px;
+    height: 35px;
+    display: flex;
+    border: 1px solid #e1e1e1;
+    box-shadow: 7px -1px 6px 0px #ededed;
+    margin: -6px 0px 16px 10px;
+    position: relative;
+    ion-label{
+        font-size: 15px;
+        font-family: 'poppins semibold';
+        color: #27384e;
+        display: none;
+    }
+    ion-select{
+        padding: 0;
+        font-size: 14px;
+        font-family: 'poppins semibold';
+        color: #26374d;
+        width: 100%;
+        min-width: 100%;
+    }
+}
+.load-more-btn{
+    --background: none;
+    --box-shadow: none;
+    border: 1px solid #9b9b9b;
+    border-radius: 30px;
+    --border-radius: 30px;
+    margin: 15px 0px 10px 0px;
+    text-transform: capitalize;
+    font-family: "poppins semibold";
+    font-size: 14px;
+    color: #7d7a7a;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    svg{
+        height: 15px;
+        width: 15px;
+        margin: 0px 10px 0px 0px;
+        fill: #e8e8e8;
+        stroke: #dcdcdc;
+    }
+}
+//Css some part for Product details page and more products page
+.shopping-items-row{
+    // justify-content: center;
+    display: flex;
+    overflow: scroll;
+}
+.shopping-items-col{
+    padding: 0;
+    margin: 5px !important;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 7px 7px;
+    min-width: 37%;
+}
+.shopping-item-img-div{
+    position: relative;
+}
+.ion-backdrop-effect-div{
+    position: absolute;
+    height: 63px;
+    bottom: 4px;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+}
+.shopping-items-fav-icon-div{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.shopping-items-fav-icon{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.shopping-items-img{
+    height: 122px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 6px;
+}
+.shopping-items-desc{
+    font-size: 13px;
+    font-family: 'poppins semibold' !important;
+    margin-top: 5px;
+    color: #24364d;
+    height: 3.5em;
+    overflow: hidden;
+}
+.shopping-items-line-separator{
+    border-top: 1px solid #d7d7d7;
+    width: 70%;
+    margin: 0 auto;
+}
+.shopping-items-price{
+    font-size: 18px;
+    font-family: 'poppins semibold' !important;
+    margin: 5px 0px 0px 0px !important;
+    color: #24364d;
+    span{
+        font-size: 12px;
+        text-decoration: line-through;
+        color: #9b9394;
+        margin-left: 5px;
+        font-family: 'poppins semibold' !important;
+    }
+}
+.shopping-items-seller{ 
+    font-size: 13px;
+    color: #766a6a;
+    margin: 0px 0px 0px 0px;
+    font-family: 'poppins Regular';
+}
+.shopping-items-desc-div{
+    margin: 0px 7px;
+    position: absolute;
+    bottom: 5px;
+    .shopping-items-desc{
+        color: #ffffff;
+        margin: 0px 0px 6px 0px;
+    }
+}
+.shopping-items-discount{
+    font-size: 14px;
+    margin: 3px 0px 1px 0px;
+    color: #dd2f2f;
+    font-family: 'poppins semibold' !important;
+}
+
+//Ion Menu Css
+ion-menu#side-menu{
+    --width: 100%;
+    min-height: 100%;
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // --ion-backdrop-color: none;
+    // --ion-background-color: var(--ion-apps-menu-background-color);
+    --ion-background-color: rgba(0,0,0,.6);
+    z-index: 9999999999;
+    .inner-scroll .scroll-y{
+        padding: 0;
+    }
+}
+//Payment PopOver\
+ion-popover{
+    --backdrop-opacity: 0.8 !important;
+    .sc-ion-popover-md-h, .sc-ion-popover-ios-h {
+    }
+    .popover-wrapper{
+        .popover-content{
+            width: 90vw;
+            max-width: 500px;
+            height: 460px;
+            border-radius: 12px;
+            overflow: hidden;
+            transform-origin: unset !important;
+            // position: absolute;
+            // left: 50% !important;
+            // top: 50% !important;
+            // transform: translate(-50%,-50%) !important;
+        }
+    }    
+}
+//Date Picker
+.picker-columns,
+.picker-toolbar,
+.picker-md .picker-wrapper,
+.picker-md .picker-toolbar
+ {
+    background: #f2f2f2;
+    border-radius: 10px 10px 0px 0px;
+}
+.picker-md .picker-prefix,
+.picker-md .picker-suffix,
+.picker-md .picker-opt.picker-opt-selected {
+    color: #1e6288;
+    font-family: "montserrat-semibold";
+    font-size: 19px;
+}
+.picker-md .picker-opt {
+   color: #272727;
+   font-size: 18px;
+   font-family: 'montserrat-medium';
+}
+
+.picker-md .picker-button,
+.picker-md .picker-button.activated {
+ color: #1e6288;
+ text-transform: capitalize;
+ font-family: 'montserrat-semibold';
+ font-size: 15px;
+}
+//Advertisement Category Action Sheet
+.action-sheet-container{
+    .action-sheet-group{
+        // border-radius: 10px 10px 0px 0px;
+        .sc-ion-action-sheet-md:last-child{
+            // display: none !important;
+            // border-radius: 0px !important;
+        }
+        .action-sheet-title {
+            font-size: 15px !important;
+            font-family: 'montserrat-semibold' !important;
+        }
+    }
+    .action-sheet-button{
+        color: #b1b1b1;
+        font-family: 'montserrat-semibold';
+        font-size: 14px;
+        height: 43px;
+    }
+    .action-sheet-selected.sc-ion-action-sheet-md, .action-sheet-selected.sc-ion-action-sheet-ios{
+        color: #1e6288;
+        font-family: 'montserrat-bold';
+        font-size: 16px;
+    }
+}
+//Form Validation Error Message
+.error{
+    font-size: 12px;
+    font-family: 'poppins semibold';
+    color: #d04444;
+    padding: 4px 0px 0px 5px;
+    margin: 0;
+    display: block;
+}
+//Loader Message
+.waiting-loader{
+    .loading-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        border-radius: 10px;
+        .loading-spinner{
+            ion-spinner{
+                color: #25364c;
+            }
+        }
+        .loading-content{
+            color: #25364c !important;
+            font-size: 13px !important;
+            font-family: 'poppins semibold' !important;
+        }
+    }
+}
+//Ion Infinite Scroll
+ion-infinite-scroll{
+    ion-infinite-scroll-content{
+        ion-spinner{
+            width: 40px;
+            height: 40px;
+            color: #25364c;
+        }
+    }
+}
+ion-refresher.refresher-native ion-spinner{
+    color: #25364c;
+}
+ion-item{
+    .item-detail-icon{
+        display: none;
+    }
+}
+//Support page start chat alert
+.start-chat-alert{
+    .alert-wrapper{
+        border-radius: 10px;
+    }
+    .alert-head{
+        text-align: center;
+        color: #1a2735;
+        font-size: 17px;
+        font-family: 'poppins semibold';
+    }
+    .alert-message{
+        font-size: 15px;
+        font-family: 'poppins medium';
+        line-height: 18px;
+    }
+    .alert-button-group{
+        display: flex !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0px 0px 10px 8px !important;
+        button{
+            font-size: 15px !important;
+            font-family: "poppins semibold" !important;
+            text-transform: capitalize !important;
+            color: #f9f9f9 !important;
+            background: #192634 !important;
+            border-radius: 8px !important;
+            margin-bottom: 3px !important;
+            padding: 7px 20px;
+            text-align: center;
+        }
+    }
+}
+//Edit Name Alert
+.edit-name-alert{
+    .alert-wrapper{
+        border-radius: 10px;
+    }
+    .alert-head{
+        text-align: center;
+        color: #1a2735;
+        font-size: 17px;
+        font-family: 'poppins semibold';
+    }
+    .alert-message{
+        font-size: 15px;
+        font-family: 'poppins medium';
+        line-height: 18px;
+    }
+    .alert-input-group{
+        padding: 8px 15px 30px 15px;
+        .alert-input{
+            background: #f2f2f2;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+    
+    .alert-button-group{
+        display: flex !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0px 0px 10px 8px !important;
+        .alert-button-role-cancel{
+            font-size: 15px !important;
+            font-family: "poppins semibold" !important;
+            text-transform: capitalize !important;
+            color: #000000 !important;
+            // background: #192634 !important;
+            border-radius: 8px !important;
+            margin-bottom: 3px !important;
+            padding: 7px 20px;
+            text-align: center;
+        }
+        .alert-button-role-{
+            font-size: 15px !important;
+            font-family: "poppins semibold" !important;
+            text-transform: capitalize !important;
+            color: #f9f9f9 !important;
+            background: #192634 !important;
+            border-radius: 8px !important;
+            margin-bottom: 3px !important;
+            padding: 7px 20px;
+            text-align: center;
+        }
+    }
+}
+//unsubsribe alert
+.unsubscribe-alert, .report-alert{
+    .alert-wrapper{
+        border-radius: 10px;
+    }
+    .alert-head{
+        text-align: center;
+        color: #1a2735;
+        font-size: 17px;
+        font-family: 'poppins semibold';
+    }
+    .alert-message{
+        font-size: 15px;
+        font-family: 'poppins medium';
+        line-height: 18px;
+    }    
+    .alert-button-group{
+        display: flex !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0px 0px 10px 8px !important;
+        .alert-button-role-cancel{
+            font-size: 15px !important;
+            font-family: "poppins semibold" !important;
+            text-transform: capitalize !important;
+            color: #000000 !important;
+            // background: #192634 !important;
+            border-radius: 8px !important;
+            margin-bottom: 3px !important;
+            padding: 7px 20px;
+            text-align: center;
+        }
+        .alert-button-role-{
+            font-size: 15px !important;
+            font-family: "poppins semibold" !important;
+            text-transform: capitalize !important;
+            color: #f9f9f9 !important;
+            background: #192634 !important;
+            border-radius: 8px !important;
+            margin-bottom: 3px !important;
+            padding: 7px 20px;
+            text-align: center;
+        }
+    }
+}
+.report-alert{
+    .alert-wrapper{
+        border-radius: 10px;
+    }
+    .alert-head{
+        text-align: left;
+        color: #1a2735;
+        font-size: 17px;
+        font-family: 'poppins medium';
+    }
+}
+.more-options-popover{
+    .modal-wrapper.sc-ion-modal-md, .modal-wrapper.sc-ion-modal-ios{
+        height: 90px;
+        position: absolute;
+        bottom: 0;
+    }
+}
